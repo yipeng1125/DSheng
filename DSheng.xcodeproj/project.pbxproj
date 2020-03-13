@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C52135725B086F07DFE50706 /* libPods-DSheng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FB95851561B9CB0D0381A60 /* libPods-DSheng.a */; };
 		FB0BC2862412A6AD00605D1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2852412A6AD00605D1B /* AppDelegate.m */; };
 		FB0BC2892412A6AD00605D1B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2882412A6AD00605D1B /* ViewController.m */; };
 		FB0BC28C2412A6AD00605D1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB0BC28A2412A6AD00605D1B /* Main.storyboard */; };
@@ -15,6 +16,41 @@
 		FB0BC2942412A6AF00605D1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2932412A6AF00605D1B /* main.m */; };
 		FB0BC29E2412A6AF00605D1B /* DShengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC29D2412A6AF00605D1B /* DShengTests.m */; };
 		FB0BC2A92412A6AF00605D1B /* DShengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2A82412A6AF00605D1B /* DShengUITests.m */; };
+		FB0BC2C52413367300605D1B /* DSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2C42413367300605D1B /* DSTabBarController.m */; };
+		FB0BC2C8241336C400605D1B /* DSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2C7241336C400605D1B /* DSHomeViewController.m */; };
+		FB0BC2CB241336F500605D1B /* DSTrendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2CA241336F500605D1B /* DSTrendViewController.m */; };
+		FB0BC2CE2413373100605D1B /* DSWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2CD2413373100605D1B /* DSWinnerViewController.m */; };
+		FB0BC2D12413375300605D1B /* DSMyInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2D02413375300605D1B /* DSMyInformationViewController.m */; };
+		FB0BC2D62413522800605D1B /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2D42413522800605D1B /* UIView+Extension.m */; };
+		FB0BC2F92414F85800605D1B /* DSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2F82414F85800605D1B /* DSLoginViewController.m */; };
+		FB0BC2FC2414F89900605D1B /* DSRegsiterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2FB2414F89900605D1B /* DSRegsiterViewController.m */; };
+		FB0BC3002415DCC300605D1B /* DSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC2FE2415DCC300605D1B /* DSNavigationController.m */; };
+		FB0BC31E2416268E00605D1B /* TRCustomAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3032416268D00605D1B /* TRCustomAlert.m */; };
+		FB0BC31F2416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3062416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		FB0BC3202416268E00605D1B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC30F2416268E00605D1B /* ViewController+MASAdditions.m */; };
+		FB0BC3212416268E00605D1B /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3132416268E00605D1B /* MASCompositeConstraint.m */; };
+		FB0BC3222416268E00605D1B /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3142416268E00605D1B /* MASConstraintMaker.m */; };
+		FB0BC3232416268E00605D1B /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3152416268E00605D1B /* MASLayoutConstraint.m */; };
+		FB0BC3242416268E00605D1B /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3162416268E00605D1B /* NSArray+MASAdditions.m */; };
+		FB0BC3252416268E00605D1B /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3172416268E00605D1B /* View+MASAdditions.m */; };
+		FB0BC3262416268E00605D1B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31A2416268E00605D1B /* MASConstraint.m */; };
+		FB0BC3272416268E00605D1B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31C2416268E00605D1B /* MASViewConstraint.m */; };
+		FB0BC3282416268E00605D1B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31D2416268E00605D1B /* MASViewAttribute.m */; };
+		FB0BC32B2416276300605D1B /* CustomAlertImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */; };
+		FB0BC32F2416291B00605D1B /* DSNetworkManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC32E2416291B00605D1B /* DSNetworkManger.m */; };
+		FB0BC3352416503700605D1B /* DSCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3342416503700605D1B /* DSCommonTool.m */; };
+		FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3372416536600605D1B /* DSAPIRequest.m */; };
+		FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC33D24166ED100605D1B /* DSKeyChain.m */; };
+		FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC340241671D800605D1B /* DSKeyChainUtils.m */; };
+		FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */; };
+		FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2F2417665400FA261F /* DSAPIInterface.m */; };
+		FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD322417779600FA261F /* DSCacheDataManager.m */; };
+		FBFECD3724177B9300FA261F /* DSLotteryTicketInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD3624177B9300FA261F /* DSLotteryTicketInfo.m */; };
+		FBFECD3B2417B00C00FA261F /* NSDate+ext.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD3A2417B00C00FA261F /* NSDate+ext.m */; };
+		FBFECD3E2417C63800FA261F /* DSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD3D2417C63800FA261F /* DSButton.m */; };
+		FBFECD4224187EBB00FA261F /* DSPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD4124187EBB00FA261F /* DSPayViewController.m */; };
+		FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */; };
+		FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBFECD472418EF1B00FA261F /* LottryticketData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A70D3A9EDB043F0B89C0EA7 /* Pods-DSheng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSheng.debug.xcconfig"; path = "Target Support Files/Pods-DSheng/Pods-DSheng.debug.xcconfig"; sourceTree = "<group>"; };
+		9FB95851561B9CB0D0381A60 /* libPods-DSheng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSheng.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F412B6B39CA79F7758D00A34 /* Pods-DSheng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSheng.release.xcconfig"; path = "Target Support Files/Pods-DSheng/Pods-DSheng.release.xcconfig"; sourceTree = "<group>"; };
 		FB0BC2812412A6AD00605D1B /* DSheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0BC2842412A6AD00605D1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB0BC2852412A6AD00605D1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +90,83 @@
 		FB0BC2A42412A6AF00605D1B /* DShengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DShengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0BC2A82412A6AF00605D1B /* DShengUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DShengUITests.m; sourceTree = "<group>"; };
 		FB0BC2AA2412A6AF00605D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB0BC2C32413367300605D1B /* DSTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSTabBarController.h; sourceTree = "<group>"; };
+		FB0BC2C42413367300605D1B /* DSTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSTabBarController.m; sourceTree = "<group>"; };
+		FB0BC2C6241336C400605D1B /* DSHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHomeViewController.h; sourceTree = "<group>"; };
+		FB0BC2C7241336C400605D1B /* DSHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHomeViewController.m; sourceTree = "<group>"; };
+		FB0BC2C9241336F500605D1B /* DSTrendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSTrendViewController.h; sourceTree = "<group>"; };
+		FB0BC2CA241336F500605D1B /* DSTrendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSTrendViewController.m; sourceTree = "<group>"; };
+		FB0BC2CC2413373100605D1B /* DSWinnerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSWinnerViewController.h; sourceTree = "<group>"; };
+		FB0BC2CD2413373100605D1B /* DSWinnerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSWinnerViewController.m; sourceTree = "<group>"; };
+		FB0BC2CF2413375300605D1B /* DSMyInformationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMyInformationViewController.h; sourceTree = "<group>"; };
+		FB0BC2D02413375300605D1B /* DSMyInformationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMyInformationViewController.m; sourceTree = "<group>"; };
+		FB0BC2D32413506500605D1B /* DSCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCommonHeader.h; sourceTree = "<group>"; };
+		FB0BC2D42413522800605D1B /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		FB0BC2D52413522800605D1B /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		FB0BC2F72414F85800605D1B /* DSLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSLoginViewController.h; sourceTree = "<group>"; };
+		FB0BC2F82414F85800605D1B /* DSLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSLoginViewController.m; sourceTree = "<group>"; };
+		FB0BC2FA2414F89900605D1B /* DSRegsiterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRegsiterViewController.h; sourceTree = "<group>"; };
+		FB0BC2FB2414F89900605D1B /* DSRegsiterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRegsiterViewController.m; sourceTree = "<group>"; };
+		FB0BC2FE2415DCC300605D1B /* DSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSNavigationController.m; sourceTree = "<group>"; };
+		FB0BC2FF2415DCC300605D1B /* DSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSNavigationController.h; sourceTree = "<group>"; };
+		FB0BC3022416268D00605D1B /* TRCustomAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCustomAlert.h; sourceTree = "<group>"; };
+		FB0BC3032416268D00605D1B /* TRCustomAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCustomAlert.m; sourceTree = "<group>"; };
+		FB0BC3052416268E00605D1B /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		FB0BC3062416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		FB0BC3072416268E00605D1B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		FB0BC3082416268E00605D1B /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		FB0BC3092416268E00605D1B /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FB0BC30A2416268E00605D1B /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		FB0BC30B2416268E00605D1B /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		FB0BC30C2416268E00605D1B /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		FB0BC30D2416268E00605D1B /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		FB0BC30E2416268E00605D1B /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		FB0BC30F2416268E00605D1B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		FB0BC3102416268E00605D1B /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		FB0BC3112416268E00605D1B /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		FB0BC3122416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		FB0BC3132416268E00605D1B /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		FB0BC3142416268E00605D1B /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		FB0BC3152416268E00605D1B /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		FB0BC3162416268E00605D1B /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		FB0BC3172416268E00605D1B /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		FB0BC3182416268E00605D1B /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		FB0BC3192416268E00605D1B /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		FB0BC31A2416268E00605D1B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		FB0BC31B2416268E00605D1B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		FB0BC31C2416268E00605D1B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		FB0BC31D2416268E00605D1B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomAlertImage.bundle; sourceTree = "<group>"; };
+		FB0BC32D2416291B00605D1B /* DSNetworkManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNetworkManger.h; sourceTree = "<group>"; };
+		FB0BC32E2416291B00605D1B /* DSNetworkManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSNetworkManger.m; sourceTree = "<group>"; };
+		FB0BC3332416503700605D1B /* DSCommonTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCommonTool.h; sourceTree = "<group>"; };
+		FB0BC3342416503700605D1B /* DSCommonTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCommonTool.m; sourceTree = "<group>"; };
+		FB0BC3362416527D00605D1B /* DSNetHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNetHeader.h; sourceTree = "<group>"; };
+		FB0BC3372416536600605D1B /* DSAPIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAPIRequest.m; sourceTree = "<group>"; };
+		FB0BC33A241653F700605D1B /* DSAPIRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAPIRequest.h; sourceTree = "<group>"; };
+		FB0BC33C24166ED100605D1B /* DSKeyChain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyChain.h; sourceTree = "<group>"; };
+		FB0BC33D24166ED100605D1B /* DSKeyChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChain.m; sourceTree = "<group>"; };
+		FB0BC33F241671D800605D1B /* DSKeyChainUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyChainUtils.h; sourceTree = "<group>"; };
+		FB0BC340241671D800605D1B /* DSKeyChainUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChainUtils.m; sourceTree = "<group>"; };
+		FBFECD2B24172AF100FA261F /* DSHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHomeTableViewCell.h; sourceTree = "<group>"; };
+		FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHomeTableViewCell.m; sourceTree = "<group>"; };
+		FBFECD2E2417665400FA261F /* DSAPIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAPIInterface.h; sourceTree = "<group>"; };
+		FBFECD2F2417665400FA261F /* DSAPIInterface.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAPIInterface.m; sourceTree = "<group>"; };
+		FBFECD312417779600FA261F /* DSCacheDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCacheDataManager.h; sourceTree = "<group>"; };
+		FBFECD322417779600FA261F /* DSCacheDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCacheDataManager.m; sourceTree = "<group>"; };
+		FBFECD3524177B9300FA261F /* DSLotteryTicketInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSLotteryTicketInfo.h; sourceTree = "<group>"; };
+		FBFECD3624177B9300FA261F /* DSLotteryTicketInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSLotteryTicketInfo.m; sourceTree = "<group>"; };
+		FBFECD382417A02800FA261F /* DSDataCommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSDataCommonHeader.h; sourceTree = "<group>"; };
+		FBFECD392417B00C00FA261F /* NSDate+ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ext.h"; sourceTree = "<group>"; };
+		FBFECD3A2417B00C00FA261F /* NSDate+ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ext.m"; sourceTree = "<group>"; };
+		FBFECD3C2417C63800FA261F /* DSButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSButton.h; sourceTree = "<group>"; };
+		FBFECD3D2417C63800FA261F /* DSButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSButton.m; sourceTree = "<group>"; };
+		FBFECD4024187EBB00FA261F /* DSPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPayViewController.h; sourceTree = "<group>"; };
+		FBFECD4124187EBB00FA261F /* DSPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSPayViewController.m; sourceTree = "<group>"; };
+		FBFECD4324187EF500FA261F /* DSChooseLotteryticketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSChooseLotteryticketViewController.h; sourceTree = "<group>"; };
+		FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChooseLotteryticketViewController.m; sourceTree = "<group>"; };
+		FBFECD46241880D400FA261F /* DSViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSViewHeader.h; sourceTree = "<group>"; };
+		FBFECD472418EF1B00FA261F /* LottryticketData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LottryticketData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C52135725B086F07DFE50706 /* libPods-DSheng.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +195,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9301227DA3EB320026F4B3ED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A70D3A9EDB043F0B89C0EA7 /* Pods-DSheng.debug.xcconfig */,
+				F412B6B39CA79F7758D00A34 /* Pods-DSheng.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A68D675440611F9016D1FEB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FB95851561B9CB0D0381A60 /* libPods-DSheng.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB0BC2782412A6AD00605D1B = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +219,8 @@
 				FB0BC29C2412A6AF00605D1B /* DShengTests */,
 				FB0BC2A72412A6AF00605D1B /* DShengUITests */,
 				FB0BC2822412A6AD00605D1B /* Products */,
+				9301227DA3EB320026F4B3ED /* Pods */,
+				A68D675440611F9016D1FEB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +237,13 @@
 		FB0BC2832412A6AD00605D1B /* DSheng */ = {
 			isa = PBXGroup;
 			children = (
+				FB0BC33B24166EB600605D1B /* Data */,
+				FB0BC32C241628F600605D1B /* Net */,
+				FB0BC3292416276200605D1B /* Resource */,
+				FB0BC2D82413CFE900605D1B /* Vendor */,
+				FB0BC2D22413502500605D1B /* Common */,
+				FB0BC2BF2413230100605D1B /* View */,
+				FB0BC2BB2412AB2200605D1B /* Main */,
 				FB0BC2842412A6AD00605D1B /* AppDelegate.h */,
 				FB0BC2852412A6AD00605D1B /* AppDelegate.m */,
 				FB0BC2872412A6AD00605D1B /* ViewController.h */,
@@ -132,6 +275,181 @@
 			path = DShengUITests;
 			sourceTree = "<group>";
 		};
+		FB0BC2BB2412AB2200605D1B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD3F24187E5400FA261F /* SubPage */,
+				FB0BC2FD2415DCC300605D1B /* Common */,
+				FB0BC2D72413C94F00605D1B /* Login */,
+				FB0BC2C32413367300605D1B /* DSTabBarController.h */,
+				FB0BC2C42413367300605D1B /* DSTabBarController.m */,
+				FB0BC2C6241336C400605D1B /* DSHomeViewController.h */,
+				FB0BC2C7241336C400605D1B /* DSHomeViewController.m */,
+				FB0BC2C9241336F500605D1B /* DSTrendViewController.h */,
+				FB0BC2CA241336F500605D1B /* DSTrendViewController.m */,
+				FB0BC2CC2413373100605D1B /* DSWinnerViewController.h */,
+				FB0BC2CD2413373100605D1B /* DSWinnerViewController.m */,
+				FB0BC2CF2413375300605D1B /* DSMyInformationViewController.h */,
+				FB0BC2D02413375300605D1B /* DSMyInformationViewController.m */,
+				FBFECD46241880D400FA261F /* DSViewHeader.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FB0BC2BF2413230100605D1B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD2B24172AF100FA261F /* DSHomeTableViewCell.h */,
+				FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */,
+				FBFECD3C2417C63800FA261F /* DSButton.h */,
+				FBFECD3D2417C63800FA261F /* DSButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB0BC2D22413502500605D1B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD392417B00C00FA261F /* NSDate+ext.h */,
+				FBFECD3A2417B00C00FA261F /* NSDate+ext.m */,
+				FB0BC2D52413522800605D1B /* UIView+Extension.h */,
+				FB0BC2D42413522800605D1B /* UIView+Extension.m */,
+				FB0BC2D32413506500605D1B /* DSCommonHeader.h */,
+				FB0BC3332416503700605D1B /* DSCommonTool.h */,
+				FB0BC3342416503700605D1B /* DSCommonTool.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FB0BC2D72413C94F00605D1B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC2F72414F85800605D1B /* DSLoginViewController.h */,
+				FB0BC2F82414F85800605D1B /* DSLoginViewController.m */,
+				FB0BC2FA2414F89900605D1B /* DSRegsiterViewController.h */,
+				FB0BC2FB2414F89900605D1B /* DSRegsiterViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FB0BC2D82413CFE900605D1B /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC3012416268D00605D1B /* CustomAlert */,
+				FB0BC3042416268E00605D1B /* Masonry */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		FB0BC2FD2415DCC300605D1B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC2FF2415DCC300605D1B /* DSNavigationController.h */,
+				FB0BC2FE2415DCC300605D1B /* DSNavigationController.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FB0BC3012416268D00605D1B /* CustomAlert */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC3022416268D00605D1B /* TRCustomAlert.h */,
+				FB0BC3032416268D00605D1B /* TRCustomAlert.m */,
+			);
+			path = CustomAlert;
+			sourceTree = "<group>";
+		};
+		FB0BC3042416268E00605D1B /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC3052416268E00605D1B /* MASCompositeConstraint.h */,
+				FB0BC3062416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m */,
+				FB0BC3072416268E00605D1B /* MASConstraint+Private.h */,
+				FB0BC3082416268E00605D1B /* MASLayoutConstraint.h */,
+				FB0BC3092416268E00605D1B /* NSArray+MASShorthandAdditions.h */,
+				FB0BC30A2416268E00605D1B /* MASConstraintMaker.h */,
+				FB0BC30B2416268E00605D1B /* View+MASAdditions.h */,
+				FB0BC30C2416268E00605D1B /* NSArray+MASAdditions.h */,
+				FB0BC30D2416268E00605D1B /* MASUtilities.h */,
+				FB0BC30E2416268E00605D1B /* MASViewAttribute.h */,
+				FB0BC30F2416268E00605D1B /* ViewController+MASAdditions.m */,
+				FB0BC3102416268E00605D1B /* MASViewConstraint.h */,
+				FB0BC3112416268E00605D1B /* MASConstraint.h */,
+				FB0BC3122416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.h */,
+				FB0BC3132416268E00605D1B /* MASCompositeConstraint.m */,
+				FB0BC3142416268E00605D1B /* MASConstraintMaker.m */,
+				FB0BC3152416268E00605D1B /* MASLayoutConstraint.m */,
+				FB0BC3162416268E00605D1B /* NSArray+MASAdditions.m */,
+				FB0BC3172416268E00605D1B /* View+MASAdditions.m */,
+				FB0BC3182416268E00605D1B /* View+MASShorthandAdditions.h */,
+				FB0BC3192416268E00605D1B /* Masonry.h */,
+				FB0BC31A2416268E00605D1B /* MASConstraint.m */,
+				FB0BC31B2416268E00605D1B /* ViewController+MASAdditions.h */,
+				FB0BC31C2416268E00605D1B /* MASViewConstraint.m */,
+				FB0BC31D2416268E00605D1B /* MASViewAttribute.m */,
+			);
+			path = Masonry;
+			sourceTree = "<group>";
+		};
+		FB0BC3292416276200605D1B /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FB0BC32C241628F600605D1B /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				FB0BC3362416527D00605D1B /* DSNetHeader.h */,
+				FB0BC32D2416291B00605D1B /* DSNetworkManger.h */,
+				FB0BC32E2416291B00605D1B /* DSNetworkManger.m */,
+				FB0BC33A241653F700605D1B /* DSAPIRequest.h */,
+				FB0BC3372416536600605D1B /* DSAPIRequest.m */,
+				FBFECD2E2417665400FA261F /* DSAPIInterface.h */,
+				FBFECD2F2417665400FA261F /* DSAPIInterface.m */,
+			);
+			path = Net;
+			sourceTree = "<group>";
+		};
+		FB0BC33B24166EB600605D1B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD3424177AD500FA261F /* Model */,
+				FB0BC33C24166ED100605D1B /* DSKeyChain.h */,
+				FB0BC33D24166ED100605D1B /* DSKeyChain.m */,
+				FB0BC33F241671D800605D1B /* DSKeyChainUtils.h */,
+				FB0BC340241671D800605D1B /* DSKeyChainUtils.m */,
+				FBFECD312417779600FA261F /* DSCacheDataManager.h */,
+				FBFECD322417779600FA261F /* DSCacheDataManager.m */,
+				FBFECD382417A02800FA261F /* DSDataCommonHeader.h */,
+				FBFECD472418EF1B00FA261F /* LottryticketData.plist */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FBFECD3424177AD500FA261F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD3524177B9300FA261F /* DSLotteryTicketInfo.h */,
+				FBFECD3624177B9300FA261F /* DSLotteryTicketInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBFECD3F24187E5400FA261F /* SubPage */ = {
+			isa = PBXGroup;
+			children = (
+				FBFECD4024187EBB00FA261F /* DSPayViewController.h */,
+				FBFECD4124187EBB00FA261F /* DSPayViewController.m */,
+				FBFECD4324187EF500FA261F /* DSChooseLotteryticketViewController.h */,
+				FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */,
+			);
+			name = SubPage;
+			path = DSheng/Main/SubPage;
+			sourceTree = SOURCE_ROOT;
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +457,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB0BC2AD2412A6AF00605D1B /* Build configuration list for PBXNativeTarget "DSheng" */;
 			buildPhases = (
+				5F323BAACCCA63515B17122B /* [CP] Check Pods Manifest.lock */,
 				FB0BC27D2412A6AD00605D1B /* Sources */,
 				FB0BC27E2412A6AD00605D1B /* Frameworks */,
 				FB0BC27F2412A6AD00605D1B /* Resources */,
+				B435DAB58327F98A68BAC07C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,8 +556,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0BC2912412A6AF00605D1B /* LaunchScreen.storyboard in Resources */,
+				FB0BC32B2416276300605D1B /* CustomAlertImage.bundle in Resources */,
 				FB0BC28E2412A6AF00605D1B /* Assets.xcassets in Resources */,
 				FB0BC28C2412A6AD00605D1B /* Main.storyboard in Resources */,
+				FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +579,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5F323BAACCCA63515B17122B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DSheng-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B435DAB58327F98A68BAC07C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSheng/Pods-DSheng-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DSheng/Pods-DSheng-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DSheng/Pods-DSheng-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FB0BC27D2412A6AD00605D1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB0BC2D62413522800605D1B /* UIView+Extension.m in Sources */,
+				FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */,
+				FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */,
+				FB0BC3272416268E00605D1B /* MASViewConstraint.m in Sources */,
+				FB0BC3242416268E00605D1B /* NSArray+MASAdditions.m in Sources */,
+				FB0BC2F92414F85800605D1B /* DSLoginViewController.m in Sources */,
+				FB0BC2CE2413373100605D1B /* DSWinnerViewController.m in Sources */,
+				FB0BC3282416268E00605D1B /* MASViewAttribute.m in Sources */,
+				FB0BC2C8241336C400605D1B /* DSHomeViewController.m in Sources */,
+				FB0BC3262416268E00605D1B /* MASConstraint.m in Sources */,
+				FBFECD3724177B9300FA261F /* DSLotteryTicketInfo.m in Sources */,
+				FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */,
 				FB0BC2892412A6AD00605D1B /* ViewController.m in Sources */,
 				FB0BC2942412A6AF00605D1B /* main.m in Sources */,
+				FB0BC2D12413375300605D1B /* DSMyInformationViewController.m in Sources */,
+				FB0BC3252416268E00605D1B /* View+MASAdditions.m in Sources */,
+				FB0BC3222416268E00605D1B /* MASConstraintMaker.m in Sources */,
+				FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */,
+				FBFECD3E2417C63800FA261F /* DSButton.m in Sources */,
+				FB0BC2C52413367300605D1B /* DSTabBarController.m in Sources */,
 				FB0BC2862412A6AD00605D1B /* AppDelegate.m in Sources */,
+				FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */,
+				FB0BC31F2416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */,
+				FB0BC2CB241336F500605D1B /* DSTrendViewController.m in Sources */,
+				FB0BC3202416268E00605D1B /* ViewController+MASAdditions.m in Sources */,
+				FB0BC3352416503700605D1B /* DSCommonTool.m in Sources */,
+				FB0BC3212416268E00605D1B /* MASCompositeConstraint.m in Sources */,
+				FB0BC3002415DCC300605D1B /* DSNavigationController.m in Sources */,
+				FB0BC2FC2414F89900605D1B /* DSRegsiterViewController.m in Sources */,
+				FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */,
+				FB0BC3232416268E00605D1B /* MASLayoutConstraint.m in Sources */,
+				FB0BC31E2416268E00605D1B /* TRCustomAlert.m in Sources */,
+				FBFECD4224187EBB00FA261F /* DSPayViewController.m in Sources */,
+				FB0BC32F2416291B00605D1B /* DSNetworkManger.m in Sources */,
+				FBFECD3B2417B00C00FA261F /* NSDate+ext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,9 +830,12 @@
 		};
 		FB0BC2AE2412A6AF00605D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A70D3A9EDB043F0B89C0EA7 /* Pods-DSheng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PE4K7U88D6;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = DSheng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -449,9 +849,12 @@
 		};
 		FB0BC2AF2412A6AF00605D1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F412B6B39CA79F7758D00A34 /* Pods-DSheng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PE4K7U88D6;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = DSheng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
