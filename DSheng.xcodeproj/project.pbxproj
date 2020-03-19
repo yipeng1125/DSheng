@@ -42,6 +42,11 @@
 		FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3372416536600605D1B /* DSAPIRequest.m */; };
 		FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC33D24166ED100605D1B /* DSKeyChain.m */; };
 		FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC340241671D800605D1B /* DSKeyChainUtils.m */; };
+		FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */; };
+		FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */; };
+		FBA74A1024209F4B00FACBFB /* DSCommonStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */; };
+		FBA74A132420A03000FACBFB /* DSHistoryWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */; };
+		FBA74A912420F7BF00FACBFB /* DSRule.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A902420F7BF00FACBFB /* DSRule.m */; };
 		FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */; };
 		FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2F2417665400FA261F /* DSAPIInterface.m */; };
 		FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD322417779600FA261F /* DSCacheDataManager.m */; };
@@ -51,6 +56,10 @@
 		FBFECD4224187EBB00FA261F /* DSPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD4124187EBB00FA261F /* DSPayViewController.m */; };
 		FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */; };
 		FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBFECD472418EF1B00FA261F /* LottryticketData.plist */; };
+		FBFECDCD241D021E00FA261F /* DSCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECDCB241D021E00FA261F /* DSCollectionViewCell.m */; };
+		FBFECDCE241D021E00FA261F /* DSCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBFECDCC241D021E00FA261F /* DSCollectionViewCell.xib */; };
+		FBFECDD2241DDD3B00FA261F /* DSKaiJianglTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECDD0241DDD3B00FA261F /* DSKaiJianglTableViewCell.m */; };
+		FBFECDD3241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBFECDD1241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +157,15 @@
 		FB0BC33D24166ED100605D1B /* DSKeyChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChain.m; sourceTree = "<group>"; };
 		FB0BC33F241671D800605D1B /* DSKeyChainUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyChainUtils.h; sourceTree = "<group>"; };
 		FB0BC340241671D800605D1B /* DSKeyChainUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChainUtils.m; sourceTree = "<group>"; };
+		FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryTableViewCell.h; sourceTree = "<group>"; };
+		FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryTableViewCell.m; sourceTree = "<group>"; };
+		FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHistoryTableViewCell.xib; sourceTree = "<group>"; };
+		FBA74A0E24209F4B00FACBFB /* DSCommonStringTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCommonStringTool.h; sourceTree = "<group>"; };
+		FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSCommonStringTool.m; sourceTree = "<group>"; };
+		FBA74A112420A03000FACBFB /* DSHistoryWinnerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryWinnerViewController.h; sourceTree = "<group>"; };
+		FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryWinnerViewController.m; sourceTree = "<group>"; };
+		FBA74A8F2420F7BF00FACBFB /* DSRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRule.h; sourceTree = "<group>"; };
+		FBA74A902420F7BF00FACBFB /* DSRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRule.m; sourceTree = "<group>"; };
 		FBFECD2B24172AF100FA261F /* DSHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHomeTableViewCell.h; sourceTree = "<group>"; };
 		FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHomeTableViewCell.m; sourceTree = "<group>"; };
 		FBFECD2E2417665400FA261F /* DSAPIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAPIInterface.h; sourceTree = "<group>"; };
@@ -167,6 +185,12 @@
 		FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSChooseLotteryticketViewController.m; sourceTree = "<group>"; };
 		FBFECD46241880D400FA261F /* DSViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSViewHeader.h; sourceTree = "<group>"; };
 		FBFECD472418EF1B00FA261F /* LottryticketData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LottryticketData.plist; sourceTree = "<group>"; };
+		FBFECDCA241D021E00FA261F /* DSCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSCollectionViewCell.h; sourceTree = "<group>"; };
+		FBFECDCB241D021E00FA261F /* DSCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSCollectionViewCell.m; sourceTree = "<group>"; };
+		FBFECDCC241D021E00FA261F /* DSCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBFECDCF241DDD3B00FA261F /* DSKaiJianglTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKaiJianglTableViewCell.h; sourceTree = "<group>"; };
+		FBFECDD0241DDD3B00FA261F /* DSKaiJianglTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKaiJianglTableViewCell.m; sourceTree = "<group>"; };
+		FBFECDD1241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSKaiJianglTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +327,15 @@
 				FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */,
 				FBFECD3C2417C63800FA261F /* DSButton.h */,
 				FBFECD3D2417C63800FA261F /* DSButton.m */,
+				FBFECDCA241D021E00FA261F /* DSCollectionViewCell.h */,
+				FBFECDCB241D021E00FA261F /* DSCollectionViewCell.m */,
+				FBFECDCC241D021E00FA261F /* DSCollectionViewCell.xib */,
+				FBFECDCF241DDD3B00FA261F /* DSKaiJianglTableViewCell.h */,
+				FBFECDD0241DDD3B00FA261F /* DSKaiJianglTableViewCell.m */,
+				FBFECDD1241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib */,
+				FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */,
+				FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */,
+				FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -317,6 +350,8 @@
 				FB0BC2D32413506500605D1B /* DSCommonHeader.h */,
 				FB0BC3332416503700605D1B /* DSCommonTool.h */,
 				FB0BC3342416503700605D1B /* DSCommonTool.m */,
+				FBA74A0E24209F4B00FACBFB /* DSCommonStringTool.h */,
+				FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -425,6 +460,8 @@
 				FBFECD322417779600FA261F /* DSCacheDataManager.m */,
 				FBFECD382417A02800FA261F /* DSDataCommonHeader.h */,
 				FBFECD472418EF1B00FA261F /* LottryticketData.plist */,
+				FBA74A8F2420F7BF00FACBFB /* DSRule.h */,
+				FBA74A902420F7BF00FACBFB /* DSRule.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -445,6 +482,8 @@
 				FBFECD4124187EBB00FA261F /* DSPayViewController.m */,
 				FBFECD4324187EF500FA261F /* DSChooseLotteryticketViewController.h */,
 				FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */,
+				FBA74A112420A03000FACBFB /* DSHistoryWinnerViewController.h */,
+				FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */,
 			);
 			name = SubPage;
 			path = DSheng/Main/SubPage;
@@ -556,10 +595,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0BC2912412A6AF00605D1B /* LaunchScreen.storyboard in Resources */,
+				FBFECDD3241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib in Resources */,
+				FBFECDCE241D021E00FA261F /* DSCollectionViewCell.xib in Resources */,
 				FB0BC32B2416276300605D1B /* CustomAlertImage.bundle in Resources */,
 				FB0BC28E2412A6AF00605D1B /* Assets.xcassets in Resources */,
 				FB0BC28C2412A6AD00605D1B /* Main.storyboard in Resources */,
 				FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */,
+				FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,8 +682,11 @@
 				FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */,
 				FB0BC2892412A6AD00605D1B /* ViewController.m in Sources */,
 				FB0BC2942412A6AF00605D1B /* main.m in Sources */,
+				FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */,
 				FB0BC2D12413375300605D1B /* DSMyInformationViewController.m in Sources */,
+				FBFECDCD241D021E00FA261F /* DSCollectionViewCell.m in Sources */,
 				FB0BC3252416268E00605D1B /* View+MASAdditions.m in Sources */,
+				FBA74A1024209F4B00FACBFB /* DSCommonStringTool.m in Sources */,
 				FB0BC3222416268E00605D1B /* MASConstraintMaker.m in Sources */,
 				FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */,
 				FBFECD3E2417C63800FA261F /* DSButton.m in Sources */,
@@ -649,6 +694,7 @@
 				FB0BC2862412A6AD00605D1B /* AppDelegate.m in Sources */,
 				FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */,
 				FB0BC31F2416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				FBA74A132420A03000FACBFB /* DSHistoryWinnerViewController.m in Sources */,
 				FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */,
 				FB0BC2CB241336F500605D1B /* DSTrendViewController.m in Sources */,
 				FB0BC3202416268E00605D1B /* ViewController+MASAdditions.m in Sources */,
@@ -658,6 +704,8 @@
 				FB0BC2FC2414F89900605D1B /* DSRegsiterViewController.m in Sources */,
 				FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */,
 				FB0BC3232416268E00605D1B /* MASLayoutConstraint.m in Sources */,
+				FBA74A912420F7BF00FACBFB /* DSRule.m in Sources */,
+				FBFECDD2241DDD3B00FA261F /* DSKaiJianglTableViewCell.m in Sources */,
 				FB0BC31E2416268E00605D1B /* TRCustomAlert.m in Sources */,
 				FBFECD4224187EBB00FA261F /* DSPayViewController.m in Sources */,
 				FB0BC32F2416291B00605D1B /* DSNetworkManger.m in Sources */,
@@ -835,7 +883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PE4K7U88D6;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = DSheng/Common/DSCommonHeader.h;
 				INFOPLIST_FILE = DSheng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -854,7 +902,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PE4K7U88D6;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = DSheng/Common/DSCommonHeader.h;
 				INFOPLIST_FILE = DSheng/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

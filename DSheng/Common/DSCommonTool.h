@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (BOOL)saveUserInfo:(NSDictionary *)info;
 + (NSDictionary *)getUserInfo;
+
++ (CGRect)getStringRect:(NSString *)name withFont:(UIFont *)font;
 
 @end
 

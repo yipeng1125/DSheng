@@ -56,6 +56,56 @@
     return self;
 }
 
+- (NSString *)cuttentState:(NSTimeInterval)timeInterval currentDate:(NSDate *)date {
+    
+    if (timeInterval<= 0 || !date) {
+        return @"服务器异常";
+    }
+    NSComparisonResult result1 = [date compare:_startTime];
+    NSComparisonResult result2 = [date compare:_endTime];
+    if (result1 == NSOrderedDescending || (result2 == NSOrderedAscending )) {
+        
+        int t = ((int)timeInterval % ((int)_enablePeriodTime + (int)_disablePeriodTime));
+        if (t >= _enablePeriodTime) {
+            t = ((int)_enablePeriodTime + (int)_disablePeriodTime) - t;
+            int hours = t / 360;
+            int min = ((int)(t / 60)) % 60;
+            int sec = ((int)t) % 60;
+            NSString *tstr = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, min, sec];
+            return tstr;
+            
+            
+        } else {
+            t = ((int)_enablePeriodTime + (int)_disablePeriodTime) - t;
+            int hours = (t - _disablePeriodTime)/360;
+            int min = ((int)((t - _disablePeriodTime) / 60)) % 60;
+            int sec = ((int)(t - _disablePeriodTime)) % 60;
+            NSString *tstr = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, min, sec];
+            return tstr;
+        }
+    } else {
+        return @"请等待，未开盘";
+    }
+    
+}
+
+
+- (NSString *)getCurrentOrderNum:(NSString *)datestr andExterTime:(NSTimeInterval)extime {
+    
+    if (!datestr) {
+        return @"";
+    }
+    
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    
+    int t = (currentTime + extime - [_startTime timeIntervalSince1970]) / (_enablePeriodTime + _disablePeriodTime);
+    
+    NSString *str = [datestr stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    str = [NSString stringWithFormat:@"%@%03d", str, t];
+    
+    return str;
+}
+
 
 
 

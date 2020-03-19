@@ -21,6 +21,12 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 /*
 #pragma mark - Navigation
 

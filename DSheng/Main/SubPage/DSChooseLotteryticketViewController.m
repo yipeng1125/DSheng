@@ -10,19 +10,43 @@
 #import "DSCommonHeader.h"
 #import "DSChooseLotteryticketViewController.h"
 #import "DSButton.h"
+#import "DSCommonTool.h"
+#import "DSNavigationController.h"
+#import "DSCacheDataManager.h"
+#import "DSAPIInterface.h"
+#import "TRCustomAlert.h"
+
 
 
 #define BUTTON_Height 32
 #define ROW_Height (32 + 12 + 2)
 
-@interface DSChooseLotteryticketViewController () {
+@interface DSChooseLotteryticketViewController ()<DSNavigationBarDelegate> {
     NSArray *titlesArrarys;
     NSArray *rowsAry;
     NSArray *topTitleArys;
+    
+    __weak UIView *contentView;
+    
+    UIView *topView;
+    BOOL btopViewShow;
+    
+    NSMutableArray *selectData;
 
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) IBOutlet UILabel *selectDetailLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *remainTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *winLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *numLabel2;
+
+@property (nonatomic)dispatch_source_t mainTimer;
+
 
 @end
 
@@ -32,18 +56,194 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    selectData = [NSMutableArray array];
+    
     //step1
-    [self setupDefaultType:_ltType];
-    //step2
     [self initParameters:_ltType];
+    btopViewShow = NO;
+    
+    //step2 准备界面
+    [self loadCustomView];
+    
+    [self makeTopView];
+    
+    self.navigationItem.title = [self getTopTitleStringWithType:_detailType];
+    ((DSNavigationController *)self.navigationController).tdelegate = self;
+    
+//    [self setupNavigationBar];
+    
+    self.navigationController.navigationBar.hidden = NO;
+    
+    [self updateCustomView];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [TRCustomAlert showShadeLoadingWithMessage:@"加载数据中..."];
+
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [weakSelf getWinnerInfo:weakSelf.ltType];
+    });
+    
+}
+
+
+- (void)setUpTimer {
+    dispatch_queue_t pingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    self.mainTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, pingQueue);
+    dispatch_source_set_timer(self.mainTimer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0);
+    __weak typeof(self) weakSelf = self;
+    dispatch_source_set_event_handler(self.mainTimer, ^{
+        
+        [weakSelf taskForTimer];
+    });
+    
+}
+
+- (void)startTimer {
+    if (_mainTimer) {
+        dispatch_resume(self.mainTimer);
+    } else {
+        [self setUpTimer];
+        dispatch_resume(self.mainTimer);
+    }
+}
+
+- (void)pauseTimer {
+    if (self.mainTimer) {
+        dispatch_suspend(_mainTimer);
+    }
+}
+
+- (void)cancelTimer {
+    if (self.mainTimer) {
+        dispatch_source_cancel(self.mainTimer);
+    }
+}
+
+- (void)taskForTimer {
+    
+    NSString *msg = [self calculatorRemainTimeType:_ltType];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.remainTimeLabel.text = [NSString stringWithFormat:@"截止投注: %@",msg];
+    });
+}
+
+- (NSString *)calculatorRemainTimeType:(DSLotteryTicketType)type {
+    
+    NSString *message;
+    NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval newInterval = (currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)  - [DSCacheDataManager shareManager].todayTimeInterval;
+    NSDate *curTime = [NSDate dateWithTimeIntervalSince1970:(currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)];
+    
+    for (DSLotteryTicketInfo *item in DSCacheDataManager.shareManager.lotteryTicketInfoList) {
+        
+        if (item.type == type) {
+            message = [item cuttentState:newInterval currentDate:curTime];
+            break;
+        }
+    }
+    
+    return message;
+}
+
+- (void)updateCustomView {
+    
+    NSString * order = [[DSCacheDataManager shareManager] getNumberOrder:_ltType];
+    
+    _numLabel.text = [NSString stringWithFormat:@"%@", order];
+    
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self cancelTimer];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self startTimer];
+}
+
+
+- (void)getWinnerInfo:(DSLotteryTicketType)type {
+    
+    NSInteger typeindex = type - 1;
     
     
-    //step3 准备界面
+    __weak typeof(self) weakSelf = self;
+
+    [DSAPIInterface getWinnerInfoAPIRequest:typeindex success:^(id result) {
+        NSLog(@"%@", result);
+        NSString *message = (NSString *)result;
+        NSArray *contents = [self parseMessage:message];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert dissmis];
+            if (!contents) {
+                [TRCustomAlert showMessage:[NSString stringWithFormat:@"服务器数据错误。\r\n%@", message] image:nil];
+            } else {
+                weakSelf.numLabel.text = [NSString stringWithFormat:@"%@%@",[DSCacheDataManager getLotteryTicketName:weakSelf.ltType], contents[1]];
+                weakSelf.winLabel.text = [NSString stringWithFormat:@"开奖号码: %@", contents.lastObject];
+                
+            }
+        });
+       
+    } failed:^(NSError *error) {
+        NSLog(@"%@", error);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert dissmis];
+            [TRCustomAlert showMessage:[NSString stringWithFormat:@"服务器错误。\r\n%@", error] image:nil];
+        });
+    }];
+    
+}
+
+- (NSArray *)parseMessage:(NSString *)message {
+    if (!message) {
+        return nil;
+    }
+    
+    NSArray *contents = [message componentsSeparatedByString:@"@"];
+    if (contents.count <= 0) {
+        return nil;
+    }
+    
+    NSString *str = contents.firstObject;
+    NSArray *subContents = [str componentsSeparatedByString:@"|"];
+    
+    if (contents.count < 3) {
+        return nil;
+    }
+    return subContents;
+}
+
+
+
+- (void)topViewClicked:(id)sender {
+    NSLog(@"sender : %@", sender);
+    
+    [selectData removeAllObjects];
+    
+    [self navigationTitleClick];
+}
+
+
+
+- (void)loadCustomView {
+    
+    if (contentView) {
+        [contentView removeFromSuperview];
+    }
+    
     UIView *contentV = [self makeContentView];
+    contentView = contentV;
     self.scrollView.contentSize = CGSizeMake(DSScreenSize.width, contentV.height);
     [self.scrollView addSubview:contentV];
-    
-    
 
 }
 
@@ -302,21 +502,120 @@
 }
 */
 
-
+- (double)getPosizitionX:(NSUInteger)cout withIndex:(int)index {
+    
+    if (cout == 1) {
+        return DSScreenSize.width / 2;
+    }
+    
+    if (cout == 2) {
+        if (index == 0) {
+            return DSScreenSize.width / 2 - 60;
+        } else {
+            return DSScreenSize.width / 2 + 60;
+        }
+    }
+    
+    if (cout == 3) {
+        if (index == 0) {
+            return DSScreenSize.width / 2 / 2;
+        } else if (index == 1) {
+            return DSScreenSize.width / 2;
+        } else {
+            return DSScreenSize.width / 2 * 1.5;
+        }
+    }
+    
+    if (cout == 4) {
+        if (index == 0 || index == 3) {
+            return DSScreenSize.width / 2 / 2;
+        } else if (index == 1) {
+            return DSScreenSize.width / 2;
+        } else {
+            return DSScreenSize.width / 2 * 1.5;
+        }
+    }
+    
+    if (cout == 5) {
+        if (index == 0 || index == 3) {
+            return DSScreenSize.width / 2 / 2;
+        } else if (index == 1 || index == 4) {
+            return DSScreenSize.width / 2;
+        } else {
+            return DSScreenSize.width / 2 * 1.5;
+        }
+    }
+    
+    return 0;
+}
 
 - (void)makeTopView {
     
-    for (NSNumber *item in topTitleArys) {
+    int rows = (int)(topTitleArys.count + 2) / 3;
+    double posizitionY = 5;
+    double height = 5 * (rows + 1) + rows * 48;
+    UIView *tview = [[UIView alloc] initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, DSScreenSize.width, height)];
+    [tview setBackgroundColor:UIColor.whiteColor];
+    
+    for (int index = 0; index < topTitleArys.count; index++) {
+
+        NSNumber *item = topTitleArys[index];
+        
+        if (index % 3 == 0 && index != 0) {
+            posizitionY += 5 + 48;
+        }
+        
         DSLTType type = [item intValue];
         
-        UIButton *button = [[UIButton alloc] init];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, posizitionY, 96, 48)];
+        double x = [self getPosizitionX:topTitleArys.count withIndex:index];
+        button.centerX = x;
         NSString *title = [self getTopTitleStringWithType:type];
         [button setTitle:title forState:UIControlStateNormal];
+        [button setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+        [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        button.imageView.contentMode = UIViewContentModeLeft;
         [button setImage:[UIImage imageNamed:@"m2"] forState:UIControlStateNormal];
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, button.titleLabel.bounds.size.width, 0, -button.titleLabel.bounds.size.width)];
-        [button setImageEdgeInsets:UIEdgeInsetsMake(0, -button.imageView.size.width, 0, button.imageView.size.width)];
+        
+//        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, button.titleLabel.bounds.size.width, 0, -button.titleLabel.bounds.size.width)];
+//        [button setImageEdgeInsets:UIEdgeInsetsMake(0, -button.imageView.size.width, 0, button.imageView.size.width)];
+        
+        double marginX = 5;
+        double marginX2 = 5;
+         if (title.length == 3) {
+            marginX = 5;
+            marginX2 = 10;
+        } else if (title.length >= 4) {
+            marginX = 20;
+            marginX2 = 30;
+        }
+        
+        [button setTitleEdgeInsets:UIEdgeInsetsMake(0, marginX2-button.titleLabel.bounds.size.width - button.imageView.bounds.size.width, 0, 0)];
+        
+        [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0,-marginX -button.imageView.bounds.size.width - button.titleLabel.bounds.size.width)];
+        
+        button.layer.borderWidth = 1.0;
+        button.layer.borderColor = DSColor(236, 107, 44).CGColor;
+        
+        button.tag = type;
+        [button addTarget:self action:@selector(topButtionClick:) forControlEvents:UIControlEventTouchUpInside];
+        
+        [tview addSubview:button];
         
     }
+    
+    tview.height = posizitionY + 48 + 5;
+    
+    topView = tview;
+//    topView.hidden = YES;
+    
+//    [_mainView addSubview:view];
+    
+}
+
+- (void)setLtType:(DSLotteryTicketType)ltType {
+    _ltType = ltType;
+    [self setupDefaultType:_ltType];
 }
 
 - (UIView *)makeContentView {
@@ -329,6 +628,18 @@
         
         //
         UIView *view = [self makeRowView:rowsAry andTitle:titlesArrarys[rowIndex] andRowIndex:rowIndex];
+        //add topline
+        {
+            UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DSScreenSize.width, 1)];
+            [lineV setBackgroundColor:UIColor.lightGrayColor];
+            [view addSubview:lineV];
+        }
+        if (rowIndex == (titlesArrarys.count - 1)) {
+            //add bottom Line
+            UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(0, view.height - 1, DSScreenSize.width, 1)];
+            [lineV setBackgroundColor:UIColor.lightGrayColor];
+            [view addSubview:lineV];
+        }
         
         view.y = posizitionY;
         posizitionY += view.height;
@@ -355,7 +666,6 @@
     double rowHeight = (crows + 1) * 5 + crows * ROW_Height;
     double rowWidth = DSScreenSize.width;
     UIView *rowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DSScreenSize.width, rowHeight)];
-    [rowView setBackgroundColor:DSRandomColor];
 
     UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 32)];
     [tLabel setBackgroundColor:DSColor(236, 107, 44)];
@@ -378,6 +688,9 @@
         button.x = posizitonX;
         button.y = posizitionY;
         [button addTarget:self action:@selector(buttonClictAction:) forControlEvents:UIControlEventTouchUpInside];
+        button.layer.borderWidth = 1.0;
+        button.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+        button.tag = rowIndex * 100 + index;
         [rowView addSubview:button];
         
         UILabel *plLabel = [[UILabel alloc] initWithFrame:CGRectMake(button.x, button.y + BUTTON_Height + 2, 32, 12)];
@@ -399,8 +712,62 @@
     UIButton *button = sender;
     BOOL bselected = button.selected;
     NSLog(@"selected: %d", bselected);
+    NSLog(@"tag : %ld", button.tag);
     button.selected = !bselected;
+    
+    if (button.selected) {
+        [selectData addObject:button];
+    }
+    
+    _selectDetailLabel.text = [NSString stringWithFormat:@"%ld注%ld元", selectData.count, selectData.count * 2];
 }
+
+- (IBAction)topButtionClick:(id)sender {
+    UIButton *button = sender;
+    
+    if (_detailType != button.tag) {
+        _detailType = button.tag;
+        [self initParameters:_ltType];
+        [self loadCustomView];
+    }
+    
+    if (topView) {
+        [topView removeFromSuperview];
+        btopViewShow = NO;
+    }
+    
+
+}
+
+- (IBAction)deleteButtonAction:(id)sender {
+    
+    for (UIButton *btn in selectData) {
+        btn.selected = NO;
+    }
+    
+    _selectDetailLabel.text = @"0注0元";
+}
+- (IBAction)commintAction:(id)sender {
+}
+
+- (void)navigationTitleClick {
+    
+    if (!btopViewShow) {
+        [topView removeFromSuperview];
+    
+        [_mainView addSubview:topView];
+        topView.hidden = NO;
+        btopViewShow = YES;
+    } else {
+        btopViewShow = NO;
+        [topView removeFromSuperview];
+    }
+    
+}
+
+
+
+
 
 
 

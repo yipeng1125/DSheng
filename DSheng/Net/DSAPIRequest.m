@@ -63,6 +63,7 @@
         if (bodystr.length > 0) {
             [bodystr appendString:@"&"];
         }
+        
         [bodystr appendFormat:@"%@=%@", key, parameters[key]];
     }
     return bodystr;
@@ -74,6 +75,40 @@
     [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
 
 }
+
+- (void)userinfoRequest:(NSDictionary *)parameters sucess:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_GET_USERINFO_API_URL];
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+
+}
+
+- (void)winnerInfoRequest:(NSInteger)index success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_WINNER_INFO_API_URL];
+    NSDictionary *parameters = @{@"bh":@(index)};
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+    
+}
+
+- (void)trendInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_TREND_INFO_API_URL];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+}
+
+- (void)allWinnerInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_GET_ALL_WINNER_API_URL];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+}
+
+
 
 /*
  http://www.desheng168.cn/dsadmin/reg.php?ph=1234567890&ps=112345&tps=1112&code=1393993

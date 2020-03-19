@@ -10,6 +10,18 @@
 
 @implementation DSCommonTool
 
++ (CGRect)getStringRect:(NSString *)name withFont:(UIFont *)font {
+    
+    NSDictionary *attributes = @{NSFontAttributeName: font};
+    
+    CGRect sz = [name boundingRectWithSize:CGSizeMake(200, CGFLOAT_MAX)
+                                   options:NSStringDrawingUsesLineFragmentOrigin
+                                attributes:attributes
+                                   context:nil];
+    
+    return sz;
+}
+
 + (BOOL)checkIsPhoneNumber:(NSString *)number {
     //2018最新手机段号正则
     NSString *phoneRegex = @"^((13[0-9])|(14[5|6|7|8])|(15[0|1|2|3|5|6|7|8|9])|(166)|(17[2|3|5|6|7|8])|(18[0-9])|(19[8|9]))\\d{8}$";
@@ -56,5 +68,9 @@
     
     return value;
 }
+
+
+
+
 
 @end

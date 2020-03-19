@@ -23,4 +23,13 @@ typedef void(^reqeustFailedBlock) (NSError *error);
 
 #define DS_LOTTERYT_TICKET_INFO_API_URL @"dsadmin/cpinfo.php"
 
+
+#define DS_GET_USERINFO_API_URL @"ios/usinfo.php"
+
+#define DS_WINNER_INFO_API_URL @"dsadmin/kjhm.php"
+
+#define DS_TREND_INFO_API_URL @"dsadmin/cphm.php"
+
+#define DS_GET_ALL_WINNER_API_URL @"dsadmin/cphm1.php"
+
 #endif /* DSNetHeader_h */

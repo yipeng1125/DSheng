@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DSViewHeader.h"
+#import "DSLotteryTicketInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,8 +22,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) NSTimeInterval deviationTime;
 @property(nonatomic, strong) NSMutableArray *oddsList;
 
+@property(nonatomic, copy) NSString *ymdString;
+
+//当前server年月日时分秒
+@property(nonatomic, assign) NSTimeInterval serverTimeInterval;
+//当前server年月日
+@property(nonatomic, assign) NSTimeInterval todayTimeInterval;
+
 - (void)clearData;
 
+
+- (NSString *)getNumberOrder:(DSLotteryTicketType)type;
+
++ (NSString *)getLotteryTicketName:(DSLotteryTicketType)type;
 
 @end
 

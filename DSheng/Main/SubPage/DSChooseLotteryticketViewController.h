@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, assign) DSLotteryTicketType ltType;
 @property(nonatomic, assign) DSLTType detailType;
 
+- (NSString *)getTopTitleStringWithType:(DSLTType)type;
+
 @end
 
 NS_ASSUME_NONNULL_END

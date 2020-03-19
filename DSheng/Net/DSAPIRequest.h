@@ -32,6 +32,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)lotteryTicketTInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
+
+- (void)userinfoRequest:(NSDictionary *)parameters sucess:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+
+- (void)winnerInfoRequest:(NSInteger)index success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+
+- (void)trendInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)allWinnerInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

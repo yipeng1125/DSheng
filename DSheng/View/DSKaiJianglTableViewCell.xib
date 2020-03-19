@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DSKaiJianglTableViewCell" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="DSKaiJianglTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北京PK拾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hnp-pf-gsv">
+                        <rect key="frame" x="15" y="5" width="65" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="9um-EJ-OiW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第8777888期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAF-gC-m5o">
+                        <rect key="frame" x="90" y="5" width="76" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NUi-bj-6Wh">
+                        <rect key="frame" x="15" y="25" width="290" height="36"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Yjk-5H-l3Z"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiantouarrow" translatesAutoresizingMaskIntoConstraints="NO" id="FtY-gb-oFS">
+                        <rect key="frame" x="294" y="24" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="3Xh-4O-6bf"/>
+                            <constraint firstAttribute="height" constant="16" id="xaR-ou-mg9"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="NUi-bj-6Wh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="EdW-Fs-fa0"/>
+                    <constraint firstItem="hnp-pf-gsv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="QTB-wP-5V4"/>
+                    <constraint firstItem="hnp-pf-gsv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="RbD-wf-GEI"/>
+                    <constraint firstAttribute="trailing" secondItem="FtY-gb-oFS" secondAttribute="trailing" constant="10" id="d3w-ke-QnN"/>
+                    <constraint firstItem="qAF-gC-m5o" firstAttribute="bottom" secondItem="hnp-pf-gsv" secondAttribute="bottom" id="iW3-Ze-5SJ"/>
+                    <constraint firstItem="FtY-gb-oFS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lra-sd-Oo1"/>
+                    <constraint firstItem="qAF-gC-m5o" firstAttribute="leading" secondItem="hnp-pf-gsv" secondAttribute="trailing" constant="10" id="nEa-C7-htp"/>
+                    <constraint firstAttribute="trailing" secondItem="NUi-bj-6Wh" secondAttribute="trailing" constant="35" id="qWz-D4-cJH"/>
+                    <constraint firstItem="NUi-bj-6Wh" firstAttribute="top" secondItem="hnp-pf-gsv" secondAttribute="bottom" constant="5" id="xxK-hs-wNK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="numberView" destination="NUi-bj-6Wh" id="JWD-OM-vJD"/>
+                <outlet property="subTitle" destination="qAF-gC-m5o" id="TOp-LC-01a"/>
+                <outlet property="title" destination="hnp-pf-gsv" id="yAb-sJ-7x1"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="jiantouarrow" width="32" height="32"/>
+    </resources>
+</document>

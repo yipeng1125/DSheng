@@ -50,6 +50,7 @@
     
     [self tryAutoLogin];
     
+    
 }
 
 
@@ -99,13 +100,15 @@
     _currentPhone = phone;
     _currentPassword = psd;
     
+    [TRCustomAlert showShadeLoadingWithMessage:@"正在登陆..."];
+    
     [DSAPIInterface loginAPIReqeust:phone passWord:psd success:^(id result) {
         
         NSDictionary *userinfo = @{DS_USER_KEY : self->_currentPhone, DS_USER_PSD_KEY : self ->_currentPassword};
         [DSCommonTool saveUserInfo:userinfo];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
+            [TRCustomAlert dissmis];
             UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSTabBarController"];
             [self.navigationController pushViewController:myView animated:YES];
@@ -113,6 +116,7 @@
         
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert dissmis];
             [TRCustomAlert showMessage:error.description image:nil];
         });
     }];

@@ -22,10 +22,9 @@
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView withIdentifyid:(NSString *)identifyid {
-    static NSString *cellId = @"cell";
     DSHomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifyid];
     if (!cell) {
-        cell = [[DSHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellId];
+        cell = [[DSHomeTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifyid];
     }
     return cell;
 }

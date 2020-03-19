@@ -75,4 +75,78 @@
     }];
 }
 
+
++ (void)getUserInfoAPIReqeust:(NSDictionary *)parameters success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+
+    [apiReqeust userinfoRequest:parameters sucess:^(id result) {
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *responseStr = [[NSString alloc] initWithData:result encoding:enc];
+        NSLog(@"%@", responseStr);
+        
+        if (sblock) {
+            sblock(responseStr);
+        }
+    } failed:^(NSError *error) {
+        NSLog(@"error : %@", error);
+        if (fblock) {
+            fblock(error);
+        }
+    }];
+}
+
++ (void)getWinnerInfoAPIRequest:(NSInteger)index success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust winnerInfoRequest:index success:^(id result) {
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *responseStr = [[NSString alloc] initWithData:result encoding:enc];
+        NSLog(@"%@", responseStr);
+        
+        if (sblock) {
+            sblock(responseStr);
+        }
+    } failed:^(NSError *error) {
+        NSLog(@"error : %@", error);
+        if (fblock) {
+            fblock(error);
+        }
+    }];
+}
+
++ (void)getTrendInfoAPIRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust trendInfoRequest:^(id result) {
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *responseStr = [[NSString alloc] initWithData:result encoding:enc];
+        NSLog(@"%@", responseStr);
+        
+        if (sblock) {
+            sblock(responseStr);
+        }
+    } failed:^(NSError *error) {
+        NSLog(@"error : %@", error);
+        if (fblock) {
+            fblock(error);
+        }
+    }];
+}
+
++ (void)getAllWinnerInfoReqeust:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust allWinnerInfoRequest:^(id result) {
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *responseStr = [[NSString alloc] initWithData:result encoding:enc];
+        
+        if (sblock) {
+            sblock(responseStr);
+        }
+    } failed:^(NSError *error) {
+        NSLog(@"error : %@", error);
+        if (fblock) {
+            fblock(error);
+        }
+    }];
+}
+
 @end

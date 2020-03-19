@@ -13,6 +13,8 @@
 #import "DSCacheDataManager.h"
 #import "DSLotteryTicketInfo.h"
 #import "DSChooseLotteryticketViewController.h"
+#import "NSDate+ext.h"
+
 
 #define DS_Bananer_Count 2
 
@@ -44,6 +46,7 @@
 
 
 
+@property (nonatomic)dispatch_source_t mainTimer;
 
 
 @end
@@ -62,7 +65,10 @@
 //    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) image:@"列表添加" highImage:@"列表添加"];
     
     [_bananerView addSubview:[self scrollViewMake]];
+    
     [self loadRefreshView];
+    
+    [self delayRefeshBananer];
     
     _infomationLabel.text = @"重庆时时彩 20200310042期\r\n12,14,32,10,4,5";
     
@@ -71,7 +77,136 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self getData];
     });
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self getUserInfo];
+        
+    });
+    
+    [self setUpTimer];
+    [self startTimer];
 }
+
+
+- (void)setUpTimer {
+    dispatch_queue_t pingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    self.mainTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, pingQueue);
+    dispatch_source_set_timer(self.mainTimer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0);
+    __weak typeof(self) weakSelf = self;
+    dispatch_source_set_event_handler(self.mainTimer, ^{
+        
+        [weakSelf taskForTimer];
+    });
+    
+}
+
+
+
+
+- (void)startTimer {
+    if (_mainTimer) {
+        dispatch_resume(self.mainTimer);
+    } else {
+        [self setUpTimer];
+        dispatch_resume(self.mainTimer);
+    }
+}
+
+- (void)pauseTimer {
+    if (self.mainTimer) {
+        dispatch_suspend(_mainTimer);
+    }
+}
+
+- (void)cancelTimer {
+    if (self.mainTimer) {
+        dispatch_source_cancel(self.mainTimer);
+    }
+}
+
+- (void)taskForTimer {
+    
+    NSArray *messages = [self calculatorDynamicTime];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self updateView:messages];
+    });
+}
+
+- (void)updateView:(NSArray *)messages {
+    
+    for (int index = 0; index < messages.count; index++) {
+        switch (index) {
+            case 0:
+                _num1.text = messages[index];
+                break;
+            case 1:
+                _num2.text = messages[index];
+                break;
+            case 2:
+                _num3.text = messages[index];
+                break;
+            case 3:
+                _num4.text = messages[index];
+                break;
+            case 4:
+                _num5.text = messages[index];
+                break;
+            case 5:
+                _num6.text = messages[index];
+                break;
+            case 6:
+                _num7.text = messages[index];
+                break;
+            case 7:
+                _num8.text = messages[index];
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self pauseTimer];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self startTimer];
+}
+
+
+
+- (NSArray *)calculatorDynamicTime {
+    
+    if (DSCacheDataManager.shareManager.lotteryTicketInfoList <= 0) {
+        return nil;
+    }
+    
+//    NSString *
+    NSMutableArray *mstrings = [NSMutableArray array];
+    
+    NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval newInterval = (currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)  - [DSCacheDataManager shareManager].todayTimeInterval;
+    NSDate *curTime = [NSDate dateWithTimeIntervalSince1970:(currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)];
+
+    for (DSLotteryTicketInfo *item in DSCacheDataManager.shareManager.lotteryTicketInfoList) {
+        
+        NSString *message = [item cuttentState:newInterval currentDate:curTime];
+        [mstrings addObject:message];
+    }
+    
+    return mstrings;
+}
+
+
+
 
 
 
@@ -108,15 +243,22 @@
 
 }
 
+- (void)getUserInfo {
+    NSDictionary *userdict = [DSCommonTool getUserInfo];
+    NSDictionary *parameters = @{@"ph":userdict[DS_USER_KEY], @"ps" : userdict[DS_USER_PSD_KEY]};
+    [DSAPIInterface getUserInfoAPIReqeust:parameters success:^(id result) {
+        NSLog(@"%@",result);
+    } failed:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
 
 - (void)getData {
-    
     
     [DSAPIInterface lotteryTicketTInfoAPIRequest:^(id result) {
         NSLog(@"result : %@", result);
         NSArray *datas = result;
-
-        
         [self cacheData:datas];
         
     } failed:^(NSError *error) {
@@ -135,12 +277,22 @@
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     NSString *str = datas[0];//服务器当前时间
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:[str doubleValue]];
+
     NSLog(@"server date: %@", date);
     NSLog(@"local  date: %@", [NSDate date]);
     [DSCacheDataManager shareManager].deviationTime = [str doubleValue] - currentTime;
+    [DSCacheDataManager shareManager].serverTimeInterval = [str doubleValue];
+    
+    NSLog(@"deviationTime : %f", [DSCacheDataManager shareManager].deviationTime);
     
     
     str = datas[1];//日期
+    if (str) {
+        NSDate *todayDate = [NSDate dateWithString:str style:1];
+        [DSCacheDataManager shareManager].todayTimeInterval = todayDate.timeIntervalSince1970;
+        DSCacheDataManager.shareManager.ymdString = str;
+    }
+    
     
     NSString *lticketstr = datas[2];
     NSArray *ltickets = [lticketstr componentsSeparatedByString:@";"];
@@ -161,7 +313,6 @@
     for (NSString *pl in items) {
         [[DSCacheDataManager shareManager].oddsList addObject:pl];
     }
-    
     
 }
 
@@ -233,7 +384,7 @@
 }
 
 - (void)refreshData {
-    NSLog(@"refresh data");
+    
     [_mainScrollview.mj_header endRefreshing];
 }
 
@@ -287,8 +438,39 @@
     [chidView addSubview:scrollView];
     [chidView addSubview:pageControl];
     self.pageControl = pageControl;
+
+
     
     return chidView;
+}
+
+- (void)delayRefeshBananer {
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        
+        double page = weakSelf.scrollView.contentOffset.x / weakSelf.scrollView.width;
+        
+
+        
+        weakSelf.pageControl.currentPage = (int)(page + 0.5);
+        
+        
+        [UIView animateWithDuration:0.5 animations:^{
+            if (weakSelf.scrollView.contentOffset.x > 0) {
+                CGPoint point = weakSelf.scrollView.contentOffset;
+                point.x = 0;
+                weakSelf.scrollView.contentOffset = point;
+            } else {
+                CGPoint point = weakSelf.scrollView.contentOffset;
+                point.x =  weakSelf.scrollView.width;
+                weakSelf.scrollView.contentOffset = point;
+            }
+        }];
+        
+        [weakSelf delayRefeshBananer];
+    });
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
