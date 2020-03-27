@@ -8,6 +8,9 @@
 
 #import "DSMyInformationViewController.h"
 #import "DSCommonHeader.h"
+#import "DSCacheDataManager.h"
+#import "DSShareViewController.h"
+
 
 
 @interface DSMyInformationViewController ()<UITableViewDelegate, UITableViewDataSource> {
@@ -27,6 +30,12 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageV;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *myTableViewConstraintHeight;
+
+@property (weak, nonatomic) IBOutlet UILabel *avaibleMoney;
+
+@property (weak, nonatomic) IBOutlet UILabel *alreadyTakeMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *winMoneyLabel;
+
 @end
 
 @implementation DSMyInformationViewController
@@ -60,11 +69,23 @@
     
     
     _mytableView.bounces = NO;
+    
+    
+    
+    _idLabel.text = [DSCacheDataManager shareManager].userInfo.userID;
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSRange range;
+    range.location = 3;
+    range.length = 5;
+    _phoneLabel.text = [phoneNumber stringByReplacingCharactersInRange:range withString:@"*****"];
+    
+    _avaibleMoney.text = [DSCacheDataManager shareManager].userInfo.balanceMoney;
 
 }
 
 - (void)initParameters {
     _menuTitleAry = @[@"充值记录", @"投注记录", @"提现记录", @"中奖记录", @"分享", @"代理中心", @"客服", @"更多"];
+    _menuIconAry = @[@"chongzhijilu-2", @"chongzhi-2", @"tixian-3", @"zhongjiangjilu-2", @"fenxiang-2", @"dailishang-2", @"kefu-my", @"gengduo"];
 }
 
 
@@ -81,10 +102,19 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentyfyID];
         cell.textLabel.text = _menuTitleAry[indexPath.row];
-        
+        [cell.imageView setImage:[UIImage imageNamed:_menuIconAry[indexPath.row]]];
+        cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        cell.imageView.width = 16;
+        cell.imageView.height = 16;
         tableViewHeight = cell.height * _menuTitleAry.count + 5;
         
         _myTableViewConstraintHeight.constant = tableViewHeight;
+        
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
     }
     
 
@@ -98,12 +128,60 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        
+    } else if (indexPath.row == 1) {
+        
+    } else if (indexPath.row == 2) {
+        
+    } else if (indexPath.row == 3) {
+        
+    } else if (indexPath.row == 4) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSShareViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSShareViewController"];
+        myView.type = DS_PageType_Shared;
+        
+        [self.navigationController pushViewController:myView animated:YES];
+    } else if (indexPath.row == 5) {
+        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSShareViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSShareViewController"];
+        myView.type = DS_PageType_Agent;
+        
+        [self.navigationController pushViewController:myView animated:YES];
+    } else if (indexPath.row == 6) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSShareViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSShareViewController"];
+        myView.type = DS_PageType_Service;
+        
+        [self.navigationController pushViewController:myView animated:YES];
+    } else if (indexPath.row == 7) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSSettingViewController"];
+        [self.navigationController pushViewController:myView animated:YES];
+
+    } else {
+        
+    }
+    
+}
+
+
+
+
 - (IBAction)payAction:(id)sender {
     
-    [_mytableView reloadData];
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSRechargeViewController"];
+    [self.navigationController pushViewController:myView animated:YES];
+    
 }
 
 - (IBAction)takeAction:(id)sender {
+    
 }
 
 /*

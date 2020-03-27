@@ -37,17 +37,18 @@
     
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.navigationBar setBarTintColor:DSColor(236, 107, 44)];
-    [self.navigationBar setBackgroundColor:DSColor(236, 107, 44)];
+//    [self.navigationBar setBackgroundColor:DSColor(236, 107, 44)];
 
-//    self.navigationBar.hidden = YES;
-//    [self.navigationBar setBarTintColor:UIColor.redColor];
     
     self.navigationController.navigationBar.translucent =NO;
     self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
+    
+
     
 }
 
@@ -67,9 +68,8 @@
         // 设置左边的按钮
         viewController.navigationItem.leftBarButtonItem = [self itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage:@"navigationbar_back_highlighted"];
         
-        
         // 设置右边的按钮
-        viewController.navigationItem.rightBarButtonItem = [self itemWithTarget:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
+//        viewController.navigationItem.rightBarButtonItem = [self itemWithTarget:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
         
     }
     
@@ -86,25 +86,36 @@
     [super pushViewController:viewController animated:animated];
 }
 
+- (UILabel *)findSubView:(UIView *)view {
+
+    UILabel *label;
+    
+    for (UIView *child in view.subviews) {
+        NSLog(@"child : %@", child);
+        if ([NSStringFromClass(view.class) isEqualToString:@"UILabel"]) {
+            return child;
+        } else {
+            label = [self findSubView:child];
+            if (label) {
+                return label;
+            }
+        }
+    }
+    
+    return nil;
+}
+
 
 - (void)setupViewController:(UIViewController *)vc navigationBar:(NSString *)title  {
+    
     
     UIView *contentView;
     for (UIView *view in self.navigationBar.subviews) {
         NSLog(@"view : %@", view);
         
+        
         if ([NSStringFromClass(view.class) isEqualToString:@"_UINavigationBarContentView"]) {
             contentView = view;
-            
-            //            for (UIView *cv in contentView.subviews) {
-            //                NSLog(@"child :%@", cv);
-            //                if ([NSStringFromClass(cv.class) isEqualToString:@"UILabel"]) {
-            //
-            //                    labelV = cv;
-            //                    break;
-            //                }
-            //
-            //            }
             break;
         }
     }
@@ -122,6 +133,7 @@
     CGRect rect = [DSCommonTool getStringRect:title withFont:font];
     imgV.x = contentView.centerX +  rect.size.width * 0.5 + 2;
     [imgV addGestureRecognizer:tapGesture];
+    
     
     navigationImageView = imgV;
     

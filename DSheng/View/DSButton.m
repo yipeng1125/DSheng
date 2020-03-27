@@ -30,6 +30,22 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    
+    DSButton *copy = [[DSButton alloc] init];
+    copy.tag = self.tag;
+    [copy setTitle:self.titleLabel.text forState:UIControlStateNormal];
+    
+    copy.layer.cornerRadius = 16;
+    copy.titleLabel.font = [UIFont systemFontOfSize:10];
+    copy.backgroundColor = self.backgroundColor;
+    [copy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    copy.frame = self.bounds;
+    copy.selected = YES;
+    
+    return copy;
+}
+
 
 
 + (DSButton *)makeSpecialTypeButtonWithTitle:(NSString *)title {
@@ -38,6 +54,7 @@
     [btn setBackgroundColor:[UIColor whiteColor]];
     btn.layer.cornerRadius = 16;
     [btn setTitle:title forState:UIControlStateNormal];
+    btn.titleLabel.text = title;
     btn.titleLabel.font = [UIFont systemFontOfSize:10];
     
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

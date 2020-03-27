@@ -15,6 +15,7 @@
 #import "DSCacheDataManager.h"
 #import "DSAPIInterface.h"
 #import "TRCustomAlert.h"
+#import "DSPayViewController.h"
 
 
 
@@ -31,7 +32,17 @@
     UIView *topView;
     BOOL btopViewShow;
     
+    
+    __weak UIButton *topButton;
+    
     NSMutableArray *selectData;
+    
+    NSString *winnerNumString;
+    
+    NSString *oddstring;
+    
+    BOOL bshowShade;
+
 
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -47,20 +58,28 @@
 
 @property (nonatomic)dispatch_source_t mainTimer;
 
+@property(nonatomic, copy)NSString *winnerNumString;
+
+@property(nonatomic, assign) BOOL bshowShade;
+
+
+@property (weak, nonatomic) IBOutlet UIView *shadeView;
 
 @end
 
 @implementation DSChooseLotteryticketViewController
+
+@synthesize winnerNumString = _winnerNumString;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     selectData = [NSMutableArray array];
-    
     //step1
     [self initParameters:_ltType];
     btopViewShow = NO;
+    _bshowShade = NO;
     
     //step2 准备界面
     [self loadCustomView];
@@ -84,6 +103,15 @@
         [weakSelf getWinnerInfo:weakSelf.ltType];
     });
     
+    [self startTimer];
+    
+    [self setShadeLayer];
+    
+}
+
+- (void)setShadeLayer {
+    [_shadeView setBackgroundColor:UIColor.lightGrayColor];
+    _shadeView.alpha = 0.5;
 }
 
 
@@ -96,7 +124,6 @@
         
         [weakSelf taskForTimer];
     });
-    
 }
 
 - (void)startTimer {
@@ -117,37 +144,64 @@
 - (void)cancelTimer {
     if (self.mainTimer) {
         dispatch_source_cancel(self.mainTimer);
+        self.mainTimer = nil;
     }
 }
 
 - (void)taskForTimer {
     
-    NSString *msg = [self calculatorRemainTimeType:_ltType];
-    
     __weak typeof(self) weakSelf = self;
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        weakSelf.remainTimeLabel.text = [NSString stringWithFormat:@"截止投注: %@",msg];
-    });
-}
-
-- (NSString *)calculatorRemainTimeType:(DSLotteryTicketType)type {
-    
-    NSString *message;
-    NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSince1970];
-    NSTimeInterval newInterval = (currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)  - [DSCacheDataManager shareManager].todayTimeInterval;
-    NSDate *curTime = [NSDate dateWithTimeIntervalSince1970:(currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)];
-    
-    for (DSLotteryTicketInfo *item in DSCacheDataManager.shareManager.lotteryTicketInfoList) {
-        
-        if (item.type == type) {
-            message = [item cuttentState:newInterval currentDate:curTime];
-            break;
-        }
+    if (_ltType == DSLotteryTicketType_lhcai) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.remainTimeLabel.text = [NSString stringWithFormat:@"%@",@"周二21:30开奖"];
+        });
+        return;
     }
     
-    return message;
+    BOOL needUpdate = _enablePayLotteryTicket;
+
+    NSString *msg = [DSCacheDataManager.shareManager calculatorRemainTimeType:_ltType block:^(BOOL enalble, NSString * _Nonnull remainTime) {
+        
+        weakSelf.enablePayLotteryTicket = enalble;
+        
+    }];
+        
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.remainTimeLabel.text = [NSString stringWithFormat:@"截止投注: %@",msg];
+        
+        if (needUpdate != weakSelf.enablePayLotteryTicket) {
+            if (!weakSelf.enablePayLotteryTicket) {
+                weakSelf.shadeView.hidden = NO;
+                weakSelf.bshowShade = YES;
+            } else {
+//                [TRCustomAlert dissmis];
+                [weakSelf updateCustomView];
+                [TRCustomAlert showShadeLoadingWithMessage:@"加载数据中..."];
+                
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    [weakSelf getWinnerInfo:weakSelf.ltType];
+                });
+                weakSelf.bshowShade = NO;
+                weakSelf.shadeView.hidden = YES;
+            }
+        } else {
+            if (!weakSelf.bshowShade && !weakSelf.enablePayLotteryTicket) {
+//                [TRCustomAlert showLoadingWithMessage:@"封盘"];
+                weakSelf.shadeView.hidden = NO;
+                weakSelf.bshowShade = YES;
+            }
+        }
+    });
+    
+    [DSPayViewController updateRemainTime:msg];
 }
+
+- (void)dealloc {
+    [self cancelTimer];
+}
+
+
 
 - (void)updateCustomView {
     
@@ -160,13 +214,13 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    [self cancelTimer];
+//    [self cancelTimer];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self startTimer];
+//    [self startTimer];
 }
 
 
@@ -188,7 +242,8 @@
                 [TRCustomAlert showMessage:[NSString stringWithFormat:@"服务器数据错误。\r\n%@", message] image:nil];
             } else {
                 weakSelf.numLabel.text = [NSString stringWithFormat:@"%@%@",[DSCacheDataManager getLotteryTicketName:weakSelf.ltType], contents[1]];
-                weakSelf.winLabel.text = [NSString stringWithFormat:@"开奖号码: %@", contents.lastObject];
+                weakSelf.winnerNumString = [NSString stringWithFormat:@"开奖号码: %@", contents.lastObject];
+                weakSelf.winLabel.text = weakSelf.winnerNumString;
                 
             }
         });
@@ -264,6 +319,8 @@
     rowsAry = [detailDict objectForKey:kDS_RowsData_Key];
     
     topTitleArys = [self getTopTitles:type];
+    
+    oddstring = [self getOddsLotteryticket:_detailType];
 }
 
 - (NSArray *)getTopTitles:(DSLotteryTicketType)type {
@@ -424,6 +481,71 @@
         default:
             break;
 
+    }
+    
+    return key;
+}
+
+- (NSString *)getOddsLotteryticket:(DSLTType)type {
+    
+    NSString *key = @"";
+    
+    NSArray * oddslist =[DSCacheDataManager shareManager].oddsList;
+    if (oddslist.count < 10) {
+        return @"x";
+    }
+    
+    switch (type) {
+        case DSLTType_sanfencai_lm:
+        case DSLTType_sanfenPKcai_lm:
+        case DSLTType_beijingPKcai_lm:
+        case DSLTType_PCdandan_lm:
+            
+        case DSLTType_cqsscai_lm:
+        case DSLTType_tjsscai_lm:
+            key = oddslist[0];
+            break;
+            
+        case DSLTType_sanfencai_1_5:
+        case DSLTType_cqsscai_1_5:
+        case DSLTType_tjsscai_1_5:
+            key = oddslist[1];
+            break;
+            
+        case DSLTType_sanfenPKcai_1_10:
+        case DSLTType_beijingPKcai_1_10:
+            key = oddslist[2];
+            break;
+            
+        case DSLTType_sanfenPKcai_gy:
+        case DSLTType_beijingPKcai_gy:
+            key = oddslist[3];
+            break;
+            
+        case DSLTType_PCdandan_tm:
+            key = oddslist[4];
+            break;
+        case DSLTType_jslhcai_tm:
+        case DSLTType_lhcai_tm:
+            key = oddslist[5];
+            break;
+            
+        case DSLTType_jslhcai_tm_tws:
+            key = oddslist[8];
+            break;
+        case DSLTType_jslhcai_tm_bs:
+            key = oddslist[7];
+            break;
+        case DSLTType_jslhcai_tm_sx:
+            key = oddslist[6];
+            break;
+        case DSLTType_jslhcai_tm_lm:
+            key = oddslist[9];
+            break;
+            
+        default:
+            break;
+            
     }
     
     return key;
@@ -694,7 +816,7 @@
         [rowView addSubview:button];
         
         UILabel *plLabel = [[UILabel alloc] initWithFrame:CGRectMake(button.x, button.y + BUTTON_Height + 2, 32, 12)];
-        plLabel.text = @"1.53";
+        plLabel.text = oddstring;
         plLabel.font = [UIFont systemFontOfSize:10];
         plLabel.centerX = button.centerX;
         plLabel.textAlignment = NSTextAlignmentCenter;
@@ -717,8 +839,9 @@
     
     if (button.selected) {
         [selectData addObject:button];
+    } else {
+        [selectData removeObject:button];
     }
-    
     _selectDetailLabel.text = [NSString stringWithFormat:@"%ld注%ld元", selectData.count, selectData.count * 2];
 }
 
@@ -729,6 +852,7 @@
         _detailType = button.tag;
         [self initParameters:_ltType];
         [self loadCustomView];
+        
     }
     
     if (topView) {
@@ -736,6 +860,8 @@
         btopViewShow = NO;
     }
     
+    self.navigationItem.title = [self getTopTitleStringWithType:_detailType];
+    oddstring = [self getOddsLotteryticket:_detailType];
 
 }
 
@@ -748,6 +874,15 @@
     _selectDetailLabel.text = @"0注0元";
 }
 - (IBAction)commintAction:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DSPayViewController *myViewC = [story instantiateViewControllerWithIdentifier:@"DSPayViewController"];
+    myViewC.ltType = _ltType;
+    myViewC.winnerString = self.winnerNumString;
+    [myViewC setSelectLotteryTicket:selectData];
+    
+    [self.navigationController pushViewController:myViewC animated:YES];
+    
 }
 
 - (void)navigationTitleClick {
@@ -764,10 +899,6 @@
     }
     
 }
-
-
-
-
 
 
 

@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)getAllWinnerInfoReqeust:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
++ (void)getOddsListRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
++ (void)sendModifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
++ (void)sendModifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
 @end
 

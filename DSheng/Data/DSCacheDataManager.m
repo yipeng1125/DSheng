@@ -111,4 +111,28 @@ static DSCacheDataManager *_manger;
 }
 
 
+
+- (NSString *)calculatorRemainTimeType:(DSLotteryTicketType)type block:(void(^)(BOOL enalble, NSString *remainTime))block {
+    
+    __block NSString *message;
+    NSTimeInterval currentTimeInterval = [[NSDate date] timeIntervalSince1970];
+    NSTimeInterval newInterval = (currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)  - [DSCacheDataManager shareManager].todayTimeInterval;
+    NSDate *curTime = [NSDate dateWithTimeIntervalSince1970:(currentTimeInterval + DSCacheDataManager.shareManager.deviationTime)];
+    
+    for (DSLotteryTicketInfo *item in DSCacheDataManager.shareManager.lotteryTicketInfoList) {
+        
+        if (item.type == type) {
+            [item cuttentState:newInterval currentDate:curTime block:^(BOOL enalble, NSString * _Nonnull remainTime) {
+                message = remainTime;
+                if (block) {
+                    block(enalble, remainTime);
+                }
+            }];
+            break;
+        }
+    }
+    
+    return message;
+}
+
 @end

@@ -13,6 +13,8 @@
 #import "TRCustomAlert.h"
 #import "DSCacheDataManager.h"
 #import "DSHistoryWinnerViewController.h"
+#import "MJRefresh.h"
+
 
 
 @interface DSWinnerViewController ()<UITableViewDelegate, UITableViewDataSource> {
@@ -38,12 +40,20 @@
     winnerNumbersAry = [NSMutableArray array];
     orderAry = [NSMutableArray array];
     
-    [TRCustomAlert showShadeLoadingWithMessage:@"数据加载中..."];
+    
+    
+    
+    
+    _myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    [TRCustomAlert showLoadingWithMessage:@"数据加载中..."];
+    [self refreshData];
+}
+
+- (void)refreshData {
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self getData];
     });
-    
 }
 
 
@@ -62,12 +72,14 @@
                 
                 [weakSelf.myTableView reloadData];
             }
+            [weakSelf.myTableView.mj_header endRefreshing];
         });
         
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
            [TRCustomAlert dissmis];
             [TRCustomAlert showMessage:[NSString stringWithFormat:@"请求服务器数失败，%@",error] image:nil];
+            [weakSelf.myTableView.mj_header endRefreshing];
         });
     }];
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DSViewHeader.h"
 #import "DSLotteryTicketInfo.h"
+#import "DSUserInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -29,12 +30,18 @@ NS_ASSUME_NONNULL_BEGIN
 //当前server年月日
 @property(nonatomic, assign) NSTimeInterval todayTimeInterval;
 
+@property(nonatomic, strong) DSUserInfo *userInfo;
+
+
 - (void)clearData;
 
 
 - (NSString *)getNumberOrder:(DSLotteryTicketType)type;
 
 + (NSString *)getLotteryTicketName:(DSLotteryTicketType)type;
+
+
+- (NSString *)calculatorRemainTimeType:(DSLotteryTicketType)type block:(void(^)(BOOL enalble, NSString *remainTime))block;
 
 @end
 

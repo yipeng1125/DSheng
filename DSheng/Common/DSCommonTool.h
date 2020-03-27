@@ -15,12 +15,15 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DSCommonTool : NSObject
 
 + (BOOL)checkIsPhoneNumber:(NSString *)number;
++ (BOOL)checkIsNumber:(NSString *)number;
 
 
 + (BOOL)saveUserInfo:(NSDictionary *)info;
 + (NSDictionary *)getUserInfo;
 
 + (CGRect)getStringRect:(NSString *)name withFont:(UIFont *)font;
+
++ (UIImage*)imageFromColor:(UIColor*)color size:(CGSize)size;
 
 @end
 

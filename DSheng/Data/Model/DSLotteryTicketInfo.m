@@ -56,35 +56,45 @@
     return self;
 }
 
-- (NSString *)cuttentState:(NSTimeInterval)timeInterval currentDate:(NSDate *)date {
+- (void)cuttentState:(NSTimeInterval)timeInterval currentDate:(NSDate *)date block:(nonnull void (^)(BOOL, NSString * _Nonnull))block {
     
     if (timeInterval<= 0 || !date) {
-        return @"服务器异常";
+        if (block) {
+            block(NO, @"服务器异常");
+        }
+        return;
     }
     NSComparisonResult result1 = [date compare:_startTime];
     NSComparisonResult result2 = [date compare:_endTime];
     if (result1 == NSOrderedDescending || (result2 == NSOrderedAscending )) {
         
-        int t = ((int)timeInterval % ((int)_enablePeriodTime + (int)_disablePeriodTime));
+        long long t = ((int)timeInterval % ((int)_enablePeriodTime + (int)_disablePeriodTime));
+        
         if (t >= _enablePeriodTime) {
             t = ((int)_enablePeriodTime + (int)_disablePeriodTime) - t;
-            int hours = t / 360;
-            int min = ((int)(t / 60)) % 60;
-            int sec = ((int)t) % 60;
-            NSString *tstr = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, min, sec];
-            return tstr;
-            
-            
+            long hours = t / 360;
+            long min = ((int)(t / 60)) % 60;
+            long sec = ((int)t) % 60;
+            NSString *tstr = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, min, sec];
+            if (block) {
+                block(NO, tstr);
+            }
+            return;
         } else {
-            t = ((int)_enablePeriodTime + (int)_disablePeriodTime) - t;
-            int hours = (t - _disablePeriodTime)/360;
-            int min = ((int)((t - _disablePeriodTime) / 60)) % 60;
-            int sec = ((int)(t - _disablePeriodTime)) % 60;
-            NSString *tstr = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, min, sec];
-            return tstr;
+            long hours = (_enablePeriodTime - t)/360;
+            long min = ((int)((_enablePeriodTime - t) / 60)) % 60;
+            long sec = ((int)(_enablePeriodTime - t)) % 60;
+            NSString *tstr = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", hours, min, sec];
+            if (block) {
+                block(YES, tstr);
+            }
+            return;
         }
     } else {
-        return @"请等待，未开盘";
+        if (block) {
+            block(NO, @"请等待，未开盘");
+        }
+        return;
     }
     
 }

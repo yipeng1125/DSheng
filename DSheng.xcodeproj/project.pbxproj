@@ -36,17 +36,26 @@
 		FB0BC3262416268E00605D1B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31A2416268E00605D1B /* MASConstraint.m */; };
 		FB0BC3272416268E00605D1B /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31C2416268E00605D1B /* MASViewConstraint.m */; };
 		FB0BC3282416268E00605D1B /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC31D2416268E00605D1B /* MASViewAttribute.m */; };
-		FB0BC32B2416276300605D1B /* CustomAlertImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */; };
 		FB0BC32F2416291B00605D1B /* DSNetworkManger.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC32E2416291B00605D1B /* DSNetworkManger.m */; };
 		FB0BC3352416503700605D1B /* DSCommonTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3342416503700605D1B /* DSCommonTool.m */; };
 		FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3372416536600605D1B /* DSAPIRequest.m */; };
 		FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC33D24166ED100605D1B /* DSKeyChain.m */; };
 		FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC340241671D800605D1B /* DSKeyChainUtils.m */; };
+		FB1716832425B39600B858D0 /* CustomAlertImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB1716822425B39600B858D0 /* CustomAlertImage.bundle */; };
+		FB1716862425B3DB00B858D0 /* dlicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1716852425B3DB00B858D0 /* dlicon.png */; };
+		FB17168C2425B69400B858D0 /* DSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17168B2425B69400B858D0 /* DSUserInfo.m */; };
+		FB17168E2425BBA000B858D0 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB17168D2425BBA000B858D0 /* My.storyboard */; };
+		FB1716922425BE8200B858D0 /* DSShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1716912425BE8200B858D0 /* DSShareViewController.m */; };
 		FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */; };
 		FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */; };
 		FBA74A1024209F4B00FACBFB /* DSCommonStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */; };
 		FBA74A132420A03000FACBFB /* DSHistoryWinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */; };
 		FBA74A912420F7BF00FACBFB /* DSRule.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A902420F7BF00FACBFB /* DSRule.m */; };
+		FBE864A42428D464009DCACE /* DSRechargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE864A32428D464009DCACE /* DSRechargeViewController.m */; };
+		FBE864A72428E243009DCACE /* DSScanPayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE864A62428E243009DCACE /* DSScanPayViewController.m */; };
+		FBE864AA2428E8C0009DCACE /* DSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE864A92428E8C0009DCACE /* DSLabel.m */; };
+		FBE864AD2429B54E009DCACE /* DSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE864AC2429B54E009DCACE /* DSSettingViewController.m */; };
+		FBE864B02429BB84009DCACE /* DSModifyPSDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE864AF2429BB84009DCACE /* DSModifyPSDViewController.m */; };
 		FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */; };
 		FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD2F2417665400FA261F /* DSAPIInterface.m */; };
 		FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFECD322417779600FA261F /* DSCacheDataManager.m */; };
@@ -145,7 +154,6 @@
 		FB0BC31B2416268E00605D1B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		FB0BC31C2416268E00605D1B /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
 		FB0BC31D2416268E00605D1B /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
-		FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomAlertImage.bundle; sourceTree = "<group>"; };
 		FB0BC32D2416291B00605D1B /* DSNetworkManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSNetworkManger.h; sourceTree = "<group>"; };
 		FB0BC32E2416291B00605D1B /* DSNetworkManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSNetworkManger.m; sourceTree = "<group>"; };
 		FB0BC3332416503700605D1B /* DSCommonTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSCommonTool.h; sourceTree = "<group>"; };
@@ -157,6 +165,13 @@
 		FB0BC33D24166ED100605D1B /* DSKeyChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChain.m; sourceTree = "<group>"; };
 		FB0BC33F241671D800605D1B /* DSKeyChainUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyChainUtils.h; sourceTree = "<group>"; };
 		FB0BC340241671D800605D1B /* DSKeyChainUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChainUtils.m; sourceTree = "<group>"; };
+		FB1716822425B39600B858D0 /* CustomAlertImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomAlertImage.bundle; sourceTree = "<group>"; };
+		FB1716852425B3DB00B858D0 /* dlicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dlicon.png; sourceTree = "<group>"; };
+		FB17168A2425B69400B858D0 /* DSUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSUserInfo.h; sourceTree = "<group>"; };
+		FB17168B2425B69400B858D0 /* DSUserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSUserInfo.m; sourceTree = "<group>"; };
+		FB17168D2425BBA000B858D0 /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
+		FB1716902425BE8200B858D0 /* DSShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSShareViewController.h; sourceTree = "<group>"; };
+		FB1716912425BE8200B858D0 /* DSShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSShareViewController.m; sourceTree = "<group>"; };
 		FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryTableViewCell.h; sourceTree = "<group>"; };
 		FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryTableViewCell.m; sourceTree = "<group>"; };
 		FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -166,6 +181,16 @@
 		FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryWinnerViewController.m; sourceTree = "<group>"; };
 		FBA74A8F2420F7BF00FACBFB /* DSRule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRule.h; sourceTree = "<group>"; };
 		FBA74A902420F7BF00FACBFB /* DSRule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRule.m; sourceTree = "<group>"; };
+		FBE864A22428D464009DCACE /* DSRechargeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRechargeViewController.h; sourceTree = "<group>"; };
+		FBE864A32428D464009DCACE /* DSRechargeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRechargeViewController.m; sourceTree = "<group>"; };
+		FBE864A52428E243009DCACE /* DSScanPayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSScanPayViewController.h; sourceTree = "<group>"; };
+		FBE864A62428E243009DCACE /* DSScanPayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSScanPayViewController.m; sourceTree = "<group>"; };
+		FBE864A82428E8C0009DCACE /* DSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSLabel.h; sourceTree = "<group>"; };
+		FBE864A92428E8C0009DCACE /* DSLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSLabel.m; sourceTree = "<group>"; };
+		FBE864AB2429B54E009DCACE /* DSSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSSettingViewController.h; sourceTree = "<group>"; };
+		FBE864AC2429B54E009DCACE /* DSSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSSettingViewController.m; sourceTree = "<group>"; };
+		FBE864AE2429BB84009DCACE /* DSModifyPSDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSModifyPSDViewController.h; sourceTree = "<group>"; };
+		FBE864AF2429BB84009DCACE /* DSModifyPSDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSModifyPSDViewController.m; sourceTree = "<group>"; };
 		FBFECD2B24172AF100FA261F /* DSHomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHomeTableViewCell.h; sourceTree = "<group>"; };
 		FBFECD2C24172AF100FA261F /* DSHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHomeTableViewCell.m; sourceTree = "<group>"; };
 		FBFECD2E2417665400FA261F /* DSAPIInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAPIInterface.h; sourceTree = "<group>"; };
@@ -263,7 +288,6 @@
 			children = (
 				FB0BC33B24166EB600605D1B /* Data */,
 				FB0BC32C241628F600605D1B /* Net */,
-				FB0BC3292416276200605D1B /* Resource */,
 				FB0BC2D82413CFE900605D1B /* Vendor */,
 				FB0BC2D22413502500605D1B /* Common */,
 				FB0BC2BF2413230100605D1B /* View */,
@@ -273,10 +297,12 @@
 				FB0BC2872412A6AD00605D1B /* ViewController.h */,
 				FB0BC2882412A6AD00605D1B /* ViewController.m */,
 				FB0BC28A2412A6AD00605D1B /* Main.storyboard */,
+				FB17168D2425BBA000B858D0 /* My.storyboard */,
 				FB0BC28D2412A6AF00605D1B /* Assets.xcassets */,
 				FB0BC28F2412A6AF00605D1B /* LaunchScreen.storyboard */,
 				FB0BC2922412A6AF00605D1B /* Info.plist */,
 				FB0BC2932412A6AF00605D1B /* main.m */,
+				FB1716812425B39600B858D0 /* Resource */,
 			);
 			path = DSheng;
 			sourceTree = "<group>";
@@ -302,6 +328,7 @@
 		FB0BC2BB2412AB2200605D1B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FB17168F2425BE6500B858D0 /* My */,
 				FBFECD3F24187E5400FA261F /* SubPage */,
 				FB0BC2FD2415DCC300605D1B /* Common */,
 				FB0BC2D72413C94F00605D1B /* Login */,
@@ -336,6 +363,8 @@
 				FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */,
 				FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */,
 				FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */,
+				FBE864A82428E8C0009DCACE /* DSLabel.h */,
+				FBE864A92428E8C0009DCACE /* DSLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -426,14 +455,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		FB0BC3292416276200605D1B /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				FB0BC32A2416276200605D1B /* CustomAlertImage.bundle */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		FB0BC32C241628F600605D1B /* Net */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,11 +487,39 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		FB1716812425B39600B858D0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FB1716842425B3AE00B858D0 /* image */,
+				FB1716822425B39600B858D0 /* CustomAlertImage.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FB1716842425B3AE00B858D0 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				FB1716852425B3DB00B858D0 /* dlicon.png */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		FB17168F2425BE6500B858D0 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				FB1716902425BE8200B858D0 /* DSShareViewController.h */,
+				FB1716912425BE8200B858D0 /* DSShareViewController.m */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
 		FBFECD3424177AD500FA261F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FBFECD3524177B9300FA261F /* DSLotteryTicketInfo.h */,
 				FBFECD3624177B9300FA261F /* DSLotteryTicketInfo.m */,
+				FB17168A2425B69400B858D0 /* DSUserInfo.h */,
+				FB17168B2425B69400B858D0 /* DSUserInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -484,6 +533,14 @@
 				FBFECD4424187EF500FA261F /* DSChooseLotteryticketViewController.m */,
 				FBA74A112420A03000FACBFB /* DSHistoryWinnerViewController.h */,
 				FBA74A122420A03000FACBFB /* DSHistoryWinnerViewController.m */,
+				FBE864A22428D464009DCACE /* DSRechargeViewController.h */,
+				FBE864A32428D464009DCACE /* DSRechargeViewController.m */,
+				FBE864A52428E243009DCACE /* DSScanPayViewController.h */,
+				FBE864A62428E243009DCACE /* DSScanPayViewController.m */,
+				FBE864AB2429B54E009DCACE /* DSSettingViewController.h */,
+				FBE864AC2429B54E009DCACE /* DSSettingViewController.m */,
+				FBE864AE2429BB84009DCACE /* DSModifyPSDViewController.h */,
+				FBE864AF2429BB84009DCACE /* DSModifyPSDViewController.m */,
 			);
 			name = SubPage;
 			path = DSheng/Main/SubPage;
@@ -597,10 +654,12 @@
 				FB0BC2912412A6AF00605D1B /* LaunchScreen.storyboard in Resources */,
 				FBFECDD3241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib in Resources */,
 				FBFECDCE241D021E00FA261F /* DSCollectionViewCell.xib in Resources */,
-				FB0BC32B2416276300605D1B /* CustomAlertImage.bundle in Resources */,
+				FB1716832425B39600B858D0 /* CustomAlertImage.bundle in Resources */,
 				FB0BC28E2412A6AF00605D1B /* Assets.xcassets in Resources */,
 				FB0BC28C2412A6AD00605D1B /* Main.storyboard in Resources */,
 				FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */,
+				FB1716862425B3DB00B858D0 /* dlicon.png in Resources */,
+				FB17168E2425BBA000B858D0 /* My.storyboard in Resources */,
 				FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,12 +728,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0BC2D62413522800605D1B /* UIView+Extension.m in Sources */,
+				FBE864AA2428E8C0009DCACE /* DSLabel.m in Sources */,
 				FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */,
 				FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */,
 				FB0BC3272416268E00605D1B /* MASViewConstraint.m in Sources */,
 				FB0BC3242416268E00605D1B /* NSArray+MASAdditions.m in Sources */,
 				FB0BC2F92414F85800605D1B /* DSLoginViewController.m in Sources */,
 				FB0BC2CE2413373100605D1B /* DSWinnerViewController.m in Sources */,
+				FBE864AD2429B54E009DCACE /* DSSettingViewController.m in Sources */,
 				FB0BC3282416268E00605D1B /* MASViewAttribute.m in Sources */,
 				FB0BC2C8241336C400605D1B /* DSHomeViewController.m in Sources */,
 				FB0BC3262416268E00605D1B /* MASConstraint.m in Sources */,
@@ -683,6 +744,7 @@
 				FB0BC2892412A6AD00605D1B /* ViewController.m in Sources */,
 				FB0BC2942412A6AF00605D1B /* main.m in Sources */,
 				FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */,
+				FBE864A42428D464009DCACE /* DSRechargeViewController.m in Sources */,
 				FB0BC2D12413375300605D1B /* DSMyInformationViewController.m in Sources */,
 				FBFECDCD241D021E00FA261F /* DSCollectionViewCell.m in Sources */,
 				FB0BC3252416268E00605D1B /* View+MASAdditions.m in Sources */,
@@ -691,7 +753,10 @@
 				FBFECD2D24172AF100FA261F /* DSHomeTableViewCell.m in Sources */,
 				FBFECD3E2417C63800FA261F /* DSButton.m in Sources */,
 				FB0BC2C52413367300605D1B /* DSTabBarController.m in Sources */,
+				FB1716922425BE8200B858D0 /* DSShareViewController.m in Sources */,
 				FB0BC2862412A6AD00605D1B /* AppDelegate.m in Sources */,
+				FB17168C2425B69400B858D0 /* DSUserInfo.m in Sources */,
+				FBE864B02429BB84009DCACE /* DSModifyPSDViewController.m in Sources */,
 				FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */,
 				FB0BC31F2416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FBA74A132420A03000FACBFB /* DSHistoryWinnerViewController.m in Sources */,
@@ -702,6 +767,7 @@
 				FB0BC3212416268E00605D1B /* MASCompositeConstraint.m in Sources */,
 				FB0BC3002415DCC300605D1B /* DSNavigationController.m in Sources */,
 				FB0BC2FC2414F89900605D1B /* DSRegsiterViewController.m in Sources */,
+				FBE864A72428E243009DCACE /* DSScanPayViewController.m in Sources */,
 				FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */,
 				FB0BC3232416268E00605D1B /* MASLayoutConstraint.m in Sources */,
 				FBA74A912420F7BF00FACBFB /* DSRule.m in Sources */,

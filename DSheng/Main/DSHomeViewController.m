@@ -14,11 +14,17 @@
 #import "DSLotteryTicketInfo.h"
 #import "DSChooseLotteryticketViewController.h"
 #import "NSDate+ext.h"
+#import "TRCustomAlert.h"
+
 
 
 #define DS_Bananer_Count 2
 
-@interface DSHomeViewController ()<UIScrollViewDelegate>
+@interface DSHomeViewController ()<UIScrollViewDelegate> {
+    
+    BOOL bEnable;
+    
+}
 @property (weak, nonatomic) IBOutlet UIView *bananerView;
 
 @property (nonatomic, weak) UIPageControl *pageControl;
@@ -74,13 +80,13 @@
     
     [self setViewActionEvent];
     
+    [TRCustomAlert showShadeLoadingWithMessage:@"数据加载中..."];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self getData];
     });
     
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self getUserInfo];
-        
     });
     
     [self setUpTimer];
@@ -198,8 +204,25 @@
 
     for (DSLotteryTicketInfo *item in DSCacheDataManager.shareManager.lotteryTicketInfoList) {
         
-        NSString *message = [item cuttentState:newInterval currentDate:curTime];
-        [mstrings addObject:message];
+        if (item.type == DSLotteryTicketType_lhcai) {
+            [mstrings addObject:@"每周二开奖"];
+            continue;
+        }
+        
+        __block BOOL en = NO;
+        [item cuttentState:newInterval currentDate:curTime block:^(BOOL enalble, NSString * _Nonnull remainTime) {
+            
+            en = enalble;
+            
+            if (enalble) {
+                [mstrings addObject:remainTime];
+            } else {
+                [mstrings addObject:@"封盘"];
+            }
+            
+        }];
+        
+        bEnable = en;
     }
     
     return mstrings;
@@ -248,6 +271,9 @@
     NSDictionary *parameters = @{@"ph":userdict[DS_USER_KEY], @"ps" : userdict[DS_USER_PSD_KEY]};
     [DSAPIInterface getUserInfoAPIReqeust:parameters success:^(id result) {
         NSLog(@"%@",result);
+        
+        [DSCacheDataManager shareManager].userInfo = [[DSUserInfo alloc] initWithString:result];
+        
     } failed:^(NSError *error) {
         NSLog(@"%@",error);
     }];
@@ -261,8 +287,16 @@
         NSArray *datas = result;
         [self cacheData:datas];
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert dissmis];
+        });
+        
     } failed:^(NSError *error) {
         NSLog(@"error : %@", error.description);
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert dissmis];
+        });
     }];
 }
 
@@ -323,6 +357,7 @@
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     DSChooseLotteryticketViewController *vc = [story instantiateViewControllerWithIdentifier:@"DSChooseLotteryticketViewController"];
     vc.ltType = type;
+    vc.enablePayLotteryTicket = bEnable;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

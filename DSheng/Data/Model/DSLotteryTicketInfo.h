@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithString:(NSString *)message withType:(DSLotteryTicketType)type;
 
-- (NSString *)cuttentState:(NSTimeInterval)timeInterval currentDate:(NSDate *)date;
+- (void)cuttentState:(NSTimeInterval)timeInterval currentDate:(NSDate *)date block:(void(^)(BOOL enalble, NSString *remainTime))block;
 
 
 - (NSString *)getCurrentOrderNum:(NSString *)datestr andExterTime:(NSTimeInterval)extime;

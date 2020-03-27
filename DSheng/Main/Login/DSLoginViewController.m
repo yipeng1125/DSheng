@@ -67,8 +67,6 @@
 
 - (IBAction)regsiterAction:(id)sender {
     
-    
-    
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSRegsiterViewController"];
     [self.navigationController pushViewController:myView animated:YES];
@@ -87,8 +85,6 @@
         [TRCustomAlert showMessage:@"密码长度不能低于6位" image:nil];
         return;
     }
-    
-
     
     [self startLogin:_phoneTextField.text password:_passworldTextField.text];
     

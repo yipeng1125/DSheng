@@ -21,10 +21,31 @@
     if (self) {
 
         
-        
     }
     
     return self;
+}
+
++ (instancetype)cellWithTableView:(UICollectionView *)collectionView withIdentifyid:(NSString *)identifyid indexPath:(NSIndexPath *)indexPath {
+    
+    DSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyid forIndexPath:indexPath];
+    
+
+
+    if (!cell) {
+        NSArray * nibObjects = [[NSBundle mainBundle] loadNibNamed:@"DSCollectionViewCell" owner:nil options:nil];
+        
+        for (id obj in nibObjects) {
+            if ([obj isKindOfClass:[DSCollectionViewCell class]]) {
+                cell = obj;
+                [cell setValue:identifyid forKey:@"reuseIdentifier"];
+                break;
+            }
+        }
+    }
+    
+    
+    return cell;
 }
 
 

@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DSCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
++ (instancetype)cellWithTableView:(UICollectionView *)collectionView withIdentifyid:(NSString *)identifyid indexPath:(NSIndexPath *)indexPath;
+
 @end
 
 NS_ASSUME_NONNULL_END

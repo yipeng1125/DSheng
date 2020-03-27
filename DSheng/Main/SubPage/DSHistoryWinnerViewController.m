@@ -11,6 +11,7 @@
 #import "TRCustomAlert.h"
 #import "DSAPIInterface.h"
 #import "DSCacheDataManager.h"
+#import "DSChooseLotteryticketViewController.h"
 
 
 @interface DSHistoryWinnerViewController () {
@@ -138,8 +139,18 @@
 
 
 - (IBAction)payAction:(id)sender {
+    
+    [self gotoPageWithType:_ltType];
 }
 
+
+- (void)gotoPageWithType:(DSLotteryTicketType)type {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DSChooseLotteryticketViewController *vc = [story instantiateViewControllerWithIdentifier:@"DSChooseLotteryticketViewController"];
+    vc.ltType = type;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 /*
 #pragma mark - Navigation

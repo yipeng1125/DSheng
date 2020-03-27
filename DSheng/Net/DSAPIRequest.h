@@ -43,6 +43,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)allWinnerInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
+- (void)oddsListRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+
+- (void)modifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)modifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
 
 @end
 

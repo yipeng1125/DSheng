@@ -149,4 +149,45 @@
     }];
 }
 
++ (void)getOddsListRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust oddsListRequest:^(id result) {
+        
+        NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        NSString *responseStr = [[NSString alloc] initWithData:result encoding:enc];
+        
+        if (sblock) {
+            sblock(responseStr);
+        }
+    } failed:^(NSError *error) {
+        NSLog(@"error : %@", error);
+        if (fblock) {
+            fblock(error);
+        }
+    }];
+}
+
+
++ (void)sendModifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust modifyPasswordReqeust:oldPsd andNew:newPsd success:^(id result) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
+}
+
+
++ (void)sendModifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    DSAPIRequest *apiReqeust = [DSAPIRequest new];
+    [apiReqeust modifyTakePasswordReqeust:oldPsd andNew:newPsd success:^(id result) {
+        
+    } failed:^(NSError *error) {
+        
+    }];
+}
+
 @end

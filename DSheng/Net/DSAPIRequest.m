@@ -109,6 +109,29 @@
 }
 
 
+- (void)oddsListRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_GET_ODDS_LIST_API_URL];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+}
+
+
+- (void)modifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_MODIFY_PASSWORD_API_URL];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+}
+
+- (void)modifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_MODIFY_TAKEPASSWORKD_API_URL];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+}
+
+
 
 /*
  http://www.desheng168.cn/dsadmin/reg.php?ph=1234567890&ps=112345&tps=1112&code=1393993

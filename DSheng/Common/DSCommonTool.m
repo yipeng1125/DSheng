@@ -29,6 +29,13 @@
     return [phoneTest evaluateWithObject:number];
 }
 
++ (BOOL)checkIsNumber:(NSString *)number {
+    //2018最新手机段号正则
+    NSString *phoneRegex = @"[0-9]*";
+    NSPredicate *phoneTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",phoneRegex];
+    return [phoneTest evaluateWithObject:number];
+}
+
 
 + (NSString *)getSaveDataPath {
     NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES)[0];
@@ -67,6 +74,19 @@
     id value = [NSKeyedUnarchiver unarchivedObjectOfClass:NSDictionary.class fromData:data error:&error];
     
     return value;
+}
+
++ (UIImage*)imageFromColor:(UIColor*)color size:(CGSize)size {
+    
+    CGRect rect=CGRectMake(0.0f, 0.0f, size.width,size.height);
+    UIGraphicsBeginImageContext(size);//创建图片
+    CGContextRef context = UIGraphicsGetCurrentContext();//创建图片上下文
+    CGContextSetFillColorWithColor(context, [color CGColor]);//设置当前填充颜色的图形上下文
+    CGContextFillRect(context, rect);//填充颜色
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 

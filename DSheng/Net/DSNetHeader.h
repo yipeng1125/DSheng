@@ -32,4 +32,6 @@ typedef void(^reqeustFailedBlock) (NSError *error);
 
 #define DS_GET_ALL_WINNER_API_URL @"dsadmin/cphm1.php"
 
+#define DS_GET_ODDS_LIST_API_URL @"ios/beilv.php"
+
 #endif /* DSNetHeader_h */
