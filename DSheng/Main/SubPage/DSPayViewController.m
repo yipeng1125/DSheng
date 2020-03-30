@@ -49,7 +49,7 @@ __weak DSPayViewController *instanceVC;
     instanceVC = self;
     
     _numTextfield.layer.borderWidth = 1.0;
-    _numTextfield.layer.borderColor = DSColor(236, 107, 44).CGColor;
+    _numTextfield.layer.borderColor = DS_MainColor.CGColor;
     _numTextfield.layer.cornerRadius = 10.0;
     _numTextfield.layer.masksToBounds = YES;
     _numTextfield.delegate = self;

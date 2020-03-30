@@ -24,6 +24,13 @@
     
     BOOL bEnable;
     
+    NSArray *winnerInfoList;
+    NSUInteger countFlag;
+    
+    int currentWinnerInfoIndex;
+    
+    BOOL bfinishReqeust;
+    
 }
 @property (weak, nonatomic) IBOutlet UIView *bananerView;
 
@@ -50,6 +57,7 @@
 @property (weak, nonatomic) IBOutlet UIView *view7;
 @property (weak, nonatomic) IBOutlet UIView *view8;
 
+@property (weak, nonatomic) IBOutlet UITabBarItem *mytableBarItem;
 
 
 @property (nonatomic)dispatch_source_t mainTimer;
@@ -63,20 +71,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _infomationLabel.text = @"";
+    countFlag = 0;
+    currentWinnerInfoIndex = 0;
     
-    /* 设置导航栏上面的内容 */
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(rightClick) image:@"列表更多" highImage:@"列表更多"];
-//    self.navigationItem.title = @""
+    bfinishReqeust = YES;
     
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(pop) image:@"列表添加" highImage:@"列表添加"];
+    [self setupTableBarItem];
     
     [_bananerView addSubview:[self scrollViewMake]];
     
     [self loadRefreshView];
     
     [self delayRefeshBananer];
-    
-    _infomationLabel.text = @"重庆时时彩 20200310042期\r\n12,14,32,10,4,5";
     
     [self setViewActionEvent];
     
@@ -93,6 +100,21 @@
     [self startTimer];
 }
 
+
+- (void)setupTableBarItem {
+    
+    self.tabBarItem.image = [UIImage imageNamed:@"tabbar_home"];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_home_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    // 设置文字的样式
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = UIColor.lightGrayColor;
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    selectTextAttrs[NSForegroundColorAttributeName] = DS_MainColor;
+    [self.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [self.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+}
 
 - (void)setUpTimer {
     dispatch_queue_t pingQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -130,7 +152,57 @@
     }
 }
 
+- (void)updateWinnerInfoListView {
+    
+    if (!bfinishReqeust) {
+        return;
+    }
+    __weak typeof(self)weakSelf = self;
+
+    if (winnerInfoList.count <= 0) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            weakSelf.infomationLabel.text = @"加载中...";
+        });
+        
+        [self refreshData];
+        return;
+    }
+    
+    NSString *conent = winnerInfoList[currentWinnerInfoIndex];
+    
+    NSArray *subs = [conent componentsSeparatedByString:@"|"];
+    
+    NSString *ltype = subs.firstObject;
+    
+    NSString *name = [DSCacheDataManager getLotteryTicketName:ltype.intValue + 1];
+    
+    NSString *showstring = [NSString stringWithFormat:@"%@  %@\r\n%@", name, subs[1], subs.lastObject];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        double px = weakSelf.infomationLabel.x;
+        weakSelf.infomationLabel.x = 600;
+        [UIView animateWithDuration:1 animations:^{
+            weakSelf.infomationLabel.text = showstring;
+            weakSelf.infomationLabel.x = px;
+        }];
+    });
+    
+    currentWinnerInfoIndex++;
+    
+    if (currentWinnerInfoIndex > 7) {
+        currentWinnerInfoIndex = 0;
+    }
+}
+
+
 - (void)taskForTimer {
+    
+    int n = countFlag % 4;
+    if (n == 3) {
+        //刷新
+        [self updateWinnerInfoListView];
+    }
+    countFlag = n + 1;
     
     NSArray *messages = [self calculatorDynamicTime];
     
@@ -282,6 +354,10 @@
 
 - (void)getData {
     
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+    
+    bfinishReqeust = NO;
+    
     [DSAPIInterface lotteryTicketTInfoAPIRequest:^(id result) {
         NSLog(@"result : %@", result);
         NSArray *datas = result;
@@ -291,13 +367,76 @@
             [TRCustomAlert dissmis];
         });
         
+        dispatch_semaphore_signal(sem);
+        
     } failed:^(NSError *error) {
         NSLog(@"error : %@", error.description);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [TRCustomAlert dissmis];
         });
+        
+        dispatch_semaphore_signal(sem);
     }];
+    
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    
+    bfinishReqeust = YES;
+}
+
+- (void)getWinnerData {
+    
+    if (!bfinishReqeust) {
+        NSLog(@"上次请求还未完成");
+        return;
+    }
+    
+    bfinishReqeust = NO;
+
+    dispatch_semaphore_t sem = dispatch_semaphore_create(0);
+
+    __weak typeof(self) weakSelf = self;
+    [DSAPIInterface getAllWinnerInfoReqeust:^(id result) {
+        NSString *message = result;
+        BOOL bparse = [weakSelf parseData:message];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (!bparse) {
+                [TRCustomAlert showMessage:[NSString stringWithFormat:@"服务器数据异常"] image:nil];
+            }
+            
+            [weakSelf.mainScrollview.mj_header endRefreshing];
+        });
+        
+        dispatch_semaphore_signal(sem);
+        
+    } failed:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert showMessage:[NSString stringWithFormat:@"请求服务器数失败，%@",error] image:nil];
+            [weakSelf.mainScrollview.mj_header endRefreshing];
+        });
+        dispatch_semaphore_signal(sem);
+    }];
+    
+    dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+    
+    bfinishReqeust = YES;
+
+}
+
+- (BOOL)parseData:(NSString *)message {
+    if (!message) {
+        return NO;
+    }
+    
+    NSArray *contents = [message componentsSeparatedByString:@"@"];
+    
+    if (contents.count <= 0) {
+        return NO;
+    }
+    
+    winnerInfoList = contents;
+    return YES;
 }
 
 - (void)cacheData:(NSArray *)datas {
@@ -406,10 +545,20 @@
 }
 
 - (IBAction)payAction:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSRechargeViewController"];
+    [self.navigationController pushViewController:myView animated:YES];
+    
 }
 - (IBAction)takeMoneyAction:(id)sender {
 }
 - (IBAction)helpAction:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSIntroductionViewController"];
+    [self.navigationController pushViewController:myView animated:YES];
+    
 }
 
 - (void)loadRefreshView {
@@ -420,7 +569,12 @@
 
 - (void)refreshData {
     
-    [_mainScrollview.mj_header endRefreshing];
+    __weak typeof(self)weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [weakSelf getWinnerData];
+
+    });
+    
 }
 
 -(UIView *)scrollViewMake{

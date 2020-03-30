@@ -77,7 +77,7 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
     label.layer.cornerRadius = label.height * 0.5;
     label.layer.masksToBounds = YES;
-    label.backgroundColor = DSColor(236, 107, 44);
+    label.backgroundColor = DS_MainColor;
     
     return label;
 }

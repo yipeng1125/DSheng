@@ -67,7 +67,7 @@
 
 -(void)setSelected:(BOOL)selected {
     if (selected) {
-        [self setBackgroundColor:DSColor(236, 107, 44)];
+        [self setBackgroundColor:DS_MainColor];
     } else {
         [self setBackgroundColor:[UIColor whiteColor]];
     }

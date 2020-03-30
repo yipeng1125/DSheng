@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "606965514.484449"
+            timestampString = "607230091.750787"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "851"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "606965514.484508"
+            timestampString = "607230091.750855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "858"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.47537"
+            timestampString = "606986041.0953031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.4754111"
+            timestampString = "606986041.0958"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.475453"
+            timestampString = "606986041.09601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.475489"
+            timestampString = "606986041.0962141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.475526"
+            timestampString = "606986041.096539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -154,7 +154,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSHistoryWinnerViewController.m"
-            timestampString = "606714615.475563"
+            timestampString = "606986041.096827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSWinnerViewController.m"
-            timestampString = "606714615.475603"
+            timestampString = "607230091.751089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "606965514.484653"
+            timestampString = "607230091.7511441"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "890"
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.242578"
+            timestampString = "607230091.7512079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSPayViewController.m"
-            timestampString = "606714615.476387"
+            timestampString = "607230091.751264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSPayViewController.m"
-            timestampString = "606714615.476432"
+            timestampString = "607230091.7513109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSSettingViewController.m"
-            timestampString = "606753098.598467"
+            timestampString = "607230091.751358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,7 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
-            timestampString = "606753098.598511"
+            timestampString = "607229014.453253"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
-            timestampString = "606753098.598634"
+            timestampString = "607229014.453319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.242961"
+            timestampString = "607230091.7514679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
             <Locations>
@@ -314,26 +314,26 @@
                   moduleName = "DSheng"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/DSTrendViewController.m"
-                  timestampString = "606877999.2840559"
+                  timestampString = "607227836.684148"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
                   offsetFromSymbolStart = "448">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__48-[DSTrendViewController getCollectDataWithType:]_block_invoke.88"
+                  symbolName = "__48-[DSTrendViewController getCollectDataWithType:]_block_invoke.114"
                   moduleName = "DSheng"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/DSTrendViewController.m"
-                  timestampString = "606877999.285979"
+                  timestampString = "607227836.685956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "186"
-                  endingLineNumber = "186"
+                  startingLineNumber = "201"
+                  endingLineNumber = "201"
                   offsetFromSymbolStart = "15">
                </Location>
             </Locations>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.243169"
+            timestampString = "607230091.751516"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
+            startingLineNumber = "322"
+            endingLineNumber = "322"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.243383"
+            timestampString = "607230091.751562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "880"
-            endingLineNumber = "880"
+            startingLineNumber = "895"
+            endingLineNumber = "895"
             landmarkName = "-refreshAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -378,11 +378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.243603"
+            timestampString = "607230091.75161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "886"
-            endingLineNumber = "886"
+            startingLineNumber = "901"
+            endingLineNumber = "901"
             landmarkName = "-refreshAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.243822"
+            timestampString = "607230091.751667"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
             landmarkName = "-parseData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.244019"
+            timestampString = "607230091.751719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.244213"
+            timestampString = "607230091.7517689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.244404"
+            timestampString = "607230091.751826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "364"
-            endingLineNumber = "364"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.244598"
+            timestampString = "607230091.751878"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "491"
-            endingLineNumber = "491"
+            startingLineNumber = "506"
+            endingLineNumber = "506"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "606800302.24479"
+            timestampString = "607230091.751925"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "482"
-            endingLineNumber = "482"
+            startingLineNumber = "497"
+            endingLineNumber = "497"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,12 +490,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/Common/DSNavigationController.m"
-            timestampString = "606965514.484888"
+            timestampString = "607230091.751974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-setupViewController:navigationBar:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSNavigationController setupViewController:navigationBar:]"
+                  moduleName = "DSheng"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/Common/DSNavigationController.m"
+                  timestampString = "607227836.74148"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "133">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSNavigationController setupViewController:navigationBar:]"
+                  moduleName = "DSheng"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/Common/DSNavigationController.m"
+                  timestampString = "607227836.745173"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "607230091.752048"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "432"
+            endingLineNumber = "432"
+            landmarkName = "-parseData:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "607230091.752102"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "394"
+            endingLineNumber = "394"
+            landmarkName = "-getWinnerData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "607230091.752161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "-getWinnerData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "607230091.752211"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "-getWinnerData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

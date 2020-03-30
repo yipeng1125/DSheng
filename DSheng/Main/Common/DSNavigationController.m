@@ -18,39 +18,56 @@
 
 @implementation DSNavigationController
 
-+ (void)initialize
-{
-    UIBarButtonItem *item = [UIBarButtonItem appearance];
-    
-    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = [UIColor blueColor];
-    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
-    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    
-    // 设置不可用状态
-    NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
-    disableTextAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.7];
-
-    disableTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
-    [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
-    
-    
-}
+//+ (void)initialize
+//{
+//    UIBarButtonItem *item = [UIBarButtonItem appearance];
+//
+//    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+//    textAttrs[NSForegroundColorAttributeName] = [UIColor blueColor];
+//    textAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+//    [item setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+//
+//    // 设置不可用状态
+//    NSMutableDictionary *disableTextAttrs = [NSMutableDictionary dictionary];
+//    disableTextAttrs[NSForegroundColorAttributeName] = [UIColor colorWithRed:0.6 green:0.6 blue:0.6 alpha:0.7];
+//
+//    disableTextAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:13];
+//    [item setTitleTextAttributes:disableTextAttrs forState:UIControlStateDisabled];
+//
+//
+//}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationBar setBarTintColor:DSColor(236, 107, 44)];
-//    [self.navigationBar setBackgroundColor:DSColor(236, 107, 44)];
+    [self.navigationBar setBarTintColor:DS_MainColor];
+    [self.navigationBar setBackgroundColor:DS_MainColor];
+    self.navigationBar.translucent = NO;
+//
 
-    
-    self.navigationController.navigationBar.translucent =NO;
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
-    
-
+//
+//    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : UIColor.whiteColor};
+//
+//    for (UIView *subView in self.navigationBar.subviews) {
+//        NSLog(@"%@", subView);
+//        if ([NSStringFromClass([subView class]) isEqualToString: @"_UIBarBackground"]) {
+//            CGRect rc = subView.frame;
+//            rc.size.height = 64.f;
+//            rc.origin.y = 0.f;
+//            subView.frame = rc;
+//        }else if ([NSStringFromClass([subView class]) isEqualToString: @"_UINavigationBarContentView"]){
+//            CGRect rc = subView.frame;
+//            rc.size.height = 44.f;
+//            rc.origin.y = 20.f;
+//            subView.frame = rc;
+//        }
+//    }
     
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

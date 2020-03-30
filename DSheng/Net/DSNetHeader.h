@@ -34,4 +34,6 @@ typedef void(^reqeustFailedBlock) (NSError *error);
 
 #define DS_GET_ODDS_LIST_API_URL @"ios/beilv.php"
 
+#define DS_TAKE_HOSITORY_API_URL @"dsadmin/tdtx.php"
+
 #endif /* DSNetHeader_h */

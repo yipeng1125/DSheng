@@ -40,14 +40,29 @@
     winnerNumbersAry = [NSMutableArray array];
     orderAry = [NSMutableArray array];
     
-    
-    
-    
+    [self setupTableBarItem];    
     
     _myTableView.mj_header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
     [TRCustomAlert showLoadingWithMessage:@"数据加载中..."];
     [self refreshData];
 }
+
+- (void)setupTableBarItem {
+    
+    self.tabBarItem.image = [UIImage imageNamed:@"tablebar_kaijaing"];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tablebar_kaijaing_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    // 设置文字的样式
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = UIColor.lightGrayColor;
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    selectTextAttrs[NSForegroundColorAttributeName] = DS_MainColor;
+    [self.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [self.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+}
+
+
 
 - (void)refreshData {
     

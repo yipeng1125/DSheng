@@ -48,6 +48,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     mylock = [NSLock new];
+    
+    [self setupTableBarItem];
     self.navigationItem.title = @"走势";
     [self makeCollectionView];
     
@@ -66,7 +68,20 @@
 }
 
 
-
+- (void)setupTableBarItem {
+    
+    self.tabBarItem.image = [UIImage imageNamed:@"tablebar_zoushi"];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tablebar_zoushi_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    // 设置文字的样式
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = UIColor.lightGrayColor;
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    selectTextAttrs[NSForegroundColorAttributeName] = DS_MainColor;
+    [self.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [self.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
+}
 
 
 - (void)getTrendData {
@@ -646,7 +661,7 @@
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:btnStrings[index] forState:UIControlStateNormal];
-        [btn setTitleColor:DSColor(236, 107, 44) forState:UIControlStateNormal];
+        [btn setTitleColor:DS_MainColor forState:UIControlStateNormal];
         btn.frame = CGRectMake(index * (width + 1), 0, width, 60);
         btn.tag = ltType * 100 + index;
         [btn addTarget:self action:@selector(catoryBtnAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -677,11 +692,11 @@
     button.selected = isselcted;
     
     if (isselcted) {
-        [button setBackgroundColor:DSColor(236, 107, 44)];
+        [button setBackgroundColor:DS_MainColor];
         [button setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
     } else {
         [button setBackgroundColor:UIColor.whiteColor];
-        [button setTitleColor:DSColor(236, 107, 44) forState:UIControlStateNormal];
+        [button setTitleColor:DS_MainColor forState:UIControlStateNormal];
     }
 }
 
@@ -702,9 +717,9 @@
         button.frame = CGRectMake(posX, posY, 160, 32);
         [button setTitle:[DSCacheDataManager getLotteryTicketName:index + 1] forState:UIControlStateNormal];
         button.tag = index + 1;
-        [button setTitleColor:DSColor(236, 107, 44) forState:UIControlStateNormal];
+        [button setTitleColor:DS_MainColor forState:UIControlStateNormal];
         button.layer.borderWidth = 1.0;
-        button.layer.borderColor = [DSColor(236, 107, 44) CGColor];
+        button.layer.borderColor = [DS_MainColor CGColor];
         button.layer.cornerRadius = 2.0;
         [button addTarget:self action:@selector(selectAciont1:) forControlEvents:UIControlEventTouchUpInside];
         [selectView addSubview:button];

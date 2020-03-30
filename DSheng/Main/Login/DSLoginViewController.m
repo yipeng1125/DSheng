@@ -47,15 +47,38 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewClicked:)];
     [_contentView addGestureRecognizer:tapGesture];
     
+    [_contentView setBackgroundColor:DS_MainColor];
+    
     
     [self tryAutoLogin];
-    
     
 }
 
 
-- (void)tryAutoLogin {
+
+- (void)setNavigationBar {
     
+//    [self setSubView:self.navigationController.navigationBar];
+}
+
+- (void)setSubView:(UIView*)view {
+    
+    for (UIView *item in view.subviews) {
+        
+        NSLog(@"%@", item);
+        if ([item isKindOfClass:UIImageView.class]) {
+            item.y = 0;
+        } else {
+            [self setSubView:item];
+        }
+    }
+}
+
+
+
+
+- (void)tryAutoLogin {
+
     NSDictionary *userinfo = [DSCommonTool getUserInfo];
     
     if (userinfo) {

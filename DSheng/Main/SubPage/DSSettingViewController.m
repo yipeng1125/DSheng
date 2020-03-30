@@ -21,6 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.navigationController.navigationBar.hidden = NO;
+
     _myTableView.scrollEnabled = NO;
     
     [self initParameters];

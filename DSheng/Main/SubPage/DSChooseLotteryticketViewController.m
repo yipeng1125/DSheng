@@ -717,7 +717,7 @@
         [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0,-marginX -button.imageView.bounds.size.width - button.titleLabel.bounds.size.width)];
         
         button.layer.borderWidth = 1.0;
-        button.layer.borderColor = DSColor(236, 107, 44).CGColor;
+        button.layer.borderColor = DS_MainColor.CGColor;
         
         button.tag = type;
         [button addTarget:self action:@selector(topButtionClick:) forControlEvents:UIControlEventTouchUpInside];
@@ -790,7 +790,7 @@
     UIView *rowView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DSScreenSize.width, rowHeight)];
 
     UILabel *tLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, 32)];
-    [tLabel setBackgroundColor:DSColor(236, 107, 44)];
+    [tLabel setBackgroundColor:DS_MainColor];
     tLabel.centerY = rowView.centerY;
     tLabel.text = title;
     tLabel.numberOfLines = 2;

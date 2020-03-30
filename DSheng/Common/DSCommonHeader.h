@@ -18,6 +18,9 @@
 #define DSScreenSize [UIScreen mainScreen].bounds.size
 
 
+#define DS_MainColor DSColor(253, 98, 0)
+
+
 #define DS_USER_KEY @"ph_acount"
 
 #define DS_USER_PSD_KEY @"ph_psd"

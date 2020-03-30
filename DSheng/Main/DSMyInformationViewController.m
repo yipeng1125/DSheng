@@ -44,8 +44,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setupTableBarItem];
     [self initParameters];
     [self setUpView];
+}
+
+
+- (void)setupTableBarItem {
+    
+    self.tabBarItem.image = [UIImage imageNamed:@"tabbar_profile"];
+    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"tabbar_profile_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    
+    // 设置文字的样式
+    NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
+    textAttrs[NSForegroundColorAttributeName] = UIColor.lightGrayColor;
+    NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
+    selectTextAttrs[NSForegroundColorAttributeName] = DS_MainColor;
+    [self.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+    [self.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];
 }
 
 

@@ -46,6 +46,7 @@
 		FB17168C2425B69400B858D0 /* DSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17168B2425B69400B858D0 /* DSUserInfo.m */; };
 		FB17168E2425BBA000B858D0 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB17168D2425BBA000B858D0 /* My.storyboard */; };
 		FB1716922425BE8200B858D0 /* DSShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1716912425BE8200B858D0 /* DSShareViewController.m */; };
+		FB35136624318C5C0062554F /* DSIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB35136524318C5C0062554F /* DSIntroductionViewController.m */; };
 		FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */; };
 		FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */; };
 		FBA74A1024209F4B00FACBFB /* DSCommonStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */; };
@@ -172,6 +173,8 @@
 		FB17168D2425BBA000B858D0 /* My.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = My.storyboard; sourceTree = "<group>"; };
 		FB1716902425BE8200B858D0 /* DSShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSShareViewController.h; sourceTree = "<group>"; };
 		FB1716912425BE8200B858D0 /* DSShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSShareViewController.m; sourceTree = "<group>"; };
+		FB35136424318C5C0062554F /* DSIntroductionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSIntroductionViewController.h; sourceTree = "<group>"; };
+		FB35136524318C5C0062554F /* DSIntroductionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSIntroductionViewController.m; sourceTree = "<group>"; };
 		FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryTableViewCell.h; sourceTree = "<group>"; };
 		FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryTableViewCell.m; sourceTree = "<group>"; };
 		FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -541,6 +544,8 @@
 				FBE864AC2429B54E009DCACE /* DSSettingViewController.m */,
 				FBE864AE2429BB84009DCACE /* DSModifyPSDViewController.h */,
 				FBE864AF2429BB84009DCACE /* DSModifyPSDViewController.m */,
+				FB35136424318C5C0062554F /* DSIntroductionViewController.h */,
+				FB35136524318C5C0062554F /* DSIntroductionViewController.m */,
 			);
 			name = SubPage;
 			path = DSheng/Main/SubPage;
@@ -736,6 +741,7 @@
 				FB0BC2F92414F85800605D1B /* DSLoginViewController.m in Sources */,
 				FB0BC2CE2413373100605D1B /* DSWinnerViewController.m in Sources */,
 				FBE864AD2429B54E009DCACE /* DSSettingViewController.m in Sources */,
+				FB35136624318C5C0062554F /* DSIntroductionViewController.m in Sources */,
 				FB0BC3282416268E00605D1B /* MASViewAttribute.m in Sources */,
 				FB0BC2C8241336C400605D1B /* DSHomeViewController.m in Sources */,
 				FB0BC3262416268E00605D1B /* MASConstraint.m in Sources */,
