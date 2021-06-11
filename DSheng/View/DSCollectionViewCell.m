@@ -31,7 +31,6 @@
     DSCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifyid forIndexPath:indexPath];
     
 
-
     if (!cell) {
         NSArray * nibObjects = [[NSBundle mainBundle] loadNibNamed:@"DSCollectionViewCell" owner:nil options:nil];
         

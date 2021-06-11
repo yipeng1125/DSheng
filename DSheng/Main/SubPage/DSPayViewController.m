@@ -9,6 +9,8 @@
 #import "DSPayViewController.h"
 #import "DSCacheDataManager.h"
 #import "TRCustomAlert.h"
+#import "DSAPIInterface.h"
+
 
 
 __weak DSPayViewController *instanceVC;
@@ -17,7 +19,10 @@ __weak DSPayViewController *instanceVC;
     
     NSMutableArray *mDatas;
     
+    long total;
+    
 }
+@property (weak, nonatomic) IBOutlet UIView *shadeView;
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *myscrollView;
@@ -55,6 +60,10 @@ __weak DSPayViewController *instanceVC;
     _numTextfield.delegate = self;
     _numTextfield.keyboardType = UIKeyboardTypeNumberPad;
     
+    NSString *bl = [NSString stringWithFormat:@"可用余额%@元", [DSCacheDataManager shareManager].userInfo.balanceMoney];
+    _balanceLabel.text = bl;
+    
+    [self setShadeLayer];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     
@@ -67,6 +76,12 @@ __weak DSPayViewController *instanceVC;
     [self.view addGestureRecognizer:tapGestureRecognizer];
 }
 
+- (void)setShadeLayer {
+    [_shadeView setBackgroundColor:UIColor.lightGrayColor];
+    _shadeView.alpha = 0.5;
+}
+
+
 - (void)keyboardHide:(id)sender {
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
 }
@@ -75,16 +90,34 @@ __weak DSPayViewController *instanceVC;
     NSLog(@"%@", textField.text);
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    NSLog(@"%@", textField.text);
+}
 
--(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    NSString *valuestring = textField.text;
-    if ([DSCommonTool checkIsNumber:valuestring]) {
-        _totalLabel.text = [NSString stringWithFormat:@"%ld注%ld元", mDatas.count, valuestring.intValue * mDatas.count * 2];
-    }
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
+    NSLog(@"change : %@", textField.text);
+    
+    if (![DSCommonTool checkIsNumber:string]) {
+        return NO;
+    }
+    [self updateMoney];
+   
     return YES;
 }
 
+- (void)updateMoney {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSInteger totalM = weakSelf.numTextfield.text.integerValue;
+        
+        self->total = totalM * self->mDatas.count;
+        weakSelf.totalLabel.text = [NSString stringWithFormat:@"%ld注%ld元", self->mDatas.count, self->total];
+    });
+
+}
 
 - (void)setupViews {
     
@@ -102,6 +135,7 @@ __weak DSPayViewController *instanceVC;
 
 - (void)refreshRemainTime:(NSString *)message {
     
+    
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         NSString *msg = [DSCacheDataManager.shareManager calculatorRemainTimeType:weakSelf.ltType block:^(BOOL enalble, NSString * _Nonnull remainTime) {
@@ -112,10 +146,18 @@ __weak DSPayViewController *instanceVC;
     
 }
 
-+ (void)updateRemainTime:(NSString *)msg {
++ (void)updateRemainTime:(NSString *)msg enable:(BOOL)enable {
     if (instanceVC) {
         [instanceVC refreshRemainTime:msg];
     }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (!enable) {
+            instanceVC.shadeView.hidden = NO;
+        } else {
+        }
+    });
+    
     
 }
 
@@ -161,6 +203,11 @@ __weak DSPayViewController *instanceVC;
         return;
     }
     
+    if (_numTextfield.text.integerValue == 1) {
+        [TRCustomAlert showMessage:@"d每注金额不能低于2元" image:nil];
+        return;
+    }
+    
     if (![DSCommonTool checkIsNumber:_numTextfield.text]) {
         [TRCustomAlert showMessage:@"请检查输入格式" image:nil];
         return;
@@ -171,13 +218,71 @@ __weak DSPayViewController *instanceVC;
         return;
     }
     
-    
-    NSString *valuestring = _numTextfield.text;
-    if ([DSCommonTool checkIsNumber:valuestring]) {
-        _totalLabel.text = [NSString stringWithFormat:@"%ld注%ld元", mDatas.count, valuestring.intValue * mDatas.count * 2];
+    long bmoney = DSCacheDataManager.shareManager.userInfo.balanceMoney.integerValue;
+    if (total > bmoney) {
+        [TRCustomAlert showMessage:@"余额不足" image:nil];
+        return;
     }
     
+    [self pay];
 }
+
+- (void)pay {
+    
+    NSArray *chooseDataAry = [self getChooseData:mDatas];
+    NSString *content = [chooseDataAry componentsJoinedByString:@","];
+    
+    NSString *type = [self getLotteryTicketString:_ltType];
+    NSString *dtype = [self getLotteryticketDetailTypeString:_detailType];
+    
+    [TRCustomAlert showShadeLoadingWithMessage:@"正在下注中..."];
+    
+    [DSAPIInterface sendCommitTicketLotteryRequest:type detailType:dtype number:_nextNumString totalMoney:total content:content success:^(id result) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [TRCustomAlert showMessage:@"下注成功" image:nil];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
+        });
+        
+    } failed:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [TRCustomAlert showMessage:error.domain image:nil];
+        });
+    }];
+}
+
+- (NSArray *)getChooseData:(NSArray *)items {
+    
+    NSMutableArray *dataAry = [NSMutableArray array];
+    
+    for (UIButton *btn in items) {
+        [dataAry addObject:@(btn.tag)];
+    }
+    
+    NSLog(@"%@", dataAry);
+    
+    [dataAry sortUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        return [obj1 compare:obj2];
+    }];
+    
+    NSLog(@"%@", dataAry);
+    
+    NSMutableArray *strDatas = [NSMutableArray array];
+    
+    for (NSNumber *num in dataAry) {
+        NSString *strValue = [NSString stringWithFormat:@"%03ld", num.integerValue];
+        [strDatas addObject:strValue];
+    }
+    
+    NSLog(@"strDatas");
+    
+    return strDatas;
+}
+
 
 
 - (void)setSelectLotteryTicket:(NSArray *)datas {
@@ -189,6 +294,101 @@ __weak DSPayViewController *instanceVC;
     for (UIButton *btn in datas) {
         [mDatas addObject:[btn copy]];
     }
+}
+
+- (NSString *)getLotteryTicketString:(DSLotteryTicketType)type {
+    
+    NSString *name = nil;
+    switch (type) {
+        case DSLotteryTicketType_sanfencai:
+            name = @"0";
+            break;
+        case DSLotteryTicketType_sanfenPKcai:
+            name = @"1";
+            break;
+        case DSLotteryTicketType_beijingPKcai:
+            name = @"2";
+            break;
+        case DSLotteryTicketType_PCdandan:
+            name = @"3";
+            break;
+        case DSLotteryTicketType_cqsscai:
+            name = @"4";
+            break;
+        case DSLotteryTicketType_tjsscai:
+            name = @"5";
+            break;
+        case DSLotteryTicketType_jslhcai:
+            name = @"6";
+            break;
+        case DSLotteryTicketType_lhcai:
+            name = @"7";
+            break;
+        default:
+            break;
+    }
+    
+    return name;
+    
+}
+
+- (NSString *)getLotteryticketDetailTypeString:(DSLTType)type {
+    
+    NSString *key = nil;
+    
+    switch (type) {
+        case DSLTType_sanfencai_lm:
+        case DSLTType_sanfenPKcai_lm:
+        case DSLTType_beijingPKcai_lm:
+        case DSLTType_PCdandan_lm:
+        case DSLTType_cqsscai_lm:
+        case DSLTType_tjsscai_lm:
+            key = @"0";
+            break;
+            
+        case DSLTType_sanfencai_1_5:
+        case DSLTType_cqsscai_1_5:
+        case DSLTType_tjsscai_1_5:
+            key = @"1";
+            break;
+            
+        case DSLTType_sanfenPKcai_1_10:
+        case DSLTType_beijingPKcai_1_10:
+            key = @"2";
+            break;
+            
+        case DSLTType_sanfenPKcai_gy:
+        case DSLTType_beijingPKcai_gy:
+            key = @"3";
+            break;
+            
+        case DSLTType_PCdandan_tm:
+        case DSLTType_jslhcai_tm:
+            key = @"4";
+            break;
+        case DSLTType_lhcai_tm:
+            key = @"5";
+            break;
+            
+        case DSLTType_jslhcai_tm_tws:
+            key = @"8";
+            break;
+        case DSLTType_jslhcai_tm_bs:
+            key = @"7";
+            break;
+        case DSLTType_jslhcai_tm_sx:
+            key = @"6";
+            break;
+        case DSLTType_jslhcai_tm_lm:
+            key = @"9";
+            break;
+            
+        default:
+            break;
+            
+    }
+    
+    return key;
 }
 
 @end

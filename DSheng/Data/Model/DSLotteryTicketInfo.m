@@ -106,14 +106,36 @@
         return @"";
     }
     
-    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
-    
-    int t = (currentTime + extime - [_startTime timeIntervalSince1970]) / (_enablePeriodTime + _disablePeriodTime);
-    
-    NSString *str = [datestr stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    str = [NSString stringWithFormat:@"%@%03d", str, t];
-    
-    return str;
+    if ([_startTime compare:_endTime] == NSOrderedAscending) {
+        NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+        
+        int t = (currentTime + extime - [_startTime timeIntervalSince1970]) / (_enablePeriodTime + _disablePeriodTime);
+        
+        NSString *str = [datestr stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        str = [NSString stringWithFormat:@"%@%03d", str, t];
+        
+        return str;
+    } else {
+        NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970] + 8 * 3600;
+        currentTime = currentTime + extime;
+        if (currentTime > _startTime.timeIntervalSince1970) {
+            currentTime = (long long)(currentTime - (_startTime.timeIntervalSince1970 - _endTime.timeIntervalSince1970)) % (60 * 60 * 24);
+            int t = currentTime / (_enablePeriodTime + _disablePeriodTime);
+            NSString *str = [datestr stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            str = [NSString stringWithFormat:@"%@%03d", str, t];
+            
+            return str;
+        } else {
+            
+            currentTime = ((long long)currentTime) % (60 * 60 * 24);
+            int t = currentTime / (_enablePeriodTime + _disablePeriodTime);
+            NSString *str = [datestr stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            str = [NSString stringWithFormat:@"%@%03d", str, t];
+            
+            return str;
+        }
+
+    }
 }
 
 

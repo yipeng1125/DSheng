@@ -62,6 +62,16 @@
 
             break;
             
+        case DS_PageType_Take:
+            [_imageView setImage:[UIImage imageNamed:@"kefu"]];
+            _fuctionView.hidden = YES;
+            _infoLabel.hidden = NO;
+            _infoLabel.text = @"如需提现，请用微信扫描以上二维码";
+            self.navigationItem.title = @"德胜微信客服";
+            
+            break;
+            
+            
         default:
             break;
     }

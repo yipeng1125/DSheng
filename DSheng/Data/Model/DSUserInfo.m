@@ -25,7 +25,7 @@
     
     NSString *userid = content.firstObject;
     NSString *bmoney = content[1];
-    NSString *str = content.lastObject;
+    NSString *str = content[2];
     
     _userID = userid;
     _balanceMoney = bmoney;
@@ -34,6 +34,12 @@
     } else {
         _isAgency = YES;
     }
+    
+    _todayPayCount = content[3];
+    _todayWinCount = content[4];
+    _todayTakeCount = content[5];
+    
+    _todayExtCount = [NSString stringWithFormat:@"%.2f", (_todayWinCount.doubleValue - _todayPayCount.doubleValue)];
     
     return self;
 }

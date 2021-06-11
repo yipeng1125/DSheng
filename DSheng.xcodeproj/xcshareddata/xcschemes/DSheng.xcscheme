@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB0BC2802412A6AD00605D1B"
-               BuildableName = "DSheng.app"
+               BuildableName = "&#x5fb7;&#x80dc;.app"
                BlueprintName = "DSheng"
                ReferencedContainer = "container:DSheng.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB0BC2802412A6AD00605D1B"
-            BuildableName = "DSheng.app"
+            BuildableName = "&#x5fb7;&#x80dc;.app"
             BlueprintName = "DSheng"
             ReferencedContainer = "container:DSheng.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB0BC2802412A6AD00605D1B"
-            BuildableName = "DSheng.app"
+            BuildableName = "&#x5fb7;&#x80dc;.app"
             BlueprintName = "DSheng"
             ReferencedContainer = "container:DSheng.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB0BC2802412A6AD00605D1B"
-            BuildableName = "DSheng.app"
+            BuildableName = "&#x5fb7;&#x80dc;.app"
             BlueprintName = "DSheng"
             ReferencedContainer = "container:DSheng.xcodeproj">
          </BuildableReference>

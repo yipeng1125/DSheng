@@ -178,21 +178,26 @@
             } else if (index == 1) {
                 
                 [currentTrendDataAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx1, BOOL * _Nonnull stop) {
+                
                     NSMutableArray *rowAry = obj;
                     
                     NSMutableArray *newRowAry = [NSMutableArray array];
-                    [rowAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
-                        if (idx2 != 0) {
-                            NSString *msg = obj;
-                            if (msg.intValue >= 5) {
-                                [newRowAry addObject:@"大"];
+                    if (idx1 == 0) {
+                        [newRowAry addObjectsFromArray:rowAry];
+                    } else {
+                        [rowAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
+                            if (idx2 != 0) {
+                                NSString *msg = obj;
+                                if (msg.intValue >= 5) {
+                                    [newRowAry addObject:@"大"];
+                                } else {
+                                    [newRowAry addObject:@"小"];
+                                }
                             } else {
-                                [newRowAry addObject:@"小"];
+                                [newRowAry addObject:obj];
                             }
-                        } else {
-                            [newRowAry addObject:obj];
-                        }
-                    }];
+                        }];
+                    }
                     
                     [tdataAry addObject:newRowAry];
                 }];
@@ -202,18 +207,23 @@
                     NSMutableArray *rowAry = obj;
                     
                     NSMutableArray *newRowAry = [NSMutableArray array];
-                    [rowAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
-                        if (idx2 != 0) {
-                            NSString *msg = obj;
-                            if (msg.intValue % 2 == 0) {
-                                [newRowAry addObject:@"双"];
+                    
+                    if (idx1 == 0) {
+                        [newRowAry addObjectsFromArray:rowAry];
+                    } else {
+                        [rowAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
+                            if (idx2 != 0) {
+                                NSString *msg = obj;
+                                if (msg.intValue % 2 == 0) {
+                                    [newRowAry addObject:@"双"];
+                                } else {
+                                    [newRowAry addObject:@"单"];
+                                }
                             } else {
-                                [newRowAry addObject:@"单"];
+                                [newRowAry addObject:obj];
                             }
-                        } else {
-                            [newRowAry addObject:obj];
-                        }
-                    }];
+                        }];
+                    }
                     
                     [tdataAry addObject:newRowAry];
                 }];
@@ -431,8 +441,65 @@
         case DSLotteryTicketType_jslhcai:
         case DSLotteryTicketType_lhcai:
             if (index == 0) {
-            } else if (index == 1){
+            } else if (index == 1) {
+                [currentTrendDataAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx1, BOOL * _Nonnull stop) {
+                
+                    NSMutableArray *rowAry = obj;
+                    
+                    NSMutableArray *newRowAry = [NSMutableArray array];
+                    if (idx1 == 0) {
+                        [newRowAry addObjectsFromArray:rowAry];
+                    } else {
+                        [rowAry enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx2, BOOL * _Nonnull stop) {
+                            if (idx2 != 0) {
+                                NSString *msg = obj;
+                                msg = [self getShengxiao:msg];
+                                [newRowAry addObject:msg];
+                            } else {
+                                [newRowAry addObject:obj];
+                            }
+                        }];
+                    }
+                    
+                    [tdataAry addObject:newRowAry];
+                }];
             } else {
+                for (int i = 0; i < currentTrendDataAry.count; i++) {
+                    NSMutableArray *rowAry = currentTrendDataAry[i];
+                    NSMutableArray *newRowAry = [NSMutableArray array];
+                    for (int j = 0; j < sessionTitleAry.count; j++) {
+                        if (i == 0) {
+                            [newRowAry addObject:sessionTitleAry[j]];
+                        } else {
+                            if (j == 0) {
+                                [newRowAry addObject:rowAry[0]];
+                            } else {
+                                NSString *temaStr = rowAry.lastObject;
+                                NSInteger temaValue = temaStr.integerValue;
+
+                                if (j == 1) {
+                                    [newRowAry addObject:temaStr];
+                                } else if (j == 2) {
+                                    if (temaValue <= 24) {
+                                        [newRowAry addObject:@"小"];
+                                    } else {
+                                        [newRowAry addObject:@"大"];
+                                    }
+                                } else if (j == 3) {
+                                    if (temaValue % 2 == 0) {
+                                        [newRowAry addObject:@"双"];
+                                    } else {
+                                         [newRowAry addObject:@"单"];
+                                    }
+                                } else if (j == 4) {
+                                    NSString *bosestr = [self getLiuhecaiBose:temaStr];
+                                    [newRowAry addObject:bosestr];
+                                }
+                            }
+                        }
+                    }
+                    [tdataAry addObject:newRowAry];
+                }
             }
             break;
         default:
@@ -684,6 +751,11 @@
         [catotyVw addSubview:btn];
     }
     
+    UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DSScreenSize.width, 1)];
+    lineV.y = _catoryView.height - 1;
+    [lineV setBackgroundColor:UIColor.lightGrayColor];
+    [catotyVw addSubview:lineV];
+    
     
     return catotyVw;
 }
@@ -826,6 +898,23 @@ double posizitionY= 0.0;
         cell.contentLabel.text = identyfier;
     }
     
+    if ([cell.contentLabel.text isEqualToString:@"红波"] || [cell.contentLabel.text isEqualToString:@"大"] || [cell.contentLabel.text isEqualToString:@"单"] || [cell.contentLabel.text isEqualToString:@"龙"]) {
+        cell.contentLabel.textColor = [UIColor redColor];
+    } else if ([cell.contentLabel.text isEqualToString:@"蓝波"]) {
+        cell.contentLabel.textColor = [UIColor blueColor];
+    } else if ([cell.contentLabel.text isEqualToString:@"绿波"] || [cell.contentLabel.text isEqualToString:@"小"] || [cell.contentLabel.text isEqualToString:@"双"] || [cell.contentLabel.text isEqualToString:@"虎"]) {
+        cell.contentLabel.textColor = DSColor(15, 99, 23);
+    }
+    
+    if (ltType == DSLotteryTicketType_lhcai || ltType == DSLotteryTicketType_jslhcai) {
+        if (catoryIndex == 0 ) {
+            if (indexPath.row == sessionTitleAry.count - 1 && indexPath.section != 0) {
+                cell.contentLabel.textColor = [UIColor redColor];
+            }
+            
+        }
+    }
+    
     if (indexPath.row == 0) {
         if (indexPath.section != 0) {
             cell.contentLabel.numberOfLines = 2;
@@ -839,24 +928,6 @@ double posizitionY= 0.0;
     cell.contentLabel.layer.borderColor = [[UIColor grayColor] CGColor];
     cell.contentLabel.layer.masksToBounds = YES;
     [cell setNeedsLayout];
-    /*
-    if (indexPath.section == 0) {
-        cell.contentLabel.text = sessionTitleAry[indexPath.row];
-        
-    } else {
-        
-        NSInteger index = indexPath.section;
-        NSArray *items = currentTrendDataAry[index -1][0];
-
-        if (indexPath.row == 0) {
-            cell.contentLabel.text = items[1];
-        } else {
-            cell.contentLabel.text =
-        }
-        
-        cell.contentLabel;
-    }
-     */
     
     return cell;
 }
@@ -951,7 +1022,7 @@ double posizitionY= 0.0;
     cView = [self makeCatoryView];
     cView.frame = _catoryView.bounds;
     cView.height = cView.height - 1;
-    cView.y = 1;
+    cView.y = 0;
 
     [_catoryView addSubview:cView];
     
@@ -973,6 +1044,84 @@ double posizitionY= 0.0;
     [mycollectionView reloadData];
 }
 
+
+- (NSString *)getShengxiao:(NSString *)msg {
+    
+    if (!msg) {
+        return @"";
+    }
+    
+    NSString *valuestring = @"";
+    
+    NSInteger value = msg.integerValue;
+    value = value % 12;
+    
+    switch (value) {
+
+            case 0:
+                valuestring = @"猪";
+                break;
+            case 1:
+                valuestring = @"狗";
+                break;
+            case 2:
+                valuestring = @"鸡";
+                break;
+            case 3:
+                valuestring = @"猴";
+                break;
+            case 4:
+                valuestring = @"羊";
+                break;
+            case 5:
+                valuestring = @"马";
+                break;
+            case 6:
+                valuestring = @"蛇";
+                break;
+            case 7:
+                valuestring = @"龙";
+                break;
+            case 8:
+                valuestring = @"兔";
+                break;
+            case 9:
+                valuestring = @"虎";
+                break;
+            case 10:
+                valuestring = @"牛";
+                break;
+            case 11:
+                valuestring = @"鼠";
+                break;
+            
+        default:
+            break;
+    }
+    
+    
+    return valuestring;
+}
+
+
+- (NSString *)getLiuhecaiBose:(NSString *)msg {
+    
+    if (!msg) {
+        return @"";
+    }
+    
+    NSInteger value = msg.integerValue;
+    
+    if (value == 1 || value ==2 || value == 7 || value == 8 || value == 12 || value == 13 || value == 18 || value == 19 || value == 23 || value == 24 || value == 29 || value == 30 || value == 35 || value == 40 || value == 45 || value == 46) {
+        return @"红波";
+    }
+    
+    if (value == 3 || value == 4 || value == 9 || value == 10 || value == 14 || value == 15 || value == 20 || value == 25 || value == 26 || value == 31 || value == 36 || value == 37 || value == 41 || value == 42 || value == 47 || value == 48) {
+        return @"红波";
+    }
+    
+    return @"绿波";
+}
 
 
 @end

@@ -18,8 +18,8 @@ typedef void(^reqeustFailedBlock) (NSError *error);
 #define DS_LOGIN_API_URL @"dsadmin/login.php"
 #define DS_COMMITORDER_API_URL @"dsadmin/saveselect1.php"
 
-#define DS_MODIFY_PASSWORD_API_URL @"dsadmin/xgmm.php"
-#define DS_MODIFY_TAKEPASSWORKD_API_URL @"dsadmin/xgtxmm.php"
+#define DS_MODIFY_PASSWORD_API_URL @"ios/xgmm.php"
+#define DS_MODIFY_TAKEPASSWORKD_API_URL @"ios/xgtxmm.php"
 
 #define DS_LOTTERYT_TICKET_INFO_API_URL @"dsadmin/cpinfo.php"
 
@@ -34,6 +34,20 @@ typedef void(^reqeustFailedBlock) (NSError *error);
 
 #define DS_GET_ODDS_LIST_API_URL @"ios/beilv.php"
 
-#define DS_TAKE_HOSITORY_API_URL @"dsadmin/tdtx.php"
+
+#define DS_COMMIT_TICKETLOTTERY_API_URL @"ios/saveselect.php"
+
+#define DS_RECHAEGE_HISTORY_API_URL @"ios/czjl.php"
+
+#define DS_TAKE_HISTORY_API_URL @"ios/txjl.php"
+
+#define DS_PAY_HISTORY_API_URL @"ios/tzjl.php"
+
+#define DS_ZHONGJIA_HISTORY_API_URL @"ios/zjjl.php"
+
+
+#define DS_RETURN_MONEY_INFO_API_URL @"ios/fxje.php"
+
+#define DS_COMMIT_RETURNMONEY_API_URL @"ios/fanxian.php"
 
 #endif /* DSNetHeader_h */

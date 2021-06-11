@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)checkIsPhoneNumber:(NSString *)number;
 + (BOOL)checkIsNumber:(NSString *)number;
 
++ (void)removeUserInfo;
 
 + (BOOL)saveUserInfo:(NSDictionary *)info;
 + (NSDictionary *)getUserInfo;

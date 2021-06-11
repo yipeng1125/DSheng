@@ -26,6 +26,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBar.hidden = NO;
+    self.navigationItem.title = @"常见问题";
 
     [self initParameters];
 }
@@ -89,6 +90,7 @@
     }
     NSInteger index = indexPath.section;
     cell.textLabel.text = contentAry[index];
+    cell.textLabel.textColor = UIColor.darkGrayColor;
     CGRect rect = cell.textLabel.frame;
     rect.size.width = DSScreenSize.width - 30;
     rect.size.height = 70;

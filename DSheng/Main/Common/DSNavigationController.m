@@ -5,6 +5,7 @@
 #import "DSViewHeader.h"
 #import "DSCommonTool.h"
 #import "DSChooseLotteryticketViewController.h"
+#import "DSCacheDataManager.h"
 
 
 
@@ -84,7 +85,7 @@
         /* 设置导航栏上面的内容 */
         // 设置左边的按钮
         viewController.navigationItem.leftBarButtonItem = [self itemWithTarget:self action:@selector(back) image:@"navigationbar_back" highImage:@"navigationbar_back_highlighted"];
-        
+
         // 设置右边的按钮
 //        viewController.navigationItem.rightBarButtonItem = [self itemWithTarget:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
         
@@ -92,7 +93,9 @@
     
     if ([viewController isKindOfClass:[DSChooseLotteryticketViewController class]]) {
         DSChooseLotteryticketViewController *ltVC = (DSChooseLotteryticketViewController *)viewController;
-        NSString *title = [ltVC getTopTitleStringWithType:ltVC.detailType];
+        NSString *title = [DSCacheDataManager getTopTitleStringWithType:ltVC.detailType];
+
+        
         [self setupViewController:ltVC navigationBar:title];
     } else {
         if (navigationImageView) {
@@ -167,11 +170,24 @@
         [navigationImageView removeFromSuperview];
     }
     
+
+    
     // 因为self本来就是一个导航控制器，self.navigationController这里是nil的
     
     NSLog(@"%@", self.childViewControllers);
     [self popViewControllerAnimated:YES];
-
+    
+    UIViewController *vc = self.childViewControllers.lastObject;
+    if ([vc isKindOfClass:[DSChooseLotteryticketViewController class]]) {
+        DSChooseLotteryticketViewController *ltVC = (DSChooseLotteryticketViewController *)vc;
+        NSString *title = [DSCacheDataManager getTopTitleStringWithType:ltVC.detailType];
+        
+        [self setupViewController:ltVC navigationBar:title];
+    } else {
+        if (navigationImageView) {
+            [navigationImageView removeFromSuperview];
+        }
+    }
     
 }
 

@@ -36,7 +36,7 @@
     copy.tag = self.tag;
     [copy setTitle:self.titleLabel.text forState:UIControlStateNormal];
     
-    copy.layer.cornerRadius = 16;
+    copy.layer.cornerRadius = self.width * 0.5;
     copy.titleLabel.font = [UIFont systemFontOfSize:10];
     copy.backgroundColor = self.backgroundColor;
     [copy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -48,11 +48,11 @@
 
 
 
-+ (DSButton *)makeSpecialTypeButtonWithTitle:(NSString *)title {
++ (DSButton *)makeSpecialTypeButtonWithTitle:(NSString *)title withFrame:(CGRect)frame{
     
-    DSButton *btn = [[DSButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
+    DSButton *btn = [[DSButton alloc] initWithFrame:frame];
     [btn setBackgroundColor:[UIColor whiteColor]];
-    btn.layer.cornerRadius = 16;
+    btn.layer.cornerRadius = btn.width * 0.5;
     [btn setTitle:title forState:UIControlStateNormal];
     btn.titleLabel.text = title;
     btn.titleLabel.font = [UIFont systemFontOfSize:10];

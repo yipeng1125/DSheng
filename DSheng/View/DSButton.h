@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DSButton : UIButton
 
-+ (DSButton *)makeSpecialTypeButtonWithTitle:(NSString *)title;
++ (DSButton *)makeSpecialTypeButtonWithTitle:(NSString *)title withFrame:(CGRect)frame;
 
 @end
 

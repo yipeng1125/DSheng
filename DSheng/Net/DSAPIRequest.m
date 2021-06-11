@@ -117,22 +117,159 @@
 }
 
 
-- (void)modifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+- (void)modifyPasswordReqeust:(NSString *)account oldPassword:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
     
     NSString *url = [DSHOST_URL stringByAppendingString:DS_MODIFY_PASSWORD_API_URL];
     
-    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:account forKey:@"ph"];
+    [parameters setObject:oldPsd forKey:@"ps"];
+    [parameters setObject:newPsd forKey:@"ps1"];
+
+//    [parameters setObject:@"6899528" forKey:@"code"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
 }
 
-- (void)modifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+- (void)modifyTakePasswordReqeust:(NSString *)account psd:(NSString *)psd oldPassword:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
     
     NSString *url = [DSHOST_URL stringByAppendingString:DS_MODIFY_TAKEPASSWORKD_API_URL];
     
-    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:nil parameter:nil success:sblock failure:fblock];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:psd forKey:@"ps"];
+    [parameters setObject:account forKey:@"ph"];
+    [parameters setObject:oldPsd forKey:@"tps"];
+    [parameters setObject:newPsd forKey:@"tps1"];
+    
+    //    [parameters setObject:@"6899528" forKey:@"code"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
 }
 
 
 
+- (void)commitTicketLotteryRequest:(NSString *)type detailType:(NSString *)dtype number:(NSString *)num totalMoney:(double)tmoney content:(NSString *)content success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_COMMIT_TICKETLOTTERY_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    [parameters setObject:type forKey:@"bh"];
+    [parameters setObject:dtype forKey:@"pbh"];
+    [parameters setObject:num forKey:@"qh"];
+    [parameters setObject:@(tmoney) forKey:@"je"];
+    [parameters setObject:content forKey:@"sel"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+
+}
+
+- (void)rechangeHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_RECHAEGE_HISTORY_API_URL];
+
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
+
+
+- (void)takeMoneyHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_TAKE_HISTORY_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
+
+
+- (void)payHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_PAY_HISTORY_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
+
+- (void)zhognjiangHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_ZHONGJIA_HISTORY_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
+
+- (void)returnMoneyInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_RETURN_MONEY_INFO_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
+
+- (void)commitReturnMoneyRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock {
+    
+    NSString *url = [DSHOST_URL stringByAppendingString:DS_COMMIT_RETURNMONEY_API_URL];
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:phoneNumber forKey:@"ph"];
+    [parameters setObject:psd forKey:@"ps"];
+    
+    NSString *bodystr = [self makeBodyStringWithParameters:parameters];
+    
+    [[DSNetworkManger shareManager] sendPostRequesttoUrl:url body:bodystr parameter:nil success:sblock failure:fblock];
+}
 /*
  http://www.desheng168.cn/dsadmin/reg.php?ph=1234567890&ps=112345&tps=1112&code=1393993
 public void RegUser(String userinfo)//注册

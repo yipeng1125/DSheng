@@ -23,6 +23,8 @@
     
     NSMutableArray *winnerNumbersAry;
     NSMutableArray *orderAry;
+    
+    BOOL isFinished;
 }
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *myTableViewConstraitHeight;
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
@@ -35,6 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    isFinished = YES;
     
     titleArys = [NSMutableArray array];
     winnerNumbersAry = [NSMutableArray array];
@@ -74,11 +77,20 @@
 
 - (void)getData {
     
+    if (isFinished == NO) {
+        return;
+    }
+    
+    isFinished = NO;
+
     __weak typeof(self) weakSelf = self;
     [DSAPIInterface getAllWinnerInfoReqeust:^(id result) {
         NSString *message = result;
-        BOOL bparse = [weakSelf parseData:message];
         
+
+        BOOL bparse = [weakSelf parseData:message];
+        self->isFinished = YES;
+
         dispatch_async(dispatch_get_main_queue(), ^{
             [TRCustomAlert dissmis];
             if (!bparse) {
@@ -86,11 +98,13 @@
             } else {
                 
                 [weakSelf.myTableView reloadData];
+                
             }
             [weakSelf.myTableView.mj_header endRefreshing];
         });
         
     } failed:^(NSError *error) {
+        self->isFinished = YES;
         dispatch_async(dispatch_get_main_queue(), ^{
            [TRCustomAlert dissmis];
             [TRCustomAlert showMessage:[NSString stringWithFormat:@"请求服务器数失败，%@",error] image:nil];
@@ -111,6 +125,12 @@
         return NO;
     }
     
+
+    [winnerNumbersAry removeAllObjects];
+    [orderAry removeAllObjects];
+    [titleArys removeAllObjects];
+
+    
     for (NSString *str in contents) {
         if ([str isEqualToString:@""]) {
             continue;
@@ -125,6 +145,7 @@
         
     }
     
+    
     return YES;
 }
 
@@ -134,6 +155,9 @@
      NSString *cellIdentyfyID = [NSString stringWithFormat:@"%0ld-%0ld", indexPath.section,indexPath.row];
     DSKaiJianglTableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:cellIdentyfyID];
     if (!cell) {
+        if (!isFinished) {
+            return [DSKaiJianglTableViewCell new];
+        }
         cell = [DSKaiJianglTableViewCell cellWithTableView:tableView withIdentifyid:cellIdentyfyID withParameters:winnerNumbersAry[indexPath.row]];
         NSString *titleIndex = titleArys[indexPath.row];
         DSLotteryTicketType type = titleIndex.intValue + 1;
@@ -149,6 +173,10 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (!isFinished) {
+        return 0;
+    }
     
     NSInteger count = titleArys.count;
     return count;

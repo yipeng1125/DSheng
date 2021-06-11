@@ -46,6 +46,18 @@
 
 }
 
+
++ (void)removeUserInfo {
+ 
+    NSString *path = [self getSaveDataPath];
+
+    NSError *error;
+
+    [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+    
+    NSLog(@"error : %@", error);
+}
+
 + (BOOL)saveUserInfo:(NSDictionary *)info {
     
     if (!info) {
@@ -53,7 +65,15 @@
     }
     
     NSError *error;
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:info requiringSecureCoding:YES error:&error];
+    NSData *data;
+    
+    NSString *version = [UIDevice currentDevice].systemVersion;
+    if (version.doubleValue >= 11.0) {
+        data = [NSKeyedArchiver archivedDataWithRootObject:info requiringSecureCoding:YES error:&error];
+    } else {
+        data = [NSKeyedArchiver archivedDataWithRootObject:info];
+    }
+
     
     if (error) {
         NSLog(@"save data error : %@", error);
@@ -71,7 +91,15 @@
     
     NSData *data = [NSData dataWithContentsOfFile:[self getSaveDataPath]];
     NSError *error;
-    id value = [NSKeyedUnarchiver unarchivedObjectOfClass:NSDictionary.class fromData:data error:&error];
+    
+    id value;
+    
+    NSString *version = [UIDevice currentDevice].systemVersion;
+    if (version.doubleValue >= 11.0) {
+        value = [NSKeyedUnarchiver unarchivedObjectOfClass:NSDictionary.class fromData:data error:&error];
+    } else {
+        value = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    }
     
     return value;
 }

@@ -10,6 +10,11 @@
 #import "DSCommonHeader.h"
 #import "DSCacheDataManager.h"
 #import "DSShareViewController.h"
+#import "DSHistoryViewController.h"
+#import "DSAPIInterface.h"
+#import "DSPayHistoryViewController.h"
+
+
 
 
 
@@ -49,6 +54,32 @@
     [self setUpView];
 }
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self getUserInfo];
+    });
+}
+
+- (void)getUserInfo {
+    NSDictionary *userdict = [DSCommonTool getUserInfo];
+    NSDictionary *parameters = @{@"ph":userdict[DS_USER_KEY], @"ps" : userdict[DS_USER_PSD_KEY]};
+    [DSAPIInterface getUserInfoAPIReqeust:parameters success:^(id result) {
+        NSLog(@"%@",result);
+        
+        [DSCacheDataManager shareManager].userInfo = [[DSUserInfo alloc] initWithString:result];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateSubview];
+        });
+        
+    } failed:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
 
 - (void)setupTableBarItem {
     
@@ -97,7 +128,18 @@
     _phoneLabel.text = [phoneNumber stringByReplacingCharactersInRange:range withString:@"*****"];
     
     _avaibleMoney.text = [DSCacheDataManager shareManager].userInfo.balanceMoney;
+    
+    _alreadyTakeMoneyLabel.text = [DSCacheDataManager shareManager].userInfo.todayTakeCount;
+    _winMoneyLabel.text = [DSCacheDataManager shareManager].userInfo.todayExtCount;
 
+}
+
+
+- (void)updateSubview {
+    _avaibleMoney.text = [DSCacheDataManager shareManager].userInfo.balanceMoney;
+    
+    _alreadyTakeMoneyLabel.text = [DSCacheDataManager shareManager].userInfo.todayTakeCount;
+    _winMoneyLabel.text = [DSCacheDataManager shareManager].userInfo.todayExtCount;
 }
 
 - (void)initParameters {
@@ -119,10 +161,17 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentyfyID];
         cell.textLabel.text = _menuTitleAry[indexPath.row];
+        cell.textLabel.font = [UIFont systemFontOfSize:14];
         [cell.imageView setImage:[UIImage imageNamed:_menuIconAry[indexPath.row]]];
         cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        cell.imageView.width = 16;
-        cell.imageView.height = 16;
+       
+        CGSize itemSize = CGSizeMake(24, 24);
+        UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
+        CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+        [cell.imageView.image drawInRect:imageRect];
+        cell.imageView.image = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
         tableViewHeight = cell.height * _menuTitleAry.count + 5;
         
         _myTableViewConstraintHeight.constant = tableViewHeight;
@@ -135,7 +184,7 @@
     }
     
 
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -148,13 +197,26 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row == 0) {
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSHistoryViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSHistoryViewController"];
+        myView.type = 1;
+        [self.navigationController pushViewController:myView animated:YES];
         
     } else if (indexPath.row == 1) {
-        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSPayHistoryViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSPayHistoryViewController"];
+        myView.type = 2;
+        [self.navigationController pushViewController:myView animated:YES];
     } else if (indexPath.row == 2) {
-        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSHistoryViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSHistoryViewController"];
+        myView.type = 3;
+        [self.navigationController pushViewController:myView animated:YES];
     } else if (indexPath.row == 3) {
-        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        DSPayHistoryViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSPayHistoryViewController"];
+        myView.type = 4;
+        [self.navigationController pushViewController:myView animated:YES];
     } else if (indexPath.row == 4) {
         UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
         DSShareViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSShareViewController"];
@@ -199,6 +261,10 @@
 
 - (IBAction)takeAction:(id)sender {
     
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSReturnMoneyViewController"];
+    [self.navigationController pushViewController:myView animated:YES];
 }
 
 /*

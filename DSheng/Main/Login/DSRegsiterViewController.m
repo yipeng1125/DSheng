@@ -57,14 +57,23 @@
         return;
     }
     
-    if ((_passwordTextField.text.length <= 6) || (_tpsdTextField.text.length <= 6)) {
+    if ((_passwordTextField.text.length < 6) || (_tpsdTextField.text.length < 6)) {
         [TRCustomAlert showMessage:@"密码长度不能低于6位" image:nil];
         return;
     }
     
+    __weak typeof(self) weakSelf = self;
+    
     [DSAPIInterface registerAPIReqeust:_phoneTextField.text passWord:_passwordTextField.text serviceCode:_inviteCodeTextField.text takePSD:_tpsdTextField.text success:^(id result) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [TRCustomAlert showMessage:@"register successfully" image:nil];
+            [TRCustomAlert showMessage:@"注册成功,请登录" image:nil];
+            
+            weakSelf.loginVC.account = weakSelf.phoneTextField.text;
+            weakSelf.loginVC.psdstring = weakSelf.passwordTextField.text;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self.navigationController popViewControllerAnimated:YES];
+            });
         });
     } failed:^(NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{

@@ -14,6 +14,7 @@ typedef enum : NSUInteger {
     DS_PageType_Shared = 1,
     DS_PageType_Agent,
     DS_PageType_Service,
+    DS_PageType_Take,
     
 }DS_PageType;
 

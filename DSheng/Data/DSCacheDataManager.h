@@ -43,6 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)calculatorRemainTimeType:(DSLotteryTicketType)type block:(void(^)(BOOL enalble, NSString *remainTime))block;
 
++ (NSString *)getTopTitleStringWithType:(DSLTType)type;
+
 @end
 
 NS_ASSUME_NONNULL_END

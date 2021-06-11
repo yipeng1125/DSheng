@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "26D7B39F-60F2-45A3-9C5D-F9BF382FCCE7"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Net/DSAPIRequest.m"
-            timestampString = "606753098.597873"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "-registerReqeust:passWord:serviceCode:takePSD:success:failed:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "607230091.750787"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "851"
-            endingLineNumber = "851"
-            landmarkName = "-topButtionClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "607230091.750855"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "858"
-            endingLineNumber = "858"
-            landmarkName = "-topButtionClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "CFEB1D83-06BF-4067-B245-E61B2399FFE6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -70,6 +24,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "F896E1A9-790D-4C55-AC6B-04005C8EA430"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -86,6 +41,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "E19EED6C-1611-47B0-9560-495A9980A48E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -102,6 +58,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "32AEAE48-B228-4D41-AAEB-373BEC5777F2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -118,6 +75,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "7BAAF443-0789-4598-8100-DFFDA7EA4AFF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -134,6 +92,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "8E791168-6563-4AA7-845A-6F4FA2FE529F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -150,6 +109,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "54C2F7ED-C2FB-4606-8F15-79428230BBDD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -166,15 +126,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "31C25A13-4695-43CB-9C74-F70C3CD67ACB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSWinnerViewController.m"
-            timestampString = "607230091.751089"
+            timestampString = "608813318.118423"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -182,31 +143,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSChooseLotteryticketViewController.m"
-            timestampString = "607230091.7511441"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "890"
-            endingLineNumber = "890"
-            landmarkName = "-navigationTitleClick"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "9D622724-4241-4C94-B961-525798E5E48C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.7512079"
+            timestampString = "607686137.991792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "249"
-            endingLineNumber = "249"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-getCollectDataWithType:"
             landmarkType = "7">
          </BreakpointContent>
@@ -214,159 +160,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSPayViewController.m"
-            timestampString = "607230091.751264"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-touchesBegan:withEvent:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSPayViewController.m"
-            timestampString = "607230091.7513109"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "-keyboardHide:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSSettingViewController.m"
-            timestampString = "607230091.751358"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
-            timestampString = "607229014.453253"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-setupviews"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
-            timestampString = "607229014.453319"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
+            uuid = "D06B7A34-324A-403F-8AE2-1834B973D0D5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.7514679"
+            timestampString = "607686137.991961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "-getCollectDataWithType:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[DSTrendViewController getCollectDataWithType:]"
-                  moduleName = "DSheng"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/DSTrendViewController.m"
-                  timestampString = "607227836.684148"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "448">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__48-[DSTrendViewController getCollectDataWithType:]_block_invoke.114"
-                  moduleName = "DSheng"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/DSTrendViewController.m"
-                  timestampString = "607227836.685956"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "201"
-                  endingLineNumber = "201"
-                  offsetFromSymbolStart = "15">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751516"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "322"
-            endingLineNumber = "322"
-            landmarkName = "-getCollectDataWithType:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751562"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "895"
-            endingLineNumber = "895"
+            startingLineNumber = "966"
+            endingLineNumber = "966"
             landmarkName = "-refreshAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -374,15 +177,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6F849FB3-8326-427E-A0B1-33FD345BEB59"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.75161"
+            timestampString = "607686137.991996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "901"
-            endingLineNumber = "901"
+            startingLineNumber = "972"
+            endingLineNumber = "972"
             landmarkName = "-refreshAction:"
             landmarkType = "7">
          </BreakpointContent>
@@ -390,11 +194,12 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "C4CD3B16-4FA5-4A3F-986E-5B1B20EF2B4E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751667"
+            timestampString = "607686137.9920321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -406,15 +211,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "2BAB6F10-BBE7-4276-9DE9-1D164134BE33"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751719"
+            timestampString = "607686137.9920681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "475"
-            endingLineNumber = "475"
+            startingLineNumber = "542"
+            endingLineNumber = "542"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -422,47 +228,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "DD269664-6C91-4EA7-803D-9BABA1D4B24D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.7517689"
+            timestampString = "607686137.9921809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "402"
-            endingLineNumber = "402"
-            landmarkName = "-getCollectDataWithType:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751826"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
-            landmarkName = "-getCollectDataWithType:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751878"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "506"
-            endingLineNumber = "506"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -470,15 +245,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "B0B770DE-6104-4709-B330-03E5FA5F3586"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSTrendViewController.m"
-            timestampString = "607230091.751925"
+            timestampString = "607686137.992216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "497"
-            endingLineNumber = "497"
+            startingLineNumber = "564"
+            endingLineNumber = "564"
             landmarkName = "-setupTrendData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -486,47 +262,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "51B68ADE-EC55-4F89-8FBA-FF72BCDFAA5F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/Common/DSNavigationController.m"
-            timestampString = "607230091.751974"
+            filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
+            timestampString = "607686137.992358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-setupViewController:navigationBar:"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-modifyAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "40DA99C3-3C55-4690-A171-7677F4E95EAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.846696"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
+            landmarkName = "+sendModifyPasswordReqeust:oldPassword:andNew:success:failed:"
             landmarkType = "7">
             <Locations>
                <Location
+                  uuid = "40DA99C3-3C55-4690-A171-7677F4E95EAA - 503070f6fe1b8f6e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[DSNavigationController setupViewController:navigationBar:]"
-                  moduleName = "DSheng"
+                  symbolName = "+[DSAPIInterface sendModifyPasswordReqeust:oldPassword:andNew:success:failed:]"
+                  moduleName = "&#x5fb7;&#x80dc;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/Common/DSNavigationController.m"
-                  timestampString = "607227836.74148"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Net/DSAPIInterface.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "133">
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "245">
                </Location>
                <Location
+                  uuid = "40DA99C3-3C55-4690-A171-7677F4E95EAA - f7263b1f088fa5dd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[DSNavigationController setupViewController:navigationBar:]"
-                  moduleName = "DSheng"
+                  symbolName = "__78+[DSAPIInterface sendModifyPasswordReqeust:oldPassword:andNew:success:failed:]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/Common/DSNavigationController.m"
-                  timestampString = "607227836.745173"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Net/DSAPIInterface.m"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "148">
+                  startingLineNumber = "177"
+                  endingLineNumber = "177"
+                  offsetFromSymbolStart = "44">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -534,15 +328,231 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "6FE203AC-3276-4A59-9680-E31D0EC6FF53"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSHomeViewController.m"
-            timestampString = "607230091.752048"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.846759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "432"
-            endingLineNumber = "432"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
+            landmarkName = "+sendModifyPasswordReqeust:oldPassword:andNew:success:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CD5CE003-8ABE-4A89-B4BC-1E7F3849FF54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
+            timestampString = "607686137.992491"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-modifyAction:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CD5CE003-8ABE-4A89-B4BC-1E7F3849FF54 - 755e6e621186f685"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[DSModifyPSDViewController modifyAction:]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSModifyPSDViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "CD5CE003-8ABE-4A89-B4BC-1E7F3849FF54 - beb396ff847cdcea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[DSModifyPSDViewController modifyAction:]_block_invoke_2"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSModifyPSDViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E39A766-8E68-4888-9964-4DE07C09009C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.846844"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "+sendModifyTakePasswordReqeust:psd:oldPassword:andNew:success:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "379948C6-F5BA-441C-983D-EC5D0373383E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSModifyPSDViewController.m"
+            timestampString = "607686137.992569"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-modifyAction:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "379948C6-F5BA-441C-983D-EC5D0373383E - 4786b5044dd5670f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSModifyPSDViewController modifyAction:]"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSModifyPSDViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1125">
+               </Location>
+               <Location
+                  uuid = "379948C6-F5BA-441C-983D-EC5D0373383E - 45bf9c3fb13cc2af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[DSModifyPSDViewController modifyAction:]_block_invoke_3.61"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSModifyPSDViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A16AD91A-FFA0-4807-95B5-9262C7C7375F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIRequest.m"
+            timestampString = "608608599.811559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-modifyTakePasswordReqeust:psd:oldPassword:andNew:success:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1F2B068B-70F5-4916-A79C-124FFDB564BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIRequest.m"
+            timestampString = "608608599.811697"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "-modifyPasswordReqeust:oldPassword:andNew:success:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8745975-A844-416F-8814-7981996D3A7D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.847239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "+getTakeHistoryRequest:failed:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8745975-A844-416F-8814-7981996D3A7D - dc3c0b204aa5d2d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[DSAPIInterface getTakeHistoryRequest:failed:]"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Net/DSAPIInterface.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "276"
+                  endingLineNumber = "276"
+                  offsetFromSymbolStart = "121">
+               </Location>
+               <Location
+                  uuid = "A8745975-A844-416F-8814-7981996D3A7D - 4d738ae14a337106"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__47+[DSAPIInterface getTakeHistoryRequest:failed:]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Net/DSAPIInterface.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "276"
+                  endingLineNumber = "276"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B0E3CA3-727C-4C1A-9615-A713661F6846"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.155718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-parseData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -550,49 +560,669 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "29486B81-83FE-4FC9-9B2C-19348ABFAB5E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSHomeViewController.m"
-            timestampString = "607230091.752102"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.155786"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
-            landmarkName = "-getWinnerData"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-parseData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "D51ABC00-4FE3-45C5-BCA1-ED3B737B5220"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DSheng/Main/DSHomeViewController.m"
-            timestampString = "607230091.752161"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.155848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "401"
-            endingLineNumber = "401"
-            landmarkName = "-getWinnerData"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-parseData:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "29FAB8C7-1574-424F-AF48-10F6B346C70A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.155907"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54C4D30A-875F-4CBD-82BE-EAF8F2BA3164"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.155961"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1397263-E8E3-4F37-9D4A-3752D36D5001"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.156013"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-getPayData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDE63B93-7718-4F09-AE05-2942D6F2EFE1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.1560659"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-getPayData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CDE63B93-7718-4F09-AE05-2942D6F2EFE1 - c25c879bca11f4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSHistoryViewController getPayData]"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  uuid = "CDE63B93-7718-4F09-AE05-2942D6F2EFE1 - ff9e5097d5856be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__37-[DSHistoryViewController getPayData]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D1C9A0F-8332-44DE-AA70-6B1AAD74286F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.156177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "-getTakeHistoryData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AC10AE15-E296-41AB-876D-5909792EA27A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.156235"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "-getTakeHistoryData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AC10AE15-E296-41AB-876D-5909792EA27A - f334cadf58e326f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSHistoryViewController getTakeHistoryData]"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  uuid = "AC10AE15-E296-41AB-876D-5909792EA27A - e17e51984fcca962"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[DSHistoryViewController getTakeHistoryData]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68BC6EB8-74FF-4596-A701-2D8C018AD62E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.848024"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "+getTakeHistoryRequest:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B787FDD5-1499-4882-B716-D34CAC4C58B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.848091"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
+            landmarkName = "+getTakeHistoryRequest:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "166FA736-55A1-4769-A0C5-26880657F312"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSHistoryViewController.m"
+            timestampString = "608554226.156377"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-getZhongjiangData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "166FA736-55A1-4769-A0C5-26880657F312 - f6abf6cd8c40f318"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[DSHistoryViewController getZhongjiangData]"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "30">
+               </Location>
+               <Location
+                  uuid = "166FA736-55A1-4769-A0C5-26880657F312 - 2c82ae15ba47e994"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[DSHistoryViewController getZhongjiangData]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSHistoryViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BAD890F1-E81D-4E83-A93F-E77D548AEEDC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSPayHistoryViewController.m"
+            timestampString = "608721150.848189"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
+            landmarkName = "-getZhongjiangData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D5419BE-30CC-426E-8F3F-EA2C74C93787"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+            timestampString = "608808282.7999769"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-getData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7373E0FB-F25E-40F4-B524-41CFDE84D6D1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DSheng/Main/DSHomeViewController.m"
-            timestampString = "607230091.752211"
+            timestampString = "608608599.813043"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
-            landmarkName = "-getWinnerData"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
+            landmarkName = "-takeMoneyAction:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "64996D7A-5D06-47C0-ADE0-EABE8B2FE73A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "608608599.813082"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "565"
+            endingLineNumber = "565"
+            landmarkName = "-helpAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "11D52E6A-D856-4476-8B8F-B28E94D8C6C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSHomeViewController.m"
+            timestampString = "608608599.81312"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "549"
+            endingLineNumber = "549"
+            landmarkName = "-payAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D267015D-7E6B-48D4-B336-DD1A3A27CB89"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSRuleIntroduceViewController.m"
+            timestampString = "608608599.813201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "-getFileName:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91675345-8509-4CEF-AF65-CDE2F2E4B14B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSRuleIntroduceViewController.m"
+            timestampString = "608608599.813242"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3143962C-8AC1-41BE-A232-1BAB74D05162"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSSettingViewController.m"
+            timestampString = "608721150.8486201"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E093C13-F808-426C-BBB0-03F883C228F1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608721150.848699"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
+            landmarkName = "+commitReturnMoneyRequest:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "32E3FE3F-E642-4965-918F-C91017C846EB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+            timestampString = "608808282.800905"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "-clickaction:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "32E3FE3F-E642-4965-918F-C91017C846EB - 972a15c04bfe41f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[DSReturnMoneyViewController clickaction:]_block_invoke"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "32E3FE3F-E642-4965-918F-C91017C846EB - 2cd49678e2ade4e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[DSReturnMoneyViewController clickaction:]_block_invoke_2"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "25">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FCFCF41-4C88-423D-96D5-61FD1EFCA3C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Net/DSAPIInterface.m"
+            timestampString = "608808331.612075"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "347"
+            endingLineNumber = "347"
+            landmarkName = "+commitReturnMoneyRequest:failed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5835B1A9-7CC6-4FEE-A2F1-8D00A629F59C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1038"
+            endingLineNumber = "1038"
+            landmarkName = "-catoryBtnAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE4700C5-9F51-432A-A1DD-A2D244711932"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
+            landmarkName = "-getCollectDataWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AB9657BA-004D-49A6-B2F0-5A48F25ECBBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-getCollectDataWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F24D2C09-E568-4BAD-B866-9318F1FC357B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "202"
+            endingLineNumber = "202"
+            landmarkName = "-getCollectDataWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE353B32-3F63-4BAD-9D6D-1514F60F9764"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-getCollectDataWithType:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5D148472-5770-4DD6-A891-BAF53103F388"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/DSTrendViewController.m"
+            timestampString = "0"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "970"
+            endingLineNumber = "970"
+            landmarkName = "-refreshAction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2383FDE-8ED2-45B0-BEC0-47DBCCB5FFA9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-clickaction:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C2D28CE1-EBE5-4BC4-836D-03485C9EB0C8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "-clickaction:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C2D28CE1-EBE5-4BC4-836D-03485C9EB0C8 - 2a3fe6dfd927164b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[DSReturnMoneyViewController clickaction:]_block_invoke.34"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  uuid = "C2D28CE1-EBE5-4BC4-836D-03485C9EB0C8 - 63562ccbf71fba28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__43-[DSReturnMoneyViewController clickaction:]_block_invoke_2.36"
+                  moduleName = "&#x5fb7;&#x80dc;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yipeng/Desktop/Demo/DSheng/DSheng/Main/SubPage/DSReturnMoneyViewController.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

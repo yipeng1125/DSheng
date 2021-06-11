@@ -13,6 +13,8 @@
 #import "DSCommonHeader.h"
 
 #import "DSAPIInterface.h"
+#import "DSRegsiterViewController.h"
+
 
 
 @interface DSLoginViewController ()<UITextFieldDelegate> {
@@ -56,6 +58,30 @@
 
 
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.navigationItem.leftBarButtonItem.customView.hidden = YES;
+    
+    if (_account && _psdstring) {
+        _phoneTextField.text = _account;
+        _passworldTextField.text = _psdstring;
+        [self startLogin:_phoneTextField.text password:_passworldTextField.text];
+    }
+
+}
+
+
+-(void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    _account = nil;
+    _psdstring = nil;
+}
+
+
+
 - (void)setNavigationBar {
     
 //    [self setSubView:self.navigationController.navigationBar];
@@ -80,6 +106,7 @@
 - (void)tryAutoLogin {
 
     NSDictionary *userinfo = [DSCommonTool getUserInfo];
+    _phoneTextField.text = userinfo[DS_USER_KEY];
     
     if (userinfo) {
         [self startLogin:userinfo[DS_USER_KEY] password:userinfo[DS_USER_PSD_KEY]];
@@ -91,7 +118,8 @@
 - (IBAction)regsiterAction:(id)sender {
     
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UIViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSRegsiterViewController"];
+    DSRegsiterViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSRegsiterViewController"];
+    myView.loginVC = self;
     [self.navigationController pushViewController:myView animated:YES];
 
 }

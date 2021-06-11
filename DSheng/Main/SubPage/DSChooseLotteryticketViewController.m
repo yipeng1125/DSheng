@@ -16,6 +16,8 @@
 #import "DSAPIInterface.h"
 #import "TRCustomAlert.h"
 #import "DSPayViewController.h"
+#import "DSRuleIntroduceViewController.h"
+#import "DSHistoryWinnerViewController.h"
 
 
 
@@ -64,6 +66,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UIView *shadeView;
+@property (weak, nonatomic) IBOutlet UIView *moreView;
 
 @end
 
@@ -86,12 +89,15 @@
     
     [self makeTopView];
     
-    self.navigationItem.title = [self getTopTitleStringWithType:_detailType];
+    self.navigationItem.title = [DSCacheDataManager getTopTitleStringWithType:_detailType];
     ((DSNavigationController *)self.navigationController).tdelegate = self;
     
 //    [self setupNavigationBar];
     
     self.navigationController.navigationBar.hidden = NO;
+    
+    self.navigationItem.rightBarButtonItem = [self itemWithTarget:self action:@selector(more) image:@"navigationbar_more" highImage:@"navigationbar_more_highlighted"];
+
     
     [self updateCustomView];
     
@@ -103,10 +109,29 @@
         [weakSelf getWinnerInfo:weakSelf.ltType];
     });
     
+    _moreView.layer.borderWidth = 1.0;
+    _moreView.layer.borderColor = [UIColor.lightGrayColor CGColor];
+    
     [self startTimer];
     
     [self setShadeLayer];
     
+}
+
+- (void)more {
+    _moreView.hidden = !_moreView.hidden;
+}
+
+- (UIBarButtonItem *)itemWithTarget:(id)target action:(SEL)action image:(NSString *)image highImage:(NSString *)highImage
+{
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+    // 设置图片
+    [btn setBackgroundImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:highImage] forState:UIControlStateHighlighted];
+    // 设置尺寸
+    btn.size = btn.currentBackgroundImage.size;
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
 - (void)setShadeLayer {
@@ -159,6 +184,7 @@
         return;
     }
     
+    
     BOOL needUpdate = _enablePayLotteryTicket;
 
     NSString *msg = [DSCacheDataManager.shareManager calculatorRemainTimeType:_ltType block:^(BOOL enalble, NSString * _Nonnull remainTime) {
@@ -169,6 +195,7 @@
         
     dispatch_async(dispatch_get_main_queue(), ^{
         weakSelf.remainTimeLabel.text = [NSString stringWithFormat:@"截止投注: %@",msg];
+        
         
         if (needUpdate != weakSelf.enablePayLotteryTicket) {
             if (!weakSelf.enablePayLotteryTicket) {
@@ -184,6 +211,8 @@
                 });
                 weakSelf.bshowShade = NO;
                 weakSelf.shadeView.hidden = YES;
+                
+                [self updateCustomView];
             }
         } else {
             if (!weakSelf.bshowShade && !weakSelf.enablePayLotteryTicket) {
@@ -194,7 +223,7 @@
         }
     });
     
-    [DSPayViewController updateRemainTime:msg];
+    [DSPayViewController updateRemainTime:msg enable:self.enablePayLotteryTicket];
 }
 
 - (void)dealloc {
@@ -207,7 +236,10 @@
     
     NSString * order = [[DSCacheDataManager shareManager] getNumberOrder:_ltType];
     
-    _numLabel.text = [NSString stringWithFormat:@"%@", order];
+//    _numLabel.text = [NSString stringWithFormat:@"%@", order];
+    
+    _numLabel.text = [NSString stringWithFormat:@"%@ %@",[DSCacheDataManager getLotteryTicketName:_ltType], order];
+
     
 }
 
@@ -241,7 +273,14 @@
             if (!contents) {
                 [TRCustomAlert showMessage:[NSString stringWithFormat:@"服务器数据错误。\r\n%@", message] image:nil];
             } else {
-                weakSelf.numLabel.text = [NSString stringWithFormat:@"%@%@",[DSCacheDataManager getLotteryTicketName:weakSelf.ltType], contents[1]];
+                if (weakSelf.ltType == DSLotteryTicketType_lhcai) {
+                    NSString *str = contents[1];
+                    str = [NSString stringWithFormat:@"%ld", ([str integerValue] + 1)];
+                    
+                    weakSelf.numLabel.text = [NSString stringWithFormat:@"%@ %@",[DSCacheDataManager getLotteryTicketName:weakSelf.ltType], str];
+                } else {
+                    [weakSelf updateCustomView];
+                }
                 weakSelf.winnerNumString = [NSString stringWithFormat:@"开奖号码: %@", contents.lastObject];
                 weakSelf.winLabel.text = weakSelf.winnerNumString;
                 
@@ -552,66 +591,6 @@
 }
 
 
-- (NSString *)getTopTitleStringWithType:(DSLTType)type {
-    
-    NSString *key = @"";
-    
-    switch (type) {
-        case DSLTType_sanfencai_lm:
-        case DSLTType_sanfenPKcai_lm:
-        case DSLTType_beijingPKcai_lm:
-        case DSLTType_PCdandan_lm:
-        case DSLTType_cqsscai_lm:
-        case DSLTType_tjsscai_lm:
-            key = @"两面盘";
-            break;
-            
-        case DSLTType_sanfencai_1_5:
-        case DSLTType_cqsscai_1_5:
-        case DSLTType_tjsscai_1_5:
-            key = @"1-5球";
-            break;
-            
-        case DSLTType_sanfenPKcai_1_10:
-        case DSLTType_beijingPKcai_1_10:
-            key = @"1-10名";
-            break;
-            
-        case DSLTType_sanfenPKcai_gy:
-        case DSLTType_beijingPKcai_gy:
-            key = @"冠亚军";
-            break;
-            
-        case DSLTType_PCdandan_tm:
-        case DSLTType_jslhcai_tm:
-        case DSLTType_lhcai_tm:
-            key = @"特码";
-            break;
-            
-        case DSLTType_jslhcai_tm_tws:
-            key = @"特码特尾数";
-            break;
-        case DSLTType_jslhcai_tm_bs:
-            key = @"特码波色";
-            break;
-        case DSLTType_jslhcai_tm_sx:
-            key = @"特码生肖";
-            break;
-        case DSLTType_jslhcai_tm_lm:
-            key = @"特码两面";
-            break;
-            
-        default:
-            break;
-            
-    }
-    
-    return key;
-}
-
-
-
-
 
 
 /*
@@ -676,7 +655,7 @@
     int rows = (int)(topTitleArys.count + 2) / 3;
     double posizitionY = 5;
     double height = 5 * (rows + 1) + rows * 48;
-    UIView *tview = [[UIView alloc] initWithFrame:CGRectMake(0, kNavBarAndStatusBarHeight, DSScreenSize.width, height)];
+    UIView *tview = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DSScreenSize.width, height)];
     [tview setBackgroundColor:UIColor.whiteColor];
     
     for (int index = 0; index < topTitleArys.count; index++) {
@@ -692,7 +671,7 @@
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, posizitionY, 96, 48)];
         double x = [self getPosizitionX:topTitleArys.count withIndex:index];
         button.centerX = x;
-        NSString *title = [self getTopTitleStringWithType:type];
+        NSString *title = [DSCacheDataManager getTopTitleStringWithType:type];
         [button setTitle:title forState:UIControlStateNormal];
         [button setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
         [button.titleLabel setFont:[UIFont systemFontOfSize:12]];
@@ -806,7 +785,7 @@
             posizitionY += BUTTON_Height + 2 + 12 + 5;
         }
         
-        DSButton *button = [DSButton makeSpecialTypeButtonWithTitle:contentArys[index]];
+        DSButton *button = [DSButton makeSpecialTypeButtonWithTitle:contentArys[index] withFrame:CGRectMake(0, 0, 32, 32)];
         button.x = posizitonX;
         button.y = posizitionY;
         [button addTarget:self action:@selector(buttonClictAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -860,7 +839,7 @@
         btopViewShow = NO;
     }
     
-    self.navigationItem.title = [self getTopTitleStringWithType:_detailType];
+    self.navigationItem.title = [DSCacheDataManager getTopTitleStringWithType:_detailType];
     oddstring = [self getOddsLotteryticket:_detailType];
 
 }
@@ -875,11 +854,22 @@
 }
 - (IBAction)commintAction:(id)sender {
     
+    
+    if (selectData.count <= 0) {
+        [TRCustomAlert showMessage:@"请先选择，再下注" image:nil];
+        return;
+    }
+    
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     DSPayViewController *myViewC = [story instantiateViewControllerWithIdentifier:@"DSPayViewController"];
     myViewC.ltType = _ltType;
+    myViewC.detailType = _detailType;
     myViewC.winnerString = self.winnerNumString;
     [myViewC setSelectLotteryTicket:selectData];
+    
+    NSString *numstr = [_numLabel.text componentsSeparatedByString:@" "].lastObject;
+    NSString *nextStr = numstr;
+    myViewC.nextNumString = nextStr;
     
     [self.navigationController pushViewController:myViewC animated:YES];
     
@@ -900,6 +890,31 @@
     
 }
 
+- (IBAction)touzhuAction:(id)sender {
+    _moreView.hidden = YES;
+    
+    
 
+}
 
+- (IBAction)winerAction:(id)sender {
+    _moreView.hidden = YES;
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DSHistoryWinnerViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSHistoryWinnerViewController"];
+    [self.navigationController pushViewController:myView animated:YES];
+    myView.ltType = _ltType;
+
+}
+
+- (IBAction)ruleAction:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DSRuleIntroduceViewController *myViewC = [story instantiateViewControllerWithIdentifier:@"DSRuleIntroduceViewController"];
+    myViewC.ltType = _ltType;
+    [self.navigationController pushViewController:myViewC animated:YES];
+    
+    _moreView.hidden = YES;
+
+}
 @end

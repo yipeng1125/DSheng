@@ -46,10 +46,23 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)oddsListRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
 
-- (void)modifyPasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+- (void)modifyPasswordReqeust:(NSString *)account oldPassword:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
-- (void)modifyTakePasswordReqeust:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+- (void)modifyTakePasswordReqeust:(NSString *)account psd:(NSString *)psd oldPassword:(NSString *)oldPsd andNew:(NSString *)newPsd success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
+- (void)commitTicketLotteryRequest:(NSString *)type detailType:(NSString *)dtype number:(NSString *)num totalMoney:(double)tmoney content:(NSString *)content success:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)rechangeHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)takeMoneyHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock ;
+
+- (void)payHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)zhognjiangHistoryRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)returnMoneyInfoRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
+
+- (void)commitReturnMoneyRequest:(reqeustSuccessBlock)sblock failed:(reqeustFailedBlock)fblock;
 
 @end
 

@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DSLoginViewController : UIViewController
 
+@property(nonatomic, copy)NSString *account;
+@property(nonatomic, copy)NSString *psdstring;
+
 @end
 
 NS_ASSUME_NONNULL_END

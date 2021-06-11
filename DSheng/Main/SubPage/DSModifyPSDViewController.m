@@ -7,6 +7,10 @@
 //
 
 #import "DSModifyPSDViewController.h"
+#import "TRCustomAlert.h"
+#import "DSAPIInterface.h"
+
+
 
 @interface DSModifyPSDViewController ()
 
@@ -25,7 +29,6 @@
     // Do any additional setup after loading the view.
         
     self.navigationController.navigationBar.hidden = NO;
-
 
     [self setupviews];
 }
@@ -57,6 +60,54 @@
 }
 */
 - (IBAction)modifyAction:(id)sender {
+    
+    if (_oldTextfield.text.length <= 0 || _mynewTextfield.text.length <= 0) {
+        [TRCustomAlert showMessage:@"密码不能为空" image:nil];
+        return;
+    }
+    
+    
+    
+    NSString *phoneNumber = [[DSCommonTool getUserInfo] objectForKey:DS_USER_KEY];
+    NSString *npsd = _mynewTextfield.text;
+    if (_type == 1) {
+        [DSAPIInterface sendModifyPasswordReqeust:phoneNumber oldPassword:_oldTextfield.text andNew:npsd success:^(id result) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TRCustomAlert showMessage:@"修改成功" image:nil];
+                NSDictionary *userinfo = @{DS_USER_KEY : phoneNumber, DS_USER_PSD_KEY : npsd};
+
+                [DSCommonTool saveUserInfo:userinfo];
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                     [self.navigationController popViewControllerAnimated:YES];
+                });
+               
+            });
+            
+        } failed:^(NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TRCustomAlert showMessage:error.description image:nil];
+            });
+        }];
+    } else {
+        NSString *psd = [[DSCommonTool getUserInfo] objectForKey:DS_USER_PSD_KEY];
+        [DSAPIInterface sendModifyTakePasswordReqeust:phoneNumber psd:psd oldPassword:_oldTextfield.text andNew:_mynewTextfield.text success:^(id result) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TRCustomAlert showMessage:@"修改成功" image:nil];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            });
+            
+        } failed:^(NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [TRCustomAlert showMessage:error.description image:nil];
+            });
+        }];
+    }
+
     
     
 }

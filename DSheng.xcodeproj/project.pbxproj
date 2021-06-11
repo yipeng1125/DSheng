@@ -41,12 +41,29 @@
 		FB0BC3392416536600605D1B /* DSAPIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC3372416536600605D1B /* DSAPIRequest.m */; };
 		FB0BC33E24166ED100605D1B /* DSKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC33D24166ED100605D1B /* DSKeyChain.m */; };
 		FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0BC340241671D800605D1B /* DSKeyChainUtils.m */; };
+		FB1377CE2445894700679A8F /* DSPayHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1377CD2445894700679A8F /* DSPayHistoryViewController.m */; };
+		FB1377D32445A60800679A8F /* DSReturnMoneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1377D22445A60800679A8F /* DSReturnMoneyViewController.m */; };
+		FB1378552447000B00679A8F /* DSAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1378542447000B00679A8F /* DSAboutViewController.m */; };
 		FB1716832425B39600B858D0 /* CustomAlertImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB1716822425B39600B858D0 /* CustomAlertImage.bundle */; };
 		FB1716862425B3DB00B858D0 /* dlicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1716852425B3DB00B858D0 /* dlicon.png */; };
 		FB17168C2425B69400B858D0 /* DSUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17168B2425B69400B858D0 /* DSUserInfo.m */; };
 		FB17168E2425BBA000B858D0 /* My.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB17168D2425BBA000B858D0 /* My.storyboard */; };
 		FB1716922425BE8200B858D0 /* DSShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1716912425BE8200B858D0 /* DSShareViewController.m */; };
 		FB35136624318C5C0062554F /* DSIntroductionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB35136524318C5C0062554F /* DSIntroductionViewController.m */; };
+		FB3513A524381E230062554F /* DSRuleIntroduceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3513A424381E230062554F /* DSRuleIntroduceViewController.m */; };
+		FB3513B424387C8D0062554F /* 七分彩.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513AB24387C8D0062554F /* 七分彩.txt */; };
+		FB3513B524387C8D0062554F /* 服务协议.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513AC24387C8D0062554F /* 服务协议.txt */; };
+		FB3513B624387C8D0062554F /* PC蛋蛋.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513AD24387C8D0062554F /* PC蛋蛋.txt */; };
+		FB3513B724387C8D0062554F /* 五分彩.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513AE24387C8D0062554F /* 五分彩.txt */; };
+		FB3513B824387C8D0062554F /* 三分PK拾规.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513AF24387C8D0062554F /* 三分PK拾规.txt */; };
+		FB3513B924387C8D0062554F /* 隐私策略.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513B024387C8D0062554F /* 隐私策略.txt */; };
+		FB3513BA24387C8D0062554F /* 六合彩规则说明.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513B124387C8D0062554F /* 六合彩规则说明.txt */; };
+		FB3513BB24387C8D0062554F /* 十分彩.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513B224387C8D0062554F /* 十分彩.txt */; };
+		FB3513BC24387C8D0062554F /* 三分彩规则.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3513B324387C8D0062554F /* 三分彩规则.txt */; };
+		FB5FAF25243F05F700136C69 /* DSDetailAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5FAF24243F05F700136C69 /* DSDetailAboutViewController.m */; };
+		FB5FAF2824401BC100136C69 /* DSHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5FAF2724401BC100136C69 /* DSHistoryViewController.m */; };
+		FB5FAF2C24415FAC00136C69 /* DSMyRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5FAF2A24415FAC00136C69 /* DSMyRecordCell.m */; };
+		FB5FAF2D24415FAC00136C69 /* DSMyRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB5FAF2B24415FAC00136C69 /* DSMyRecordCell.xib */; };
 		FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */; };
 		FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */; };
 		FBA74A1024209F4B00FACBFB /* DSCommonStringTool.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA74A0F24209F4B00FACBFB /* DSCommonStringTool.m */; };
@@ -93,7 +110,7 @@
 		4A70D3A9EDB043F0B89C0EA7 /* Pods-DSheng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSheng.debug.xcconfig"; path = "Target Support Files/Pods-DSheng/Pods-DSheng.debug.xcconfig"; sourceTree = "<group>"; };
 		9FB95851561B9CB0D0381A60 /* libPods-DSheng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSheng.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F412B6B39CA79F7758D00A34 /* Pods-DSheng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSheng.release.xcconfig"; path = "Target Support Files/Pods-DSheng/Pods-DSheng.release.xcconfig"; sourceTree = "<group>"; };
-		FB0BC2812412A6AD00605D1B /* DSheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0BC2812412A6AD00605D1B /* 德胜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "德胜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0BC2842412A6AD00605D1B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FB0BC2852412A6AD00605D1B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FB0BC2872412A6AD00605D1B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -166,6 +183,12 @@
 		FB0BC33D24166ED100605D1B /* DSKeyChain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChain.m; sourceTree = "<group>"; };
 		FB0BC33F241671D800605D1B /* DSKeyChainUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSKeyChainUtils.h; sourceTree = "<group>"; };
 		FB0BC340241671D800605D1B /* DSKeyChainUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSKeyChainUtils.m; sourceTree = "<group>"; };
+		FB1377CC2445894700679A8F /* DSPayHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSPayHistoryViewController.h; sourceTree = "<group>"; };
+		FB1377CD2445894700679A8F /* DSPayHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSPayHistoryViewController.m; sourceTree = "<group>"; };
+		FB1377D12445A60800679A8F /* DSReturnMoneyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSReturnMoneyViewController.h; sourceTree = "<group>"; };
+		FB1377D22445A60800679A8F /* DSReturnMoneyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSReturnMoneyViewController.m; sourceTree = "<group>"; };
+		FB1378532447000B00679A8F /* DSAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAboutViewController.h; sourceTree = "<group>"; };
+		FB1378542447000B00679A8F /* DSAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAboutViewController.m; sourceTree = "<group>"; };
 		FB1716822425B39600B858D0 /* CustomAlertImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomAlertImage.bundle; sourceTree = "<group>"; };
 		FB1716852425B3DB00B858D0 /* dlicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dlicon.png; sourceTree = "<group>"; };
 		FB17168A2425B69400B858D0 /* DSUserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSUserInfo.h; sourceTree = "<group>"; };
@@ -175,6 +198,24 @@
 		FB1716912425BE8200B858D0 /* DSShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSShareViewController.m; sourceTree = "<group>"; };
 		FB35136424318C5C0062554F /* DSIntroductionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSIntroductionViewController.h; sourceTree = "<group>"; };
 		FB35136524318C5C0062554F /* DSIntroductionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSIntroductionViewController.m; sourceTree = "<group>"; };
+		FB3513A324381E230062554F /* DSRuleIntroduceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSRuleIntroduceViewController.h; sourceTree = "<group>"; };
+		FB3513A424381E230062554F /* DSRuleIntroduceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSRuleIntroduceViewController.m; sourceTree = "<group>"; };
+		FB3513AB24387C8D0062554F /* 七分彩.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "七分彩.txt"; sourceTree = "<group>"; };
+		FB3513AC24387C8D0062554F /* 服务协议.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "服务协议.txt"; sourceTree = "<group>"; };
+		FB3513AD24387C8D0062554F /* PC蛋蛋.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PC蛋蛋.txt"; sourceTree = "<group>"; };
+		FB3513AE24387C8D0062554F /* 五分彩.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "五分彩.txt"; sourceTree = "<group>"; };
+		FB3513AF24387C8D0062554F /* 三分PK拾规.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "三分PK拾规.txt"; sourceTree = "<group>"; };
+		FB3513B024387C8D0062554F /* 隐私策略.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "隐私策略.txt"; sourceTree = "<group>"; };
+		FB3513B124387C8D0062554F /* 六合彩规则说明.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "六合彩规则说明.txt"; sourceTree = "<group>"; };
+		FB3513B224387C8D0062554F /* 十分彩.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "十分彩.txt"; sourceTree = "<group>"; };
+		FB3513B324387C8D0062554F /* 三分彩规则.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "三分彩规则.txt"; sourceTree = "<group>"; };
+		FB5FAF23243F05F700136C69 /* DSDetailAboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSDetailAboutViewController.h; sourceTree = "<group>"; };
+		FB5FAF24243F05F700136C69 /* DSDetailAboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSDetailAboutViewController.m; sourceTree = "<group>"; };
+		FB5FAF2624401BC100136C69 /* DSHistoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryViewController.h; sourceTree = "<group>"; };
+		FB5FAF2724401BC100136C69 /* DSHistoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryViewController.m; sourceTree = "<group>"; };
+		FB5FAF2924415FAC00136C69 /* DSMyRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSMyRecordCell.h; sourceTree = "<group>"; };
+		FB5FAF2A24415FAC00136C69 /* DSMyRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSMyRecordCell.m; sourceTree = "<group>"; };
+		FB5FAF2B24415FAC00136C69 /* DSMyRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSMyRecordCell.xib; sourceTree = "<group>"; };
 		FBA74A092420780500FACBFB /* DSHistoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSHistoryTableViewCell.h; sourceTree = "<group>"; };
 		FBA74A0A2420780500FACBFB /* DSHistoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSHistoryTableViewCell.m; sourceTree = "<group>"; };
 		FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DSHistoryTableViewCell.xib; sourceTree = "<group>"; };
@@ -279,7 +320,7 @@
 		FB0BC2822412A6AD00605D1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB0BC2812412A6AD00605D1B /* DSheng.app */,
+				FB0BC2812412A6AD00605D1B /* 德胜.app */,
 				FB0BC2992412A6AF00605D1B /* DShengTests.xctest */,
 				FB0BC2A42412A6AF00605D1B /* DShengUITests.xctest */,
 			);
@@ -368,6 +409,9 @@
 				FBA74A0B2420780500FACBFB /* DSHistoryTableViewCell.xib */,
 				FBE864A82428E8C0009DCACE /* DSLabel.h */,
 				FBE864A92428E8C0009DCACE /* DSLabel.m */,
+				FB5FAF2924415FAC00136C69 /* DSMyRecordCell.h */,
+				FB5FAF2A24415FAC00136C69 /* DSMyRecordCell.m */,
+				FB5FAF2B24415FAC00136C69 /* DSMyRecordCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -493,6 +537,7 @@
 		FB1716812425B39600B858D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FB3513AA24387C8D0062554F /* introduce */,
 				FB1716842425B3AE00B858D0 /* image */,
 				FB1716822425B39600B858D0 /* CustomAlertImage.bundle */,
 			);
@@ -514,6 +559,22 @@
 				FB1716912425BE8200B858D0 /* DSShareViewController.m */,
 			);
 			path = My;
+			sourceTree = "<group>";
+		};
+		FB3513AA24387C8D0062554F /* introduce */ = {
+			isa = PBXGroup;
+			children = (
+				FB3513AB24387C8D0062554F /* 七分彩.txt */,
+				FB3513AC24387C8D0062554F /* 服务协议.txt */,
+				FB3513AD24387C8D0062554F /* PC蛋蛋.txt */,
+				FB3513AE24387C8D0062554F /* 五分彩.txt */,
+				FB3513AF24387C8D0062554F /* 三分PK拾规.txt */,
+				FB3513B024387C8D0062554F /* 隐私策略.txt */,
+				FB3513B124387C8D0062554F /* 六合彩规则说明.txt */,
+				FB3513B224387C8D0062554F /* 十分彩.txt */,
+				FB3513B324387C8D0062554F /* 三分彩规则.txt */,
+			);
+			path = introduce;
 			sourceTree = "<group>";
 		};
 		FBFECD3424177AD500FA261F /* Model */ = {
@@ -546,6 +607,18 @@
 				FBE864AF2429BB84009DCACE /* DSModifyPSDViewController.m */,
 				FB35136424318C5C0062554F /* DSIntroductionViewController.h */,
 				FB35136524318C5C0062554F /* DSIntroductionViewController.m */,
+				FB3513A324381E230062554F /* DSRuleIntroduceViewController.h */,
+				FB3513A424381E230062554F /* DSRuleIntroduceViewController.m */,
+				FB5FAF23243F05F700136C69 /* DSDetailAboutViewController.h */,
+				FB5FAF24243F05F700136C69 /* DSDetailAboutViewController.m */,
+				FB5FAF2624401BC100136C69 /* DSHistoryViewController.h */,
+				FB5FAF2724401BC100136C69 /* DSHistoryViewController.m */,
+				FB1377CC2445894700679A8F /* DSPayHistoryViewController.h */,
+				FB1377CD2445894700679A8F /* DSPayHistoryViewController.m */,
+				FB1377D12445A60800679A8F /* DSReturnMoneyViewController.h */,
+				FB1377D22445A60800679A8F /* DSReturnMoneyViewController.m */,
+				FB1378532447000B00679A8F /* DSAboutViewController.h */,
+				FB1378542447000B00679A8F /* DSAboutViewController.m */,
 			);
 			name = SubPage;
 			path = DSheng/Main/SubPage;
@@ -570,7 +643,7 @@
 			);
 			name = DSheng;
 			productName = DSheng;
-			productReference = FB0BC2812412A6AD00605D1B /* DSheng.app */;
+			productReference = FB0BC2812412A6AD00605D1B /* 德胜.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FB0BC2982412A6AF00605D1B /* DShengTests */ = {
@@ -657,14 +730,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB0BC2912412A6AF00605D1B /* LaunchScreen.storyboard in Resources */,
+				FB3513B524387C8D0062554F /* 服务协议.txt in Resources */,
+				FB3513B924387C8D0062554F /* 隐私策略.txt in Resources */,
 				FBFECDD3241DDD3B00FA261F /* DSKaiJianglTableViewCell.xib in Resources */,
 				FBFECDCE241D021E00FA261F /* DSCollectionViewCell.xib in Resources */,
 				FB1716832425B39600B858D0 /* CustomAlertImage.bundle in Resources */,
 				FB0BC28E2412A6AF00605D1B /* Assets.xcassets in Resources */,
+				FB3513BC24387C8D0062554F /* 三分彩规则.txt in Resources */,
 				FB0BC28C2412A6AD00605D1B /* Main.storyboard in Resources */,
 				FBFECD482418EF1B00FA261F /* LottryticketData.plist in Resources */,
 				FB1716862425B3DB00B858D0 /* dlicon.png in Resources */,
+				FB3513B824387C8D0062554F /* 三分PK拾规.txt in Resources */,
 				FB17168E2425BBA000B858D0 /* My.storyboard in Resources */,
+				FB3513BA24387C8D0062554F /* 六合彩规则说明.txt in Resources */,
+				FB3513B424387C8D0062554F /* 七分彩.txt in Resources */,
+				FB5FAF2D24415FAC00136C69 /* DSMyRecordCell.xib in Resources */,
+				FB3513B624387C8D0062554F /* PC蛋蛋.txt in Resources */,
+				FB3513BB24387C8D0062554F /* 十分彩.txt in Resources */,
+				FB3513B724387C8D0062554F /* 五分彩.txt in Resources */,
 				FBA74A0D2420780500FACBFB /* DSHistoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,9 +815,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1377CE2445894700679A8F /* DSPayHistoryViewController.m in Sources */,
+				FB5FAF25243F05F700136C69 /* DSDetailAboutViewController.m in Sources */,
 				FB0BC2D62413522800605D1B /* UIView+Extension.m in Sources */,
 				FBE864AA2428E8C0009DCACE /* DSLabel.m in Sources */,
 				FBFECD302417665400FA261F /* DSAPIInterface.m in Sources */,
+				FB5FAF2824401BC100136C69 /* DSHistoryViewController.m in Sources */,
 				FBFECD332417779600FA261F /* DSCacheDataManager.m in Sources */,
 				FB0BC3272416268E00605D1B /* MASViewConstraint.m in Sources */,
 				FB0BC3242416268E00605D1B /* NSArray+MASAdditions.m in Sources */,
@@ -751,6 +837,7 @@
 				FB0BC2942412A6AF00605D1B /* main.m in Sources */,
 				FBA74A0C2420780500FACBFB /* DSHistoryTableViewCell.m in Sources */,
 				FBE864A42428D464009DCACE /* DSRechargeViewController.m in Sources */,
+				FB1377D32445A60800679A8F /* DSReturnMoneyViewController.m in Sources */,
 				FB0BC2D12413375300605D1B /* DSMyInformationViewController.m in Sources */,
 				FBFECDCD241D021E00FA261F /* DSCollectionViewCell.m in Sources */,
 				FB0BC3252416268E00605D1B /* View+MASAdditions.m in Sources */,
@@ -763,6 +850,7 @@
 				FB0BC2862412A6AD00605D1B /* AppDelegate.m in Sources */,
 				FB17168C2425B69400B858D0 /* DSUserInfo.m in Sources */,
 				FBE864B02429BB84009DCACE /* DSModifyPSDViewController.m in Sources */,
+				FB1378552447000B00679A8F /* DSAboutViewController.m in Sources */,
 				FB0BC341241671D800605D1B /* DSKeyChainUtils.m in Sources */,
 				FB0BC31F2416268E00605D1B /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				FBA74A132420A03000FACBFB /* DSHistoryWinnerViewController.m in Sources */,
@@ -774,6 +862,7 @@
 				FB0BC3002415DCC300605D1B /* DSNavigationController.m in Sources */,
 				FB0BC2FC2414F89900605D1B /* DSRegsiterViewController.m in Sources */,
 				FBE864A72428E243009DCACE /* DSScanPayViewController.m in Sources */,
+				FB3513A524381E230062554F /* DSRuleIntroduceViewController.m in Sources */,
 				FBFECD4524187EF500FA261F /* DSChooseLotteryticketViewController.m in Sources */,
 				FB0BC3232416268E00605D1B /* MASLayoutConstraint.m in Sources */,
 				FBA74A912420F7BF00FACBFB /* DSRule.m in Sources */,
@@ -782,6 +871,7 @@
 				FBFECD4224187EBB00FA261F /* DSPayViewController.m in Sources */,
 				FB0BC32F2416291B00605D1B /* DSNetworkManger.m in Sources */,
 				FBFECD3B2417B00C00FA261F /* NSDate+ext.m in Sources */,
+				FB5FAF2C24415FAC00136C69 /* DSMyRecordCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,17 +1043,21 @@
 			baseConfigurationReference = 4A70D3A9EDB043F0B89C0EA7 /* Pods-DSheng.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PE4K7U88D6;
+				DEVELOPMENT_TEAM = Y88QHA8MZ6;
 				GCC_PREFIX_HEADER = DSheng/Common/DSCommonHeader.h;
 				INFOPLIST_FILE = DSheng/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "works-yip.DSheng";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuesd.order.desheng;
+				PRODUCT_NAME = "德胜";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -972,17 +1066,21 @@
 			baseConfigurationReference = F412B6B39CA79F7758D00A34 /* Pods-DSheng.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PE4K7U88D6;
+				DEVELOPMENT_TEAM = Y88QHA8MZ6;
 				GCC_PREFIX_HEADER = DSheng/Common/DSCommonHeader.h;
 				INFOPLIST_FILE = DSheng/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "works-yip.DSheng";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				MARKETING_VERSION = 1.2.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuesd.order.desheng;
+				PRODUCT_NAME = "德胜";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

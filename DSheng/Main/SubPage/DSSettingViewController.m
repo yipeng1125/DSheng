@@ -8,6 +8,7 @@
 
 #import "DSSettingViewController.h"
 #import "DSModifyPSDViewController.h"
+#import "DSDetailAboutViewController.h"
 
 @interface DSSettingViewController ()<UITableViewDelegate, UITableViewDataSource> {
     NSArray *titleAry;
@@ -22,6 +23,7 @@
     // Do any additional setup after loading the view.
     
     self.navigationController.navigationBar.hidden = NO;
+    self.navigationItem.title = @"设置";
 
     _myTableView.scrollEnabled = NO;
     
@@ -35,6 +37,15 @@
     
 }
 
+- (IBAction)logoutAction:(id)sender {
+    
+    [DSCommonTool removeUserInfo];
+    
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UIViewController *myVc = [story instantiateViewControllerWithIdentifier:@"DSLoginViewController"];
+    [self.navigationController pushViewController:myVc animated:YES];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -81,15 +92,30 @@
         return;
     }
     
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DSDetailAboutViewController *myViewC = [story instantiateViewControllerWithIdentifier:@"DSDetailAboutViewController"];
+    
     if (indexPath.row == 2) {
         
+        myViewC.type = 1;
+        [self.navigationController pushViewController:myViewC animated:YES];
         return;
     }
     
     if (indexPath.row == 3) {
-        
+        myViewC.type = 2;
+        [self.navigationController pushViewController:myViewC animated:YES];
         return;
     }
+    
+    if (indexPath.row == 4) {
+        
+        UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+        UIViewController *aboutvc = [story instantiateViewControllerWithIdentifier:@"DSAboutViewController"];
+        [self.navigationController pushViewController:aboutvc animated:YES];
+        return;
+    }
+
 }
 
 @end

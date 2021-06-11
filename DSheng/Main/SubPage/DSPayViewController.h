@@ -13,10 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DSPayViewController : UIViewController
 
 @property(nonatomic, assign)DSLotteryTicketType ltType;
+@property(nonatomic, assign)DSLTType detailType;
 @property(nonatomic, copy)NSString *winnerString;
+
+@property(nonatomic, copy)NSString *nextNumString;
 - (void)setSelectLotteryTicket:(NSArray *)datas;
 
-+ (void)updateRemainTime:(NSString *)msg;
++ (void)updateRemainTime:(NSString *)msg enable:(BOOL)enable;
 
 @end
 

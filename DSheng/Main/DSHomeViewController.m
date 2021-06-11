@@ -15,6 +15,7 @@
 #import "DSChooseLotteryticketViewController.h"
 #import "NSDate+ext.h"
 #import "TRCustomAlert.h"
+#import "DSShareViewController.h"
 
 
 
@@ -97,7 +98,6 @@
     });
     
     [self setUpTimer];
-    [self startTimer];
 }
 
 
@@ -247,15 +247,15 @@
 }
 
 
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self pauseTimer];
-}
+
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
+    [self pauseTimer];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     [self startTimer];
 }
 
@@ -552,6 +552,13 @@
     
 }
 - (IBAction)takeMoneyAction:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"My" bundle:[NSBundle mainBundle]];
+    DSShareViewController *myView = [story instantiateViewControllerWithIdentifier:@"DSShareViewController"];
+    myView.type = DS_PageType_Take;
+    [self.navigationController pushViewController:myView animated:YES];
+
+    
 }
 - (IBAction)helpAction:(id)sender {
     

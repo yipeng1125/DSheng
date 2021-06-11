@@ -15,6 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy)NSString *userID;
 @property(nonatomic, copy)NSString *balanceMoney;
 
+@property(nonatomic, copy)NSString *todayPayCount;
+@property(nonatomic, copy)NSString *todayWinCount;
+@property(nonatomic, copy)NSString *todayTakeCount;
+@property(nonatomic, copy)NSString *todayExtCount;
+
+
+
 @property(nonatomic, assign)BOOL isAgency;
 
 - (instancetype)initWithString:(NSString *)message;
